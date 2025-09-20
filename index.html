@@ -2,67 +2,236 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <title>SmartLivingBerlin – Immobilien & KI</title>
+  <title>SmartLivingBerlin – Immobilien, Energie & KI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aktuelle Informationen zu Immobilien, Bau, Energie, Klima, Smart Living & KI – automatisch aktualisiert, visuell, interaktiv.">
+  <meta property="og:title" content="SmartLivingBerlin – Immobilien, Energie & KI">
+  <meta property="og:description" content="Die Seite, die sich selbst aktualisiert. News, Videos, Bilder, Karten – ohne Anmeldung.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smartlivingberlin.github.io/">
+  <meta property="og:image" content="https://source.unsplash.com/featured/?architecture,berlin">
   <style>
-    body{font-family:system-ui,Arial,sans-serif;margin:0;padding:0;line-height:1.55}
-    header{padding:48px 24px;background:#0a2540;color:#fff;text-align:center}
-    .btn{display:inline-block;margin:12px;padding:12px 18px;border-radius:8px;text-decoration:none;background:#00b894;color:#fff}
-    section{padding:28px 18px;max-width:900px;margin:auto}
-    footer{padding:24px;text-align:center;background:#f5f7fb}
-    .card{border:1px solid #e5e9f2;border-radius:10px;padding:16px;margin:12px 0}
+    :root{--bg:#f5f7fb;--fg:#0a2540;--muted:#5b6b80;--brand:#00b894;--card:#ffffff;--line:#e5e9f2}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu}
+    a{color:var(--fg);text-decoration:underline}
+    header.hero{display:grid;place-items:center;min-height:58vh;padding:40px 16px;background:linear-gradient(180deg,rgba(10,37,64,.9),rgba(10,37,64,.3)), url('https://source.unsplash.com/1600x900/?smart,home,city') center/cover no-repeat;color:#fff;text-align:center}
+    .hero h1{font-size:clamp(28px,4.2vw,44px);margin:0 0 10px}
+    .hero p{max-width:800px;margin:8px auto 24px;color:#e9eef6}
+    .cta{display:inline-block;background:var(--brand);color:#022;padding:12px 18px;border-radius:10px;margin:6px 6px 0 6px;text-decoration:none;font-weight:600}
+    main{max-width:1080px;margin:0 auto;padding:24px 16px}
+    section{margin:36px 0}
+    h2{font-size:clamp(20px,3vw,28px);margin:0 0 12px}
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;border:1px solid var(--line);padding:4px 10px;border-radius:999px;font-size:12px;margin:2px}
+    footer{padding:40px 16px;text-align:center;color:var(--muted)}
+    .admin{position:fixed;top:8px;left:8px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 10px;z-index:9;font-size:13px;opacity:.85}
+    .search{display:flex;gap:8px;margin:8px 0 16px}
+    .search input{flex:1;padding:10px;border-radius:10px;border:1px solid var(--line)}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+    .notice{font-size:12px;color:#6c7a90}
+    .faq dt{font-weight:700;margin-top:10px}
+    .faq dd{margin:4px 0 12px}
   </style>
-<script type="text/javascript">
-  (function() {
-    d = document;
-    s = d.createElement("script");
-    s.async = 1;
-    d.getElementsByTagName("head")[0].appendChild(s);
-  })();
-</script>
-<script type="text/javascript">
-  window.$crisp = [];
-  window.CRISP_WEBSITE_ID = "d09a6760-5ff6-4125-a923-3daa2ae22de9";
-  (function() {
-    d = document;
-    s = d.createElement("script");
-    s.src = "https://client.crisp.chat/l.js";
-    s.async = 1;
-    d.getElementsByTagName("head")[0].appendChild(s);
-  })();
-</script>
+
+  <!-- Schema.org (Organization + FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"SmartLivingBerlin",
+    "url":"https://smartlivingberlin.github.io",
+    "logo":"https://source.unsplash.com/300x300/?berlin,skyline",
+    "sameAs":["https://www.youtube.com/","https://www.linkedin.com/"]
+  }
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Immobilien & KI – Klar. Einfach. Effektiv.</h1>
-    <p>Eigentümer- & Käufer-Leitfäden • KI-gestützte Beratung • Vorlagen & Kurse</p>
-    <a class="btn" href="#lead">PDF kostenlos sichern</a>
-    <a class="btn" href="#termin">Kostenloses Erstgespräch</a>
-  </header>
 
-  <section id="lead">
-    <h2>Lead-Magnet: Checkliste Immobilienverkauf 2025</h2>
-    <div class="card">
-      <p>Trage hier deine E-Mail ein, wir senden dir die PDF sofort:</p>
-      <!-- TEMP: Formular deaktiviert --><iframe style="display:none" src="about:blank" width="100%" height="380" style="border:0" title="Lead-Formular"></iframe>
+<!-- Mini-Admin (nur für dich; für Besucher unauffällig) -->
+<div class="admin">
+  <strong>Ansicht:</strong>
+  <label class="pill"><input type="checkbox" id="toggleNews" checked> News</label>
+  <label class="pill"><input type="checkbox" id="toggleVideos" checked> Videos</label>
+  <label class="pill"><input type="checkbox" id="toggleImages" checked> Bilder</label>
+  <label class="pill"><input type="checkbox" id="toggleTips" checked> Tipps</label>
+  <label class="pill"><input type="checkbox" id="toggleFAQ" checked> FAQ</label>
+</div>
+
+<header class="hero">
+  <div>
+    <h1>SmartLivingBerlin – Immobilien · Energie · KI</h1>
+    <p>Die Website, die sich <em>selbst</em> aktualisiert: Nachrichten, Videos, Bilder, Karten und Antworten – automatisch, kostenlos, ohne Anmeldung.</p>
+    <a class="cta" href="#news">Aktuelles ansehen</a>
+    <a class="cta" href="#ask">Frage stellen</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- Interaktive Suche / Antworten -->
+  <section id="ask">
+    <h2>Frag die Seite</h2>
+    <div class="search">
+      <input id="q" placeholder="z. B. Sanierungspflicht, Wärmepumpe, Energieausweis, Smart Home …">
+      <button id="btnAsk">Suchen</button>
+    </div>
+    <div id="answers" class="grid cols-3"></div>
+    <div class="notice">Hinweis: Antworten sind automatisch zusammengetragen; bei Rechtsfragen gilt: <em>Keine Rechtsberatung.</em></div>
+  </section>
+
+  <!-- News (auto) -->
+  <section id="news">
+    <h2>Aktuelle News</h2>
+    <div id="newsList" class="grid cols-3"></div>
+  </section>
+
+  <!-- Videos (Playlist-Embed; sofort sichtbar) -->
+  <section id="videos">
+    <h2>Videos & Talks</h2>
+    <div class="card" style="overflow:hidden">
+      <iframe width="100%" height="420" loading="lazy" title="YouTube Playlist"
+        src="https://www.youtube.com/embed/videoseries?list=PLU12uITxBEPF5xTqg1Qq0Jm9uGg8mQx7X"
+        frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 
-  <section id="termin">
-    <h2>Termin buchen</h2>
-    <div class="card">
-      <div class="calendly-inline-widget" style="display:none" style="display:none" data-url="HIER-DEIN-CALENDLY-LINK" style="min-width:320px;height:700px;"></div>
-      <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
+  <!-- Bilder (Unsplash Streams) -->
+  <section id="images">
+    <h2>Bilder – Architektur · Energie · Smart Home</h2>
+    <div id="gallery" class="grid cols-3 gallery"></div>
+  </section>
+
+  <!-- Tipps/FAQ (Demo; später via Google Sheet CSV) -->
+  <section id="tips">
+    <h2>Praktische Tipps</h2>
+    <div id="tipsList" class="grid cols-3"></div>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ – Häufige Fragen</h2>
+    <dl class="faq" id="faqList"></dl>
+    <div class="notice">*Keine Rechts- bzw. Steuerberatung.*</div>
+  </section>
+
+  <!-- Karte (uMap/OSM – Beispiel) -->
+  <section id="map">
+    <h2>Karten & Projekte (Beispiel)</h2>
+    <div class="card" style="overflow:hidden">
+      <iframe loading="lazy" title="uMap Beispielkarte"
+        src="https://umap.openstreetmap.fr/de/map/new#10/52.5200/13.4050"
+        width="100%" height="420" frameborder="0"></iframe>
     </div>
   </section>
 
-  <footer>
-    <p>© SmartLivingBerlin • <a href="#impressum">Impressum</a> • <a href="#datenschutz">Datenschutz</a></p>
-  </footer>
+</main>
 
-  <!-- CRISP Chat -->
-  <script type="text/javascript">
-  s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
-  </script>
+<footer>
+  <div class="muted">
+    © SmartLivingBerlin · <a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a><br>
+    Diese Website nutzt ausschließlich kostenlose, offene Quellen und aktualisiert sich automatisch.
+  </div>
+</footer>
+
+<!-- Impressum/Datenschutz Platzhalter -->
+<section id="impressum" class="card" style="max-width:980px;margin:20px auto;padding:16px">
+  <h2>Impressum (Platzhalter)</h2>
+  <p>Bitte später mit generierten Rechtstexten ersetzen (z. B. eRecht24). *Keine Rechtsberatung.*</p>
+</section>
+<section id="datenschutz" class="card" style="max-width:980px;margin:20px auto;padding:16px">
+  <h2>Datenschutz (Platzhalter)</h2>
+  <p>Keine Cookies, keine Tracker. Externe Embeds (YouTube, uMap) laden Inhalte vom jeweiligen Anbieter.</p>
+</section>
+
+<script>
+// Sichtbarkeits-Toggles (wird lokal gespeichert)
+const toggles = ["News","Videos","Images","Tips","FAQ"];
+toggles.forEach(t=>{
+  const id = "toggle"+t;
+  const sec = document.getElementById(t.toLowerCase());
+  const el = document.getElementById(id);
+  const key = "sv_toggle_"+t.toLowerCase();
+  const saved = localStorage.getItem(key);
+  if(saved !== null && sec) sec.style.display = saved==="0" ? "none":"";
+  if(el) {
+    el.checked = (saved===null || saved==="1");
+    el.addEventListener('change', ()=>{
+      localStorage.setItem(key, el.checked ? "1":"0");
+      if(sec) sec.style.display = el.checked ? "":"none";
+    });
+  }
+});
+
+// News laden
+(async function loadNews(){
+  try{
+    const r = await fetch('./data/news.json',{cache:'no-store'});
+    const items = await r.json();
+    const root = document.getElementById('newsList');
+    root.innerHTML = (items||[]).slice(0,12).map(x=>`
+      <article class="card">
+        <a href="${x.link}" target="_blank" rel="noopener"><strong>${x.title}</strong></a>
+        <div class="muted">${new Date(x.date||Date.now()).toLocaleString('de-DE')}</div>
+      </article>`).join('') || '<div class="muted">Noch keine News.</div>';
+  }catch(e){
+    console.error(e);
+  }
+})();
+
+// Bilder (Unsplash – ohne Key, thematisch)
+(function loadImages(){
+  const topics = ["architecture,city","renewable,energy","smart,home","berlin,architecture","eco,building","interior,design"];
+  const urls = topics.map(q=>`https://source.unsplash.com/600x400/?${encodeURIComponent(q)}`);
+  const g = document.getElementById('gallery');
+  g.innerHTML = urls.map(u=>`<img loading="lazy" src="${u}" alt="Bild">`).join('');
+})();
+
+// Tipps (Demo; später Google Sheets CSV)
+const demoTips = [
+  {title:"Energieausweis verstehen",desc:"Was steht drin und worauf achten?",link:"https://www.co2online.de/energiesparen/strom-sparen/energieausweis/"},
+  {title:"Sanierungsfahrplan",desc:"Schritte für Eigentümer – von Dämmung bis Heizung.",link:"https://www.bafa.de/"},
+  {title:"Smart-Home Basics",desc:"Kleine Schritte mit großem Effekt.",link:"https://www.smarthome.de/"}
+];
+document.getElementById('tipsList').innerHTML =
+  demoTips.map(t=>`<div class="card"><strong>${t.title}</strong><div class="muted">${t.desc}</div><a href="${t.link}" target="_blank">Mehr</a></div>`).join('');
+
+// FAQ (Demo)
+const faq = [
+  {q:"Was kostet GitHub Pages?", a:"0 €. Hosting ist kostenlos, ideal für statische Seiten."},
+  {q:"Wie bleibt die Seite aktuell?", a:"RSS-Feeds werden täglich in GitHub Actions geladen; Embeds (YouTube/uMap) aktualisieren sich automatisch."},
+  {q:"Brauche ich Programmierkenntnisse?", a:"Nein. Inhalte kommen aus Feeds/Embeds. Später kannst du Google Sheets als CMS nutzen."},
+  {q:"Ist das rechtssicher?", a:"Für Rechtstexte bitte einen Generator/einen Anwalt nutzen. *Keine Rechtsberatung.*"},
+  {q:"Kann ich Social Media verbinden?", a:"Ja – Links/Embeds sind möglich; Planung mit kostenlosen Tools (Buffer) machbar."}
+];
+document.getElementById('faqList').innerHTML =
+  faq.map(x=>`<dt>${x.q}</dt><dd>${x.a}</dd>`).join('');
+
+// „Frag die Seite“: durchsucht News + Tipps + FAQ (einfach & schnell)
+document.getElementById('btnAsk').addEventListener('click', async ()=>{
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const out = document.getElementById('answers');
+  if(!q){ out.innerHTML='<div class="muted">Bitte Suchbegriff eingeben.</div>'; return; }
+  const res = [];
+  try{
+    const nj = await (await fetch('./data/news.json',{cache:'no-store'})).json();
+    (nj||[]).slice(0,50).forEach(n=>{
+      if((n.title||'').toLowerCase().includes(q)) res.push({t:n.title, link:n.link, k:'News'});
+    });
+  }catch(e){}
+  demoTips.forEach(t => {
+    if((t.title+t.desc).toLowerCase().includes(q)) res.push({t:t.title, link:t.link, k:'Tipp'});
+  });
+  faq.forEach(f => {
+    if((f.q+f.a).toLowerCase().includes(q)) res.push({t:f.q, link:'#faq', k:'FAQ'});
+  });
+  out.innerHTML = res.length ? res.slice(0,12).map(r=>`
+    <div class="card"><span class="pill">${r.k}</span><br>
+    <a href="${r.link}" target="_blank" rel="noopener"><strong>${r.t}</strong></a></div>
+  `).join('') : '<div class="muted">Keine Treffer. Versuche ein anderes Stichwort.</div>';
+});
+</script>
 </body>
 </html>
