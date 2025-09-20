@@ -1,47 +1,7 @@
-name: Fetch News
-
+name: Update News
 on:
   schedule:
-    - cron: "0 * * * *"   # jede volle Stunde (UTC)
-  workflow_dispatch:      # manueller Start-Button in GitHub
-
-permissions:
-  contents: write         # damit der Bot ins Repo pushen darf
-
-concurrency:
-  group: fetch-news
-  cancel-in-progress: false
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run fetch script
-        run: node scripts/fetch_rss.js
-
-      - name: Commit & Push changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/news.json
-          git commit -m "Update news.json (auto)" || echo "No changes to commit"
-          git push
-name: Fetch RSS and update news.json
-
-on:
-  schedule:
-    - cron: '23 5 * * *'   # täglich 05:23 UTC
+    - cron: "17 */6 * * *"  # alle 6h
   workflow_dispatch:
 
 jobs:
@@ -51,50 +11,69 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - run: npm ci || npm i
-      - run: node scripts/fetch_rss.js
-      - name: Commit & push if changed
-        run: |
-          if ! git diff --quiet; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/news.json
-            git commit -m "chore: auto-update news.json"
-            git push
-          else
-            echo "No changes."
-          fi
 
-name: Auto News Fetch
-on:
-  schedule:
-    - cron: "0 5 * * *"     # täglich 05:00 UTC
-  workflow_dispatch:        # manuell startbar
-jobs:
-  fetch:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - name: Install XML parser
-        run: npm init -y && npm i xml2js
-      - name: Fetch RSS -> data/news.json
-        run: node scripts/fetch_rss.js
-      - name: Commit changes
+      - name: Install deps
         run: |
-          if [[ -n "$(git status --porcelain)" ]]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add data/news.json
-            git commit -m "chore: auto-update news.json"
-            git push
-          else
-            echo "No changes."
-          fi
+          npm init -y >/dev/null 2>&1 || true
+          npm install xml2js@0.6.2 --no-audit --no-fund
+
+      - name: Fetch RSS -> data/news.json
+        run: |
+          node - <<'NODE'
+          const https=require('https'), fs=require('fs'), {parseString}=require('xml2js');
+          const feeds=[
+            "https://www.tagesschau.de/xml/rss2/",
+            "https://www.heise.de/rss/heise-atom.xml",
+            "https://www.cleanenergywire.org/rss.xml"
+          ];
+          function get(u){return new Promise(res=>{
+            https.get(u,r=>{let d='';r.on('data',c=>d+=c);r.on('end',()=>res({ok:true,body:d}));}).on('error',()=>res({ok:false,body:''}));
+          });}
+          (async()=>{
+            let all=[];
+            for(const u of feeds){
+              const r=await get(u);
+              if(!r.ok) continue;
+              await new Promise(done=>{
+                parseString(r.body,(e,j)=>{
+                  if(e||!j) return done();
+                  const items=(j.rss?.channel?.[0]?.item||j.feed?.entry||[]).map(it=>({
+                    title: (it.title?.[0]||it.title)||'Ohne Titel',
+                    link: (it.link?.[0]?.href||it.link?.[0]||it.id?.[0]||'#'),
+                    date: (it.pubDate?.[0]||it.updated?.[0]||new Date().toISOString()),
+                    source: (new URL((it.link?.[0]?.href||it.link?.[0]||'https://example.com'))).hostname
+                  }));
+                  all=all.concat(items);
+                  done();
+                });
+              });
+            }
+            all=all.filter(x=>x.title&&x.link).slice(0,40);
+            fs.mkdirSync('data',{recursive:true});
+            fs.writeFileSync('data/news.json',JSON.stringify(all,null,2));
+            console.log('Wrote data/news.json with',all.length,'items');
+          })();
+          NODE
+
+      - name: Build partials/top5.html
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const news=require('./data/news.json');
+          const top5=(news||[]).slice(0,5).map(n=>`<li><a target="_blank" rel="noopener" href="${n.link}">${n.title}</a> <small>· ${new Date(n.date).toLocaleDateString('de-DE')}</small></li>`).join('\n');
+          fs.mkdirSync('partials',{recursive:true});
+          fs.writeFileSync('partials/top5.html', `<ul class="mb-0">\n${top5||'<li>noch keine Daten</li>'}\n</ul>\n`);
+          console.log('partials/top5.html written');
+          NODE
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/news.json partials/top5.html || true
+          git commit -m "chore: auto update news & top5 [skip ci]" || echo "nichts zu committen"
+          git push
