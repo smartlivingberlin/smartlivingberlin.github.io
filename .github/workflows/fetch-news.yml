@@ -1,3 +1,34 @@
+name: Fetch RSS and update news.json
+
+on:
+  schedule:
+    - cron: '23 5 * * *'   # täglich 05:23 UTC
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm ci || npm i
+      - run: node scripts/fetch_rss.js
+      - name: Commit & push if changed
+        run: |
+          if ! git diff --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/news.json
+            git commit -m "chore: auto-update news.json"
+            git push
+          else
+            echo "No changes."
+          fi
+
 name: Auto News Fetch
 on:
   schedule:
