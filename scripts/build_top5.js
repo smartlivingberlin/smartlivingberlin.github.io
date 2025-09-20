@@ -1,56 +1,50 @@
 const fs = require('fs');
-const path = require('path');
 
-const INPUT = path.join('data', 'news.json');
-const OUTDIR = 'partials';
-const OUTPUT = path.join(OUTDIR, 'top5.html');
+const NEWS_JSON = 'data/news.json';
+const INDEX = 'index.html';
+const START = '<!-- NEWS:START -->';
+const END   = '<!-- NEWS:END -->';
 
-function readNews() {
-  if (!fs.existsSync(INPUT)) {
-    console.error('⚠️ news.json nicht gefunden:', INPUT, '- Skript beendet.');
-    process.exit(0); // kein harter Fehler, Workflow darf weiterlaufen
-  }
-  try {
-    const raw = fs.readFileSync(INPUT, 'utf8');
-    const arr = JSON.parse(raw);
-    if (!Array.isArray(arr)) return [];
-    // Nach Datum absteigend sortieren
-    return arr
-      .slice()
-      .sort((a,b) => new Date(b.date) - new Date(a.date))
-      .filter(n => n.link && n.title);
-  } catch (e) {
-    console.error('❌ Konnte news.json nicht parsen:', e.message);
-    process.exit(1);
-  }
+function loadNews() {
+  const raw = fs.readFileSync(NEWS_JSON, 'utf8');
+  const arr = JSON.parse(raw);
+  // Sortiere neueste zuerst (nach ISO-Datum)
+  return arr
+    .map(x => ({...x, date: new Date(x.date || x.pubDate || Date.now()).toISOString()}))
+    .sort((a,b) => b.date.localeCompare(a.date))
+    .slice(0,5);
 }
 
-function fmtDate(iso) {
-  try { return new Date(iso).toLocaleDateString('de-DE'); }
-  catch { return ''; }
-}
-
-function buildHTML(items) {
-  const top = items.slice(0, 5);
-  const lis = top.map(n => {
-    const d = fmtDate(n.date);
-    return `<li><a href="${n.link}" target="_blank" rel="noopener">${n.title}</a>` +
-           (d ? ` <small>– ${d}</small>` : '') +
-           `</li>`;
+function renderList(items){
+  const li = items.map(it => {
+    const date = (it.date || '').slice(0,10);
+    const title = it.title || 'Ohne Titel';
+    const link = it.link || '#';
+    const src  = it.source || '';
+    return `<li><a href="${link}" target="_blank" rel="noopener">${title}</a> <small>(${date}${src?`, ${src}`:''})</small></li>`;
   }).join('\n');
-  return `<!-- automatisch erzeugt: partials/top5.html -->
-<section style="max-width:900px;margin:40px auto">
-  <h2>Top 5 der Woche</h2>
-  <ul style="line-height:1.6">
-${lis || '<li>Zurzeit keine Artikel verfügbar.</li>'}
+  return `<section id="news" class="card">
+  <h2>Aktuelle Branchen-News</h2>
+  <ul>
+  ${li}
   </ul>
 </section>`;
 }
 
-(function main() {
-  const news = readNews();
-  if (!fs.existsSync(OUTDIR)) fs.mkdirSync(OUTDIR, { recursive: true });
-  const html = buildHTML(news);
-  fs.writeFileSync(OUTPUT, html);
-  console.log('✅ Geschrieben:', OUTPUT, 'mit', Math.min(news.length, 5), 'Einträgen.');
-})();
+function replaceInIndex(html, block){
+  const i1 = html.indexOf(START);
+  const i2 = html.indexOf(END);
+  if (i1 === -1 || i2 === -1 || i2 < i1) {
+    throw new Error('NEWS Marker nicht gefunden. Bitte START/END Marker in index.html setzen.');
+  }
+  const before = html.slice(0, i1 + START.length);
+  const after  = html.slice(i2);
+  return `${before}\n${block}\n${after}`;
+}
+
+const news = loadNews();
+const block = renderList(news);
+const indexHtml = fs.readFileSync(INDEX, 'utf8');
+const out = replaceInIndex(indexHtml, block);
+fs.writeFileSync(INDEX, out, 'utf8');
+console.log(`OK: index.html aktualisiert mit ${news.length} Artikeln.`);
