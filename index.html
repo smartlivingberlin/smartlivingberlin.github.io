@@ -13,7 +13,25 @@
   <style>
     :root{--bg:#f5f7fb;--fg:#0a2540;--muted:#5b6b80;--brand:#00b894;--card:#ffffff;--line:#e5e9f2}
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu}
+   <section id="news" style="max-width:900px;margin:40px auto;">
+  <h2>Aktuelle News</h2>
+  <ul id="news-list" style="line-height:1.6"></ul>
+</section>
+<script>
+fetch('data/news.json')
+  .then(r => r.json())
+  .then(items => {
+    const ul = document.getElementById('news-list');
+    if (!Array.isArray(items) || items.length === 0) {
+      ul.innerHTML = '<li>Zurzeit keine News verfügbar.</li>'; return;
+    }
+    ul.innerHTML = items.slice(0, 12).map(it =>
+      `<li><a href="${it.link}" target="_blank" rel="noopener">${it.title}</a> <small>– ${new Date(it.date).toLocaleDateString('de-DE')}</small></li>`
+    ).join('');
+  })
+  .catch(() => { document.getElementById('news-list').innerHTML = '<li>Fehler beim Laden der News.</li>';});
+</script>
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu}
     a{color:var(--fg);text-decoration:underline}
     header.hero{display:grid;place-items:center;min-height:58vh;padding:40px 16px;background:linear-gradient(180deg,rgba(10,37,64,.9),rgba(10,37,64,.3)), url('https://source.unsplash.com/1600x900/?smart,home,city') center/cover no-repeat;color:#fff;text-align:center}
     .hero h1{font-size:clamp(28px,4.2vw,44px);margin:0 0 10px}
