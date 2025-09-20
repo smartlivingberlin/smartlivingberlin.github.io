@@ -31,6 +31,15 @@ fetch('data/news.json')
   })
   .catch(() => { document.getElementById('news-list').innerHTML = '<li>Fehler beim Laden der News.</li>';});
 </script>
+<!-- Top-5 der Woche (wird als HTML-Snippet geladen) -->
+<div id="top5-container"></div>
+<script>
+  fetch('partials/top5.html', { cache: 'no-store' })
+    .then(r => r.ok ? r.text() : Promise.reject(r.status))
+    .then(html => { document.getElementById('top5-container').innerHTML = html; })
+    .catch(() => { document.getElementById('top5-container').innerHTML =
+      '<section style="max-width:900px;margin:40px auto"><h2>Top 5 der Woche</h2><p><small>Zurzeit nicht verfügbar.</small></p></section>'; });
+</script>
  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu}
     a{color:var(--fg);text-decoration:underline}
     header.hero{display:grid;place-items:center;min-height:58vh;padding:40px 16px;background:linear-gradient(180deg,rgba(10,37,64,.9),rgba(10,37,64,.3)), url('https://source.unsplash.com/1600x900/?smart,home,city') center/cover no-repeat;color:#fff;text-align:center}
