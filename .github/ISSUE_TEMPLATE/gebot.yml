@@ -1,0 +1,35 @@
+name: Gebot abgeben
+description: Gebot zu einem Angebot/Projekt abgeben
+labels: ["bid","needs-review"]
+body:
+  - type: input
+    id: listing_slug
+    attributes:
+      label: Angebots-Slug
+      description: Steht in der URL der Angebotsseite (z. B. angebote/beispiel-2-zimmer-prenzlauer-berg.html → slug = beispiel-2-zimmer-prenzlauer-berg)
+      placeholder: beispiel-2-zimmer-prenzlauer-berg
+    validations: { required: true }
+  - type: input
+    id: bidder_name
+    attributes:
+      label: Dein Name (kann gekürzt angezeigt werden)
+      placeholder: Max M. / M.Mustermann
+    validations: { required: true }
+  - type: input
+    id: bid_amount
+    attributes:
+      label: Gebot (EUR, nur Zahl)
+      placeholder: 520000
+    validations: { required: true }
+  - type: textarea
+    id: note
+    attributes:
+      label: Hinweis (optional)
+      placeholder: z. B. Finanzierungsbestätigung vorhanden / gewünschter Übergabetermin
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Bestätigung
+      options:
+        - label: Ich bestätige, dass mein Gebot ernst gemeint ist. Mir ist bewusst, dass kein Vertrag zustande kommt, bis ein Kaufvertrag notariell geschlossen ist.
+          required: true
