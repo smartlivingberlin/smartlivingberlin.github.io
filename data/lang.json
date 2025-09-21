@@ -59,7 +59,16 @@
     "feature.nebenkostenrechner": "Kaufnebenkosten",
     "feature.zins": "Zinsentwicklung",
     "feature.faqmieter": "FAQ für Mieter",
-    "feature.faqeigentuemer": "FAQ für Eigentümer"
+    "feature.faqeigentuemer": "FAQ für Eigentümer",
+    "feature.auktion": "Bieterverfahren (Light)",
+    "feature.submit": "Projekt einreichen",
+    "feature.zvg": "Zwangsversteigerung (ZVG)",
+    "themen.auktion.title": "Bieterverfahren (Light)",
+    "themen.auktion.lead": "Gebote öffentlich per GitHub-Issue – nur freigegebene Gebote zählen.",
+    "themen.submit.title": "Projekt einreichen",
+    "themen.submit.lead": "Kostenlos vorstellen – wir prüfen & veröffentlichen.",
+    "themen.zvg.title": "Zwangsversteigerung (ZVG) – Schnellüberblick",
+    "themen.zvg.lead": "Was ist ZVG? Wo finde ich Termine? Welche Schritte beachten?"
   },
   "en": {
     "nav.baukasten": "Toolbox",
@@ -121,7 +130,16 @@
     "feature.nebenkostenrechner": "Closing Costs",
     "feature.zins": "Interest Trend",
     "feature.faqmieter": "FAQ for Tenants",
-    "feature.faqeigentuemer": "FAQ for Owners"
+    "feature.faqeigentuemer": "FAQ for Owners",
+    "feature.auktion": "Auction (Light)",
+    "feature.submit": "Submit a project",
+    "feature.zvg": "Foreclosure (ZVG)",
+    "themen.auktion.title": "Auction (Light) via Issues",
+    "themen.auktion.lead": "Public bids via GitHub issue – only approved bids count.",
+    "themen.submit.title": "Submit a Project",
+    "themen.submit.lead": "Showcase for free – we review & publish.",
+    "themen.zvg.title": "Foreclosure (ZVG) – Quick Guide",
+    "themen.zvg.lead": "What is ZVG? Where to find dates? Which steps to consider?"
   },
   "ru": {
     "nav.baukasten": "Конструктор",
@@ -183,6 +201,15 @@
     "feature.nebenkostenrechner": "Сопутствующие расходы при покупке",
     "feature.zins": "Динамика ставок",
     "feature.faqmieter": "FAQ для арендаторов",
-    "feature.faqeigentuemer": "FAQ для собственников"
+    "feature.faqeigentuemer": "FAQ для собственников",
+    "feature.auktion": "Аукцион (лайт)",
+    "feature.submit": "Отправить проект",
+    "feature.zvg": "Принудительные торги (ZVG)",
+    "themen.auktion.title": "Аукцион (лайт) через Issues",
+    "themen.auktion.lead": "Ставки через GitHub issue — засчитываются только одобренные.",
+    "themen.submit.title": "Отправить проект",
+    "themen.submit.lead": "Бесплатная публикация — проверим и опубликуем.",
+    "themen.zvg.title": "Принудительные торги (ZVG) — кратко",
+    "themen.zvg.lead": "Что такое ZVG? Где найти даты? На что обратить внимание?"
   }
 }
