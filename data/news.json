@@ -1,4 +1,7 @@
 [
-  {"title":"Demo: Smart-Living 2025 – KI spart Energie","link":"https://example.com/smart","date":"2025-01-15T08:00:00Z","source":"demo"},
-  {"title":"Demo: Immobilienmarkt Berlin – Chancen durch Sanierung","link":"https://example.com/markt","date":"2025-01-10T10:30:00Z","source":"demo"}
+  {"title":"Sanierung: Förderung im Fokus","link":"https://example.com/foerderung","date":"2025-01-05"},
+  {"title":"Energie: Wärmepumpe – Faktencheck","link":"https://example.com/waermepumpe","date":"2025-01-08"},
+  {"title":"EEG-News kompakt","link":"https://example.com/eeg","date":"2025-01-10"},
+  {"title":"Zinsen & Finanzierung kurz erklärt","link":"https://example.com/zinsen","date":"2025-01-12"},
+  {"title":"Mieter: Rechte & Pflichten","link":"https://example.com/mieter","date":"2025-01-14"}
 ]
