@@ -1,39 +1,17 @@
 <!doctype html><html lang="de"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Zinsen & Finanzierung – einfach erklärt</title>
+<title>Zinsen & Finanzierung – kurz erklärt</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>body{background:#f7f9fc} .wrap{max-width:900px;margin:auto;padding:24px}</style>
-</head><body><div class="wrap">
-<a class="btn btn-sm btn-outline-secondary mb-3" href="../index.html#finanzen">← Zurück</a>
-<h1 class="h3 mb-3">Zinsen & Finanzierung</h1>
-<div class="mb-2">Sprache:
-  <button class="btn btn-sm btn-light" onclick="setLang('de')">DE</button>
-  <button class="btn btn-sm btn-light" onclick="setLang('en')">EN</button>
-  <button class="btn btn-sm btn-light" onclick="setLang('ru')">RU</button>
-</div>
-
-<div data-lang="de">
-  <p><strong>Annuität:</strong> Feste Rate, Zinsanteil sinkt, Tilgung steigt. Wichtige Stellschrauben: Sollzins, Zinsbindung, Anfangstilgung.</p>
-  <p><strong>Nebenkosten:</strong> GrESt, Notar, Grundbuch, ggf. Makler. Puffer für Modernisierung einplanen.</p>
-  <p><strong>Strategie:</strong> Angebote vergleichen, Sondertilgung/Forward prüfen, Laufzeiten zum Lebensplan passend wählen.</p>
-  <div class="small text-muted">Quellen: Bundesbank · Baufinanzrechner</div>
-</div>
-
-<div data-lang="en" hidden>
-  <p><strong>Annuity loans:</strong> Fixed payment; interest part falls, principal rises. Key knobs: rate, fixed period, initial amortization.</p>
-  <p><strong>Side costs:</strong> Purchase taxes, notary, land registry, broker. Keep a buffer for upgrades.</p>
-  <p><strong>Strategy:</strong> Compare offers, consider extra repayments/forward loans, align term with life plans.</p>
-  <div class="small text-muted">Sources: Bundesbank · calculators</div>
-</div>
-
-<div data-lang="ru" hidden>
-  <p><strong>Аннуитет:</strong> Фиксированный платёж; доля процентов падает, погашение растёт. Важно: ставка, фикс-период, начальное погашение.</p>
-  <p><strong>Доп. расходы:</strong> Налог на покупку, нотариус, реестр, брокер. Заложите резерв на обновления.</p>
-  <p><strong>Стратегия:</strong> Сравнивайте предложения, досрочное погашение/форвард, срок под жизненные планы.</p>
-  <div class="small text-muted">Источники: Bundesbank</div>
-</div>
-</div>
-<script>
-function setLang(l){ for(const el of document.querySelectorAll('[data-lang]')) el.hidden = el.dataset.lang!==l; }
-(() => { const q=new URLSearchParams(location.search).get('lang')||'de'; setLang(q); })();
-</script></body></html>
+</head><body class="container py-4">
+<a href="../index.html" class="btn btn-link">&larr; Zurück</a>
+<h1 class="mb-2">Zinsen & Finanzierung – kurz erklärt</h1>
+<p class="lead">Annuität, Zinsbindung, Sondertilgung – was bedeutet das in Euro pro Monat?</p>
+<hr>
+<h3>1) Annuität verstehen</h3>
+<p>Die Rate bleibt gleich, der Zinsanteil sinkt, der Tilgungsanteil steigt. Online-Rechner hilft, Szenarien zu vergleichen.</p>
+<h3>2) Zinsbindung & Risiko</h3>
+<p>Längere Bindung = höhere Planungssicherheit. Achte auf Forward-Optionen und Sondertilgungen (z. B. 5–10 % p. a.).</p>
+<h3>3) Nebenkosten</h3>
+<p>Grunderwerb, Notar, Grundbuch, ggf. Makler. Reserve für Instandhaltung einplanen.</p>
+<p class="small text-muted mt-4">Quellen/Weiterlesen: Banken-Leitfäden, Verbraucherzentrale, Stiftung Warentest.</p>
+</body></html>
