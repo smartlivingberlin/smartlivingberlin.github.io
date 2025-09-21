@@ -1,0 +1,6 @@
+@media print {
+  nav, footer, .btn, .navbar, .hero { display:none !important; }
+  body { color:#000; background:#fff; }
+  .container { width:100% !important; max-width:none !important; }
+  a[href]:after { content:" (" attr(href) ")"; font-size:10px; }
+}
