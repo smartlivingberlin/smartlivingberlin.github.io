@@ -1,0 +1,103 @@
+{
+  "de": {
+    "nav.baukasten": "Baukasten",
+    "nav.news": "News",
+    "nav.recht": "Recht",
+    "nav.finanzen": "Finanzen",
+    "nav.smart": "Smart Living",
+    "nav.design": "Design",
+    "nav.chat": "Frag die Seite",
+
+    "hero.title": "Immobilien. Energie. Inspiration.",
+    "hero.sub": "Einfach erklärt · Interaktiv · Für Eigentümer, Käufer, Mieter & Neugierige.",
+    "hero.btn.primary": "Zum Baukasten",
+    "hero.btn.secondary": "Aktuelle Trends",
+
+    "dashboard.title": "Baukasten – 30 Themen",
+    "news.title": "Aktuelle Branchen-News",
+    "recht.title": "Recht & Wissen – in Alltagssprache",
+    "fin.title": "Finanzierung & Rendite",
+    "smart.title": "Smart Living – Geräte & Spartipps",
+    "design.title": "Design, Homestaging & Grundriss",
+    "chat.title": "Frag die Seite",
+
+    "themen.sanierung.title": "Sanierung & Förderung im Fokus",
+    "themen.sanierung.lead": "Welche Maßnahmen lohnen sich? Förderquellen & Reihenfolge.",
+    "themen.waermepumpe.title": "Energie: Wärmepumpe — Faktencheck",
+    "themen.waermepumpe.lead": "Kosten, Effizienz, Dämmung – wann passt sie wirklich?",
+    "themen.eeg.title": "EEG-News kompakt",
+    "themen.eeg.lead": "Photovoltaik, Einspeisevergütung, Balkonkraftwerk – kurz & klar.",
+    "themen.zins.title": "Zinsen & Finanzierung kurz erklärt",
+    "themen.zins.lead": "Annuität, Nebenkosten, Laufzeit & Risiken verständlich.",
+    "themen.mieterrechte.title": "Mieter: Rechte & Pflichten",
+    "themen.mieterrechte.lead": "§ 535, § 556 BGB einfach in Alltagssprache."
+  },
+
+  "en": {
+    "nav.baukasten": "Toolbox",
+    "nav.news": "News",
+    "nav.recht": "Law",
+    "nav.finanzen": "Finance",
+    "nav.smart": "Smart Living",
+    "nav.design": "Design",
+    "nav.chat": "Ask the site",
+
+    "hero.title": "Real Estate. Energy. Inspiration.",
+    "hero.sub": "Plain-language & interactive – for owners, buyers, tenants & the curious.",
+    "hero.btn.primary": "Open Toolbox",
+    "hero.btn.secondary": "Latest Trends",
+
+    "dashboard.title": "Toolbox – 30 Topics",
+    "news.title": "Industry News",
+    "recht.title": "Law & Knowledge – in plain language",
+    "fin.title": "Financing & Returns",
+    "smart.title": "Smart Living – Devices & Savings",
+    "design.title": "Design, Homestaging & Floor Plans",
+    "chat.title": "Ask the site",
+
+    "themen.sanierung.title": "Renovation & Subsidies in Focus",
+    "themen.sanierung.lead": "Which measures pay off? Grants & step-by-step.",
+    "themen.waermepumpe.title": "Energy: Heat Pump — Fact Check",
+    "themen.waermepumpe.lead": "Costs, efficiency, insulation – when does it fit?",
+    "themen.eeg.title": "EEG News – Essentials",
+    "themen.eeg.lead": "PV basics, feed-in tariffs, balcony PV – quick overview.",
+    "themen.zins.title": "Interest & Financing – Short Guide",
+    "themen.zins.lead": "Annuity, closing costs, term & risks explained.",
+    "themen.mieterrechte.title": "Tenants: Rights & Duties",
+    "themen.mieterrechte.lead": "§ 535, § 556 BGB – in everyday language."
+  },
+
+  "ru": {
+    "nav.baukasten": "Конструктор",
+    "nav.news": "Новости",
+    "nav.recht": "Право",
+    "nav.finanzen": "Финансы",
+    "nav.smart": "Умный дом",
+    "nav.design": "Дизайн",
+    "nav.chat": "Спросить сайт",
+
+    "hero.title": "Недвижимость. Энергия. Вдохновение.",
+    "hero.sub": "Просто и интерактивно — для собственников, покупателей, арендаторов и всех интересующихся.",
+    "hero.btn.primary": "К конструктору",
+    "hero.btn.secondary": "Актуальные тренды",
+
+    "dashboard.title": "Конструктор — 30 тем",
+    "news.title": "Новости отрасли",
+    "recht.title": "Право простым языком",
+    "fin.title": "Финансирование и доходность",
+    "smart.title": "Умный дом — устройства и экономия",
+    "design.title": "Дизайн, хоумстейджинг и планировки",
+    "chat.title": "Спросить сайт",
+
+    "themen.sanierung.title": "Ремонт и субсидии",
+    "themen.sanierung.lead": "Какие меры выгодны? Источники поддержки и порядок действий.",
+    "themen.waermepumpe.title": "Энергия: тепловые насосы — факты",
+    "themen.waermepumpe.lead": "Затраты, эффективность, утепление — когда это подходит?",
+    "themen.eeg.title": "EEG — кратко о главном",
+    "themen.eeg.lead": "Солнечные панели, тарифы, балконные станции — краткий обзор.",
+    "themen.zins.title": "Проценты и финансирование — кратко",
+    "themen.zins.lead": "Аннуитет, допрасходы, срок и риски понятным языком.",
+    "themen.mieterrechte.title": "Права и обязанности арендатора",
+    "themen.mieterrechte.lead": "§ 535, § 556 BGB простым языком."
+  }
+}
