@@ -1,4 +1,6 @@
 [
-  { "paragraph":"§ 535 BGB", "explanation":"Vermieter überlässt & erhält die Mietsache, Mieter zahlt Miete." },
-  { "paragraph":"§ 556 BGB", "explanation":"Betriebskosten: Umlage nur bei Vereinbarung, Abrechnung jährlich." }
+  {"paragraph":"§ 535 BGB","explanation":"Vermieter überlässt die Mietsache in brauchbarem Zustand und hält sie instand; Mieter zahlt Miete und nutzt schonend."},
+  {"paragraph":"§ 556 BGB","explanation":"Betriebskosten dürfen umgelegt werden, wenn vertraglich vereinbart. Abrechnung in der Regel jährlich mit Fristen."},
+  {"paragraph":"§ 559 BGB","explanation":"Modernisierungsumlage: Ein Teil der Modernisierungskosten darf auf die Miete umgelegt werden (Grenzen/Fristen beachten)."},
+  {"paragraph":"WEG-Beschluss","explanation":"Entscheidung der Eigentümergemeinschaft. Form, Mehrheit und ordnungsmäßige Verwaltung sind wichtig, sonst anfechtbar."}
 ]
