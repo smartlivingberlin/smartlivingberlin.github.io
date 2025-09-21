@@ -99,7 +99,7 @@ footer{padding:24px 0;color:#666}
 <section id="dashboard" class="section">
   <div class="container">
     <h2 class="mb-3" data-i18n="bk_title"><span data-i18n="dashboard.title">Baukasten – 30 Themen</span></h2>
-    <p class="small-muted" data-i18n="bk_hint">Klicke auf <strong>Interaktiv</strong> – jedes Thema öffnet ein Tool, eine Liste oder eine Erklärung.</p>
+    <p class="small-muted" data-i18n="bk_hint">Klicke auf <strong data-i18n="btn.interact">Interaktiv</strong> – jedes Thema öffnet ein Tool, eine Liste oder eine Erklärung.</p>
     <div id="featureGrid" class="grid cols-3"></div>
   </div>
 </section>
@@ -135,8 +135,8 @@ footer{padding:24px 0;color:#666}
           </ul>
         </div>
         </div>
-        <div class="card p-3 mt-3"><h6>Bieterverfahren (Light)</h6><a class="btn btn-sm btn-primary" href="themen/auktion.html">Zur Auktion</a><div class="small text-muted mt-2">Gebote via GitHub-Issue; nur „approved“ zählt.</div></div>
-        <div class="card p-3 mt-3"><h6>Projekt einreichen</h6><a class="btn btn-sm btn-success" href="themen/submit.html">Jetzt einreichen</a><div class="small text-muted mt-2">Wir prüfen <div id="top5-container" class="small-muted">Wird geladen …</div>
+        <div class="card p-3 mt-3"><h6 data-i18n="sidebar.auktion.title">Bieterverfahren (Light)</h6><a class="btn btn-sm btn-primary" href="themen/auktion.html">Zur Auktion</a><div class="small text-muted mt-2"><span data-i18n="sidebar.auktion.desc">Gebote via GitHub-Issue; nur „approved“ zählt.</span></div></div>
+        <div class="card p-3 mt-3"><h6 data-i18n="sidebar.submit.title">Projekt einreichen</h6><a class="btn btn-sm btn-success" href="themen/submit.html">Jetzt einreichen</a><div class="small text-muted mt-2">Wir prüfen <div id="top5-container" class="small-muted">Wird geladen …</div>
         </div>
         <div class="card p-3 mt-3">
           <h6>Themen direkt</h6>
@@ -153,7 +153,7 @@ footer{padding:24px 0;color:#666}
             <li><a href="themen/homestaging.html">Homestaging – Tipps</a></li>
           </ul>
         </div> veröffentlichen.</div></div>
-        <div class="card p-3 mt-3"><h6>ZVG – Überblick</h6><a class="btn btn-sm btn-outline-secondary" href="themen/zvg.html">Infos <div id="top5-container" class="small-muted">Wird geladen …</div>
+        <div class="card p-3 mt-3"><h6 data-i18n="sidebar.zvg.title">ZVG – Überblick</h6><a class="btn btn-sm btn-outline-secondary" href="themen/zvg.html">Infos <div id="top5-container" class="small-muted">Wird geladen …</div>
         </div>
         <div class="card p-3 mt-3">
           <h6>Themen direkt</h6>
@@ -417,8 +417,8 @@ function renderFeatures(){
       </div>
       <p class="small-muted mb-2">${f.desc}</p>
       <div class="d-flex gap-2">
-        <a href="${f.link}" class="btn btn-sm btn-outline-primary">Öffnen</a>
-        <button class="btn btn-sm btn-accent" onclick="openFeature(${i})">Interaktiv</button>
+        <a href="${f.link}" class="btn btn-sm btn-outline-primary" data-i18n="btn.open">Öffnen</a>
+        <button class="btn btn-sm btn-accent" onclick="openFeature(${i})" data-i18n="btn.interact">Interaktiv</button>
       </div>
     </div>
   `).join('');
