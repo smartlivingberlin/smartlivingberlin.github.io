@@ -1,39 +1,404 @@
 {
   "de": {
-    "feature.immobilienpreise": {"tag":"Preistrends & Rendite auf einen Blick","img":"https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200"},
-    "feature.foerdermittel":    {"tag":"KfW/BAFA kurz erklärt – so beantragst du richtig","img":"https://images.unsplash.com/photo-1560518883-8b59c0f1b3a6?q=80&w=1200"},
-    "feature.smartspare":       {"tag":"Geräte, die wirklich sparen – mit Praxiswert","img":"https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200"},
-    "feature.nebenkosten":      {"tag":"Umlagefähig oder nicht? Verständlich erklärt","img":"https://images.unsplash.com/photo-1529429612779-c8e40ef2f36f?q=80&w=1200"},
-    "feature.mietrecht":        {"tag":"§ 535 / 556 BGB – Klartext statt Juristendeutsch","img":"https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200"},
-    "feature.mietenkaufen":     {"tag":"Was rechnet sich für dich? Schnellvergleich","img":"https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200"},
-    "feature.hyporechner":      {"tag":"Rate, Laufzeit, Gesamtzins – transparent","img":"https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200"},
-    "feature.energie":          {"tag":"Sanieren mit Sinn: Reihenfolge & Wirkung","img":"https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200"},
-    "feature.weg":              {"tag":"Eigentümerwissen kompakt: Beschlüsse & Rechte","img":"https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200"},
-    "feature.grundsteuer":      {"tag":"Kurz erklärt: Grundsteuer & Betriebskosten","img":"https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?q=80&w=1200"},
-    "feature.smartmeter":       {"tag":"Pflicht, Fristen, Praxis – was heißt das?","img":"https://images.unsplash.com/photo-1581091870622-7c1d2bc88674?q=80&w=1200"},
-    "feature.interiorbudget":   {"tag":"Guter Look mit kleinem Budget","img":"https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1200"},
-    "feature.homestaging":      {"tag":"Vorher/Nachher erlebbar – so wirkt’s","img":"https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1200"},
-    "feature.grundriss":        {"tag":"Wege, Zonen, Licht – schnell besser planen","img":"https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200"},
-    "feature.rendite":          {"tag":"Hotspots erkennen, Risiken meiden","img":"https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1200"},
-    "feature.finanzirrtuemer":  {"tag":"10 typische Fehler – und wie du sie vermeidest","img":"https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200"},
-    "feature.modernisierung":   {"tag":"Fahrplan Schritt für Schritt","img":"https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1200"},
-    "feature.mietspiegel":      {"tag":"Preisgefühl pro Bezirk gewinnen","img":"https://images.unsplash.com/photo-1429041966141-44d228a42775?q=80&w=1200"},
-    "feature.versicherungen":   {"tag":"Welche Policen sinnvoll sind","img":"https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200"},
-    "feature.wohnenneu":        {"tag":"Tiny House, Co-Living & Co.","img":"https://images.unsplash.com/photo-1502005229762-cf1b2da7c9fb?q=80&w=1200"},
-    "feature.architektur":      {"tag":"Inspirationen für Stil & Formen","img":"https://images.unsplash.com/photo-1487956382158-bb926046304a?q=80&w=1200"},
-    "feature.energiepreise":    {"tag":"Trends verstehen, Kosten senken","img":"https://images.unsplash.com/photo-1557401622-cfc0aa5d2d54?q=80&w=1200"},
-    "feature.checklisten":      {"tag":"Kauf, Übergabe, Vermietung als PDF","img":"https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200"},
-    "feature.glossar":          {"tag":"Grundbuch, Erbpacht & mehr in Klartext","img":"https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200"},
-    "feature.locks":            {"tag":"Smarte Sicherheit in der Praxis","img":"https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1200"},
-    "feature.foerderungberlin": {"tag":"Berlin-spezifische Programme & Hinweise","img":"https://images.unsplash.com/photo-1560972550-aba3456b5564?q=80&w=1200"},
-    "feature.nebenkostenrechner":{"tag":"Rechnen statt rätseln – einfach starten","img":"https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200"},
-    "feature.zins":             {"tag":"Zinskurve lesbar gemacht","img":"https://images.unsplash.com/photo-1454165205744-3b78555e5572?q=80&w=1200"},
-    "feature.faqmieter":        {"tag":"Rechte & Pflichten – schnell finden","img":"https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200"},
-    "feature.faqeigentuemer":   {"tag":"Pflichten & Chancen im Überblick","img":"https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1200"},
-    "feature.auktion":          {"tag":"Gebote per GitHub-Issue (Light)","img":"https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200"},
-    "feature.submit":           {"tag":"Dein Projekt sichtbar machen","img":"https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1200"},
-    "feature.zvg":              {"tag":"Ablauf, Risiken, Links – kompakt","img":"https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200"}
+    "feature.immobilienpreise": {
+      "tag": "Preistrends & Rendite auf einen Blick",
+      "img": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200"
+    },
+    "feature.foerdermittel": {
+      "tag": "KfW/BAFA kurz erklärt – so beantragst du richtig",
+      "img": "https://images.unsplash.com/photo-1560518883-8b59c0f1b3a6?q=80&w=1200"
+    },
+    "feature.smartspare": {
+      "tag": "Geräte, die wirklich sparen – mit Praxiswert",
+      "img": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200"
+    },
+    "feature.nebenkosten": {
+      "tag": "Umlagefähig oder nicht? Verständlich erklärt",
+      "img": "https://images.unsplash.com/photo-1529429612779-c8e40ef2f36f?q=80&w=1200"
+    },
+    "feature.mietrecht": {
+      "tag": "§ 535 / 556 BGB – Klartext statt Juristendeutsch",
+      "img": "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200"
+    },
+    "feature.mietenkaufen": {
+      "tag": "Was rechnet sich für dich? Schnellvergleich",
+      "img": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200"
+    },
+    "feature.hyporechner": {
+      "tag": "Rate, Laufzeit, Gesamtzins – transparent",
+      "img": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200"
+    },
+    "feature.energie": {
+      "tag": "Sanieren mit Sinn: Reihenfolge & Wirkung",
+      "img": "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200"
+    },
+    "feature.weg": {
+      "tag": "Eigentümerwissen kompakt: Beschlüsse & Rechte",
+      "img": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200"
+    },
+    "feature.grundsteuer": {
+      "tag": "Kurz erklärt: Grundsteuer & Betriebskosten",
+      "img": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?q=80&w=1200"
+    },
+    "feature.smartmeter": {
+      "tag": "Pflicht, Fristen, Praxis – was heißt das?",
+      "img": "https://images.unsplash.com/photo-1581091870622-7c1d2bc88674?q=80&w=1200"
+    },
+    "feature.interiorbudget": {
+      "tag": "Guter Look mit kleinem Budget",
+      "img": "https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1200"
+    },
+    "feature.homestaging": {
+      "tag": "Vorher/Nachher erlebbar – so wirkt’s",
+      "img": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1200"
+    },
+    "feature.grundriss": {
+      "tag": "Wege, Zonen, Licht – schnell besser planen",
+      "img": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200"
+    },
+    "feature.rendite": {
+      "tag": "Hotspots erkennen, Risiken meiden",
+      "img": "https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1200"
+    },
+    "feature.finanzirrtuemer": {
+      "tag": "10 typische Fehler – und wie du sie vermeidest",
+      "img": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200"
+    },
+    "feature.modernisierung": {
+      "tag": "Fahrplan Schritt für Schritt",
+      "img": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1200"
+    },
+    "feature.mietspiegel": {
+      "tag": "Preisgefühl pro Bezirk gewinnen",
+      "img": "https://images.unsplash.com/photo-1429041966141-44d228a42775?q=80&w=1200"
+    },
+    "feature.versicherungen": {
+      "tag": "Welche Policen sinnvoll sind",
+      "img": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200"
+    },
+    "feature.wohnenneu": {
+      "tag": "Tiny House, Co-Living & Co.",
+      "img": "https://images.unsplash.com/photo-1502005229762-cf1b2da7c9fb?q=80&w=1200"
+    },
+    "feature.architektur": {
+      "tag": "Inspirationen für Stil & Formen",
+      "img": "https://images.unsplash.com/photo-1487956382158-bb926046304a?q=80&w=1200"
+    },
+    "feature.energiepreise": {
+      "tag": "Trends verstehen, Kosten senken",
+      "img": "https://images.unsplash.com/photo-1557401622-cfc0aa5d2d54?q=80&w=1200"
+    },
+    "feature.checklisten": {
+      "tag": "Kauf, Übergabe, Vermietung als PDF",
+      "img": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200"
+    },
+    "feature.glossar": {
+      "tag": "Grundbuch, Erbpacht & mehr in Klartext",
+      "img": "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200"
+    },
+    "feature.locks": {
+      "tag": "Smarte Sicherheit in der Praxis",
+      "img": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1200"
+    },
+    "feature.foerderungberlin": {
+      "tag": "Berlin-spezifische Programme & Hinweise",
+      "img": "https://images.unsplash.com/photo-1560972550-aba3456b5564?q=80&w=1200"
+    },
+    "feature.nebenkostenrechner": {
+      "tag": "Rechnen statt rätseln – einfach starten",
+      "img": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200"
+    },
+    "feature.zins": {
+      "tag": "Zinskurve lesbar gemacht",
+      "img": "https://images.unsplash.com/photo-1454165205744-3b78555e5572?q=80&w=1200"
+    },
+    "feature.faqmieter": {
+      "tag": "Rechte & Pflichten – schnell finden",
+      "img": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200"
+    },
+    "feature.faqeigentuemer": {
+      "tag": "Pflichten & Chancen im Überblick",
+      "img": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1200"
+    },
+    "feature.auktion": {
+      "tag": "Gebote per GitHub-Issue (Light)",
+      "img": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200"
+    },
+    "feature.submit": {
+      "tag": "Dein Projekt sichtbar machen",
+      "img": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1200"
+    },
+    "feature.zvg": {
+      "tag": "Ablauf, Risiken, Links – kompakt",
+      "img": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200"
+    }
   },
-  "en": {},
-  "ru": {}
+  "en": {
+    "feature.immobilienpreise": {
+      "tag": "Price trends & yields at a glance",
+      "img": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200"
+    },
+    "feature.foerdermittel": {
+      "tag": "KfW/BAFA explained – apply right",
+      "img": "https://images.unsplash.com/photo-1560518883-8b59c0f1b3a6?q=80&w=1200"
+    },
+    "feature.smartspare": {
+      "tag": "Devices that truly save – with real impact",
+      "img": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200"
+    },
+    "feature.nebenkosten": {
+      "tag": "What is chargeable? In plain words",
+      "img": "https://images.unsplash.com/photo-1529429612779-c8e40ef2f36f?q=80&w=1200"
+    },
+    "feature.mietrecht": {
+      "tag": "§ 535 / 556 BGB in plain language",
+      "img": "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200"
+    },
+    "feature.mietenkaufen": {
+      "tag": "What pays off for you? Quick check",
+      "img": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200"
+    },
+    "feature.hyporechner": {
+      "tag": "Rate, term, total interest – transparent",
+      "img": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200"
+    },
+    "feature.energie": {
+      "tag": "Renovate smart: order & effect",
+      "img": "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200"
+    },
+    "feature.weg": {
+      "tag": "Condo owner essentials: decisions & rights",
+      "img": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200"
+    },
+    "feature.grundsteuer": {
+      "tag": "Property tax & operating costs – short",
+      "img": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?q=80&w=1200"
+    },
+    "feature.smartmeter": {
+      "tag": "Obligations & timelines – what it means",
+      "img": "https://images.unsplash.com/photo-1581091870622-7c1d2bc88674?q=80&w=1200"
+    },
+    "feature.interiorbudget": {
+      "tag": "Great look on a budget",
+      "img": "https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1200"
+    },
+    "feature.homestaging": {
+      "tag": "Before/after that really convinces",
+      "img": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1200"
+    },
+    "feature.grundriss": {
+      "tag": "Flows, zones, light – plan better",
+      "img": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200"
+    },
+    "feature.rendite": {
+      "tag": "Spot hotspots, avoid pitfalls",
+      "img": "https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1200"
+    },
+    "feature.finanzirrtuemer": {
+      "tag": "10 common mistakes – and fixes",
+      "img": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200"
+    },
+    "feature.modernisierung": {
+      "tag": "Step-by-step modernization plan",
+      "img": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1200"
+    },
+    "feature.mietspiegel": {
+      "tag": "Sense of prices by district",
+      "img": "https://images.unsplash.com/photo-1429041966141-44d228a42775?q=80&w=1200"
+    },
+    "feature.versicherungen": {
+      "tag": "Which policies make sense",
+      "img": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200"
+    },
+    "feature.wohnenneu": {
+      "tag": "Tiny house, co-living & more",
+      "img": "https://images.unsplash.com/photo-1502005229762-cf1b2da7c9fb?q=80&w=1200"
+    },
+    "feature.architektur": {
+      "tag": "Style & shapes inspiration",
+      "img": "https://images.unsplash.com/photo-1487956382158-bb926046304a?q=80&w=1200"
+    },
+    "feature.energiepreise": {
+      "tag": "Understand trends, cut costs",
+      "img": "https://images.unsplash.com/photo-1557401622-cfc0aa5d2d54?q=80&w=1200"
+    },
+    "feature.checklisten": {
+      "tag": "Buyer/handover/letting checklists (PDF)",
+      "img": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200"
+    },
+    "feature.glossar": {
+      "tag": "Land register, leasehold & more explained",
+      "img": "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200"
+    },
+    "feature.locks": {
+      "tag": "Smart security in practice",
+      "img": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1200"
+    },
+    "feature.foerderungberlin": {
+      "tag": "Berlin-specific programs",
+      "img": "https://images.unsplash.com/photo-1560972550-aba3456b5564?q=80&w=1200"
+    },
+    "feature.nebenkostenrechner": {
+      "tag": "Calculate instead of guessing",
+      "img": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200"
+    },
+    "feature.zins": {
+      "tag": "Yield curve made readable",
+      "img": "https://images.unsplash.com/photo-1454165205744-3b78555e5572?q=80&w=1200"
+    },
+    "feature.faqmieter": {
+      "tag": "Tenant rights & duties – fast",
+      "img": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200"
+    },
+    "feature.faqeigentuemer": {
+      "tag": "Owner duties & opportunities",
+      "img": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1200"
+    },
+    "feature.auktion": {
+      "tag": "Bids via GitHub issue (light)",
+      "img": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200"
+    },
+    "feature.submit": {
+      "tag": "Make your project visible",
+      "img": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1200"
+    },
+    "feature.zvg": {
+      "tag": "Foreclosure basics & links",
+      "img": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200"
+    }
+  },
+  "ru": {
+    "feature.immobilienpreise": {
+      "tag": "Тренды цен и доходность — наглядно",
+      "img": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200"
+    },
+    "feature.foerdermittel": {
+      "tag": "KfW/BAFA простыми словами — как подать",
+      "img": "https://images.unsplash.com/photo-1560518883-8b59c0f1b3a6?q=80&w=1200"
+    },
+    "feature.smartspare": {
+      "tag": "Устройства, которые реально экономят",
+      "img": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200"
+    },
+    "feature.nebenkosten": {
+      "tag": "Что можно переложить на арендатора?",
+      "img": "https://images.unsplash.com/photo-1529429612779-c8e40ef2f36f?q=80&w=1200"
+    },
+    "feature.mietrecht": {
+      "tag": "§ 535/556 BGB — человеческим языком",
+      "img": "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200"
+    },
+    "feature.mietenkaufen": {
+      "tag": "Что выгоднее? Быстрый расчет",
+      "img": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200"
+    },
+    "feature.hyporechner": {
+      "tag": "Платеж, срок, проценты — прозрачно",
+      "img": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200"
+    },
+    "feature.energie": {
+      "tag": "Ремонт по уму: порядок и эффект",
+      "img": "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200"
+    },
+    "feature.weg": {
+      "tag": "Основы для собственников-совладельцев",
+      "img": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200"
+    },
+    "feature.grundsteuer": {
+      "tag": "Земельный налог и эксплуатационные",
+      "img": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?q=80&w=1200"
+    },
+    "feature.smartmeter": {
+      "tag": "Обязанности и сроки — что это значит",
+      "img": "https://images.unsplash.com/photo-1581091870622-7c1d2bc88674?q=80&w=1200"
+    },
+    "feature.interiorbudget": {
+      "tag": "Красивый интерьер за малые деньги",
+      "img": "https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1200"
+    },
+    "feature.homestaging": {
+      "tag": "До/после, чтобы произвести эффект",
+      "img": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1200"
+    },
+    "feature.grundriss": {
+      "tag": "Потоки, зоны, свет — планируем лучше",
+      "img": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200"
+    },
+    "feature.rendite": {
+      "tag": "Ищем «горячие точки», избегаем рисков",
+      "img": "https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1200"
+    },
+    "feature.finanzirrtuemer": {
+      "tag": "10 типичных ошибок — и как их избежать",
+      "img": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200"
+    },
+    "feature.modernisierung": {
+      "tag": "Пошаговый план модернизации",
+      "img": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1200"
+    },
+    "feature.mietspiegel": {
+      "tag": "Ощущение цен по районам",
+      "img": "https://images.unsplash.com/photo-1429041966141-44d228a42775?q=80&w=1200"
+    },
+    "feature.versicherungen": {
+      "tag": "Какие полисы действительно нужны",
+      "img": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200"
+    },
+    "feature.wohnenneu": {
+      "tag": "Tiny house, co-living и др.",
+      "img": "https://images.unsplash.com/photo-1502005229762-cf1b2da7c9fb?q=80&w=1200"
+    },
+    "feature.architektur": {
+      "tag": "Вдохновение стилями и формами",
+      "img": "https://images.unsplash.com/photo-1487956382158-bb926046304a?q=80&w=1200"
+    },
+    "feature.energiepreise": {
+      "tag": "Тренды и как экономить",
+      "img": "https://images.unsplash.com/photo-1557401622-cfc0aa5d2d54?q=80&w=1200"
+    },
+    "feature.checklisten": {
+      "tag": "Чек-листы: покупка/передача/сдача",
+      "img": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200"
+    },
+    "feature.glossar": {
+      "tag": "ЕГРН, эмфитевзис и др. — просто",
+      "img": "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200"
+    },
+    "feature.locks": {
+      "tag": "Умная безопасность на практике",
+      "img": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1200"
+    },
+    "feature.foerderungberlin": {
+      "tag": "Программы именно для Берлина",
+      "img": "https://images.unsplash.com/photo-1560972550-aba3456b5564?q=80&w=1200"
+    },
+    "feature.nebenkostenrechner": {
+      "tag": "Считать, а не гадать",
+      "img": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200"
+    },
+    "feature.zins": {
+      "tag": "Процентная кривая — понятно",
+      "img": "https://images.unsplash.com/photo-1454165205744-3b78555e5572?q=80&w=1200"
+    },
+    "feature.faqmieter": {
+      "tag": "Права и обязанности нанимателя",
+      "img": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200"
+    },
+    "feature.faqeigentuemer": {
+      "tag": "Обязанности и возможности собственника",
+      "img": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1200"
+    },
+    "feature.auktion": {
+      "tag": "Ставки через GitHub issue (лайт)",
+      "img": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200"
+    },
+    "feature.submit": {
+      "tag": "Опубликовать свой проект",
+      "img": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1200"
+    },
+    "feature.zvg": {
+      "tag": "Кратко о принудительных торгах (ZVG)",
+      "img": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200"
+    }
+  }
 }
