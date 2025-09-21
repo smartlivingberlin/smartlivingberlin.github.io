@@ -1,3 +1,4 @@
+cat > index.html <<'HTML'
 <!doctype html>
 <html lang="de">
 <head>
@@ -5,21 +6,13 @@
 <title>SmartLivingBerlin – Immobilien · Energie · KI</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Immobilien-Wissen verständlich, Smart Living, Finanzierung, Design & Homestaging, KI-Tools – automatisch aktualisiert.">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='12' width='64' height='64' fill='%230a2540'/%3E%3Cpath fill='%23fff' d='M20 38h10v10H20zM34 16h10v32H34z'/%3E%3C/svg%3E">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
-:root{
-  --brand:#0a2540; --accent:#1db954; --muted:#6c757d; --bg:#f5f7fb; --card:#ffffff;
-}
+:root{ --brand:#0a2540; --accent:#1db954; --muted:#6c757d; --bg:#f5f7fb; --card:#ffffff; }
 html,body{background:var(--bg);color:#111;}
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline}
-.navbar{background:var(--brand)!important}
-.navbar .nav-link,.navbar-brand{color:#fff!important}
+a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+.navbar{background:var(--brand)!important}.navbar .nav-link,.navbar-brand{color:#fff!important}
 .hero{background:linear-gradient(180deg,#0a2540,#0a2540c0),url('https://source.unsplash.com/1600x700/?architecture,smart,home') center/cover no-repeat;color:#fff;padding:64px 0}
 .hero h1{font-weight:800;letter-spacing:.5px}
 .badge-pill{border-radius:999px;padding:.5rem .75rem}
@@ -30,8 +23,7 @@ a:hover{text-decoration:underline}
 .grid{display:grid;gap:16px}
 .cols-3{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
 #news-list li{margin:.35rem 0}
-.btn-accent{background:var(--accent);border-color:var(--accent)}
-.btn-accent:hover{filter:brightness(.95)}
+.btn-accent{background:var(--accent);border-color:var(--accent)} .btn-accent:hover{filter:brightness(.95)}
 .modal-title{font-weight:700}
 .figure-compare{position:relative;max-width:100%;overflow:hidden;border-radius:12px}
 .figure-compare img{display:block;width:100%;height:auto}
@@ -41,6 +33,7 @@ a:hover{text-decoration:underline}
 footer{padding:24px 0;color:#666}
 kbd{background:#eef;border-radius:6px;padding:2px 6px;border:1px solid #dde}
 </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
 
@@ -83,7 +76,6 @@ kbd{background:#eef;border-radius:6px;padding:2px 6px;border:1px solid #dde}
 </header>
 
 <main>
-
 <section id="dashboard" class="section">
   <div class="container">
     <h2 class="mb-3">Baukasten – Schnellzugriff</h2>
@@ -246,7 +238,6 @@ kbd{background:#eef;border-radius:6px;padding:2px 6px;border:1px solid #dde}
     </div>
   </div>
 </section>
-
 </main>
 
 <footer class="container section">
@@ -263,7 +254,7 @@ kbd{background:#eef;border-radius:6px;padding:2px 6px;border:1px solid #dde}
   </div>
 </footer>
 
-<!-- Modal (generisch für 30 Buttons) -->
+<!-- Modal -->
 <div class="modal fade" id="featureModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
@@ -281,76 +272,91 @@ kbd{background:#eef;border-radius:6px;padding:2px 6px;border:1px solid #dde}
 </div>
 
 <script>
-/* ============= UTIL & FALLBACKS ============= */
-const fmtDate = iso => {
-  try{ return new Date(iso).toLocaleDateString('de-DE'); }catch{ return ''; }
-};
-const fetchJSON = async (url) => {
-  try{
-    onst r = await fetch(url,{cache:'no-store'});
-    if(!r.ok) throw new Error(r.status);
-    return await r.json();
-  }catch(e){ return null; }
-};
+const fmtDate = iso => { try{ return new Date(iso).toLocaleDateString('de-DE'); }catch{ return ''; } };
+const fetchJSON = async (url) => { try{ const r = await fetch(url,{cache:'no-store'}); if(!r.ok) throw new Error(r.status); return await r.json(); }catch(e){ return null; } };
 
-/* ============= 30 BLICKFANG-BUTTONS (schöne Kacheln) ============= */
 const FEATURES = [
-  {title:"Immobilienpreise 2025", desc:"Entwicklung & Prognosen – interaktiv.", link:"#news", type:"chart",  icon:"bi-graph-up",      img:"market"},
-  {title:"Fördermittel-Finder",   desc:"KfW/BAFA kurz erklärt.",              link:"#recht", type:"faq",    icon:"bi-piggy-bank",   img:"grant"},
-  {title:"Smart-Home Spartipps",  desc:"Sinnvolle Geräte & Effekte.",         link:"#smart", type:"table",  icon:"bi-house-gear",   img:"smart%20home"},
-  {title:"Nebenkosten verstehen", desc:"Was ist umlagefähig?",                link:"#recht", type:"faq",    icon:"bi-receipt",      img:"bill"},
-  {title:"Mietrecht kompakt",     desc:"§ 535, § 556 BGB einfach.",           link:"#recht", type:"law",    icon:"bi-balance-scale",img:"law"},
-  {title:"Mieten vs. Kaufen",     desc:"Vergleich mit Zahlen.",               link:"#finanzen",type:"calc", icon:"bi-arrows-left-right",img:"compare"},
-  {title:"Hypotheken-Rechner",    desc:"Rate & Gesamtzins.",                  link:"#finanzen",type:"calc_ann",icon:"bi-cash-coin", img:"mortgage"},
-  {title:"Energie & Sanierung",   desc:"Was lohnt sich wann?",                link:"#smart", type:"gallery",icon:"bi-lightning",    img:"energy"},
-  {title:"WEG – Eigentümerwissen",desc:"Beschlüsse & Verwaltung.",            link:"#recht", type:"faq",    icon:"bi-people",       img:"community"},
-  {title:"Grundsteuer & BK",      desc:"Kurz & klar.",                        link:"#recht", type:"faq",    icon:"bi-percent",      img:"tax"},
-  {title:"Smart Meter Pflicht?",  desc:"Was bedeutet das praktisch?",         link:"#smart", type:"table",  icon:"bi-speedometer2", img:"meter"},
-  {title:"Interior Budget Tricks",desc:"Qualität günstig.",                   link:"#design",type:"gallery",icon:"bi-brush",        img:"interior"},
-  {title:"Homestaging DIY",       desc:"Vorher/Nachher & Checkliste.",        link:"#design",type:"slider", icon:"bi-magic",        img:"staging"},
-  {title:"Grundriss optimieren",  desc:"Zonen, Licht, Wege.",                 link:"#design",type:"planner",icon:"bi-grid-1x2",     img:"floor%20plan"},
-  {title:"Rendite-Hotspots",      desc:"Wo lohnt sich Investment?",           link:"#news",  type:"chart",  icon:"bi-geo-alt",      img:"map"},
-  {title:"Finanzierungsirrtümer", desc:"10 Fehler vermeiden.",                link:"#finanzen",type:"calc", icon:"bi-exclamation-triangle",img:"warning"},
-  {title:"Modernisierungsfahrplan",desc:"Schrittweise zur Effizienz.",        link:"#smart", type:"gallery",icon:"bi-tools",        img:"renovation"},
-  {title:"Mietspiegel & Bezirke", desc:"Preisgefühl gewinnen.",               link:"#news",  type:"list",   icon:"bi-collection",   img:"city"},
-  {title:"Versicherungen",        desc:"Was ist sinnvoll?",                   link:"#finanzen",type:"faq",  icon:"bi-shield-check", img:"insurance"},
-  {title:"Tiny House / Co-Living",desc:"Neue Wohnformen.",                    link:"#news",  type:"list",   icon:"bi-house",        img:"tiny%20house"},
-  {title:"Architektur-Inspiration",desc:"Galerie & Stile.",                   link:"#smart", type:"gallery",icon:"bi-buildings",     img:"architecture"},
-  {title:"Energiepreise verstehen",desc:"Trends erkennen.",                    link:"#news",  type:"chart",  icon:"bi-graph-up-arrow",img:"energy%20price"},
-  {title:"Checklisten (PDF)",     desc:"Kauf, Übergabe, Vermietung.",         link:"#recht", type:"faq",    icon:"bi-check2-square",img:"checklist"},
-  {title:"Glossar: Grundbuch …",  desc:"Begriffe einfach.",                   link:"#recht", type:"faq",    icon:"bi-journal-text", img:"glossary"},
-  {title:"Smart Locks & Security",desc:"Was lohnt sich?",                     link:"#smart", type:"table",  icon:"bi-lock",         img:"security"},
-  {title:"Förderung Berlin",      desc:"Lokal kompakt.",                      link:"#news",  type:"list",   icon:"bi-geo",          img:"berlin"},
-  {title:"Kaufnebenkosten",       desc:"Rechner & Anteile.",                  link:"#finanzen",type:"calc", icon:"bi-calculator",   img:"fees"},
-  {title:"Zinsentwicklung",       desc:"Historie & heute.",                   link:"#",      type:"chart",  icon:"bi-activity",     img:"interest"},
-  {title:"FAQ für Mieter",        desc:"Rechte & Pflichten.",                 link:"#recht", type:"faq",    icon:"bi-person",       img:"tenant"},
-  {title:"FAQ für Eigentümer",    desc:"Pflichten & Chancen.",                link:"#recht", type:"faq",    icon:"bi-person-check", img:"owner"}
+  {title:"Immobilien Wissen", desc:"Kaufen, Verkaufen, Mieten – verständlich erklärt.", link:"#recht", icon:"bi-house-door"},
+  {title:"Finanzen", desc:"Kredite, Förderung, Steuern kurz & klar.", link:"#finanzen", icon:"bi-piggy-bank"},
+  {title:"Recht", desc:"BGB & WEG in Alltagssprache.", link:"#recht", icon:"bi-balance-scale"},
+  {title:"Smart-Home Spartipps", desc:"Was lohnt sich wirklich?", link:"#smart", icon:"bi-lightning"},
+  {title:"Mietrecht kompakt", desc:"§ 535, § 556 BGB einfach erklärt.", link:"#recht", icon:"bi-journal-text"},
+  {title:"Mieten vs. Kaufen", desc:"Vergleichsrechner inkl. Nebenkosten.", link:"#finanzen", icon:"bi-calculator"},
+  {title:"Hypotheken-Rechner", desc:"Rate & Gesamtzahlung berechnen.", link:"#finanzen", icon:"bi-graph-up"},
+  {title:"Energie & Sanierung", desc:"Was bringt welche Maßnahme?", link:"#smart", icon:"bi-recycle"},
+  {title:"WEG – Eigentümerwissen", desc:"Beschlüsse & Verwaltung leicht.", link:"#recht", icon:"bi-people"},
+  {title:"Grundsteuer & Nebenkosten", desc:"Kurz & klar erklärt.", link:"#recht", icon:"bi-receipt"},
+  {title:"Smart Meter Pflicht?", desc:"Was bedeutet das praktisch?", link:"#smart", icon:"bi-speedometer2"},
+  {title:"Interior Budget Tricks", desc:"Schön einrichten für wenig Geld.", link:"#design", icon:"bi-brush"},
+  {title:"Homestaging DIY", desc:"Vorher/Nachher & Checkliste.", link:"#design", icon:"bi-sliders"},
+  {title:"Grundriss optimieren", desc:"Zonen, Licht, Wege.", link:"#design", icon:"bi-bounding-box"},
+  {title:"Rendite-Hotspots", desc:"Wo lohnt sich Investment?", link:"#news", icon:"bi-geo-alt"},
+  {title:"Finanzierungsirrtümer", desc:"10 Fehler vermeiden.", link:"#finanzen", icon:"bi-exclamation-triangle"},
+  {title:"Modernisierungsfahrplan", desc:"Schrittweise zur Effizienz.", link:"#smart", icon:"bi-clipboard-check"},
+  {title:"Mietspiegel & Bezirke", desc:"Preisgefühl gewinnen.", link:"#news", icon:"bi-bar-chart"},
+  {title:"Versicherungen", desc:"Was ist sinnvoll?", link:"#finanzen", icon:"bi-shield-check"},
+  {title:"Neue Wohnformen", desc:"Tiny House, Co-Living …", link:"#news", icon:"bi-building"},
+  {title:"Architektur Inspiration", desc:"Galerie & Stile.", link:"#smart", icon:"bi-image"},
+  {title:"Energiepreise verstehen", desc:"Trends erkennen.", link:"#news", icon:"bi-activity"},
+  {title:"Checklisten (PDF)", desc:"Kauf, Übergabe, Vermietung.", link:"#recht", icon:"bi-list-check"},
+  {title:"Glossar", desc:"Grundbuch, Erbpacht, Beleihung …", link:"#recht", icon:"bi-book"},
+  {title:"Sicherheit daheim", desc:"Smart Locks & Co.", link:"#smart", icon:"bi-door-closed"},
+  {title:"Förderung Berlin", desc:"Lokale Programme kompakt.", link:"#news", icon:"bi-pin-map"},
+  {title:"Kaufnebenkosten", desc:"Rechner & Anteile.", link:"#finanzen", icon:"bi-cash-coin"},
+  {title:"Zinsentwicklung", desc:"Historie & heute.", link:"#", icon:"bi-graph-up-arrow"},
+  {title:"FAQ für Mieter", desc:"Rechte & Pflichten.", link:"#recht", icon:"bi-question-circle"},
+  {title:"FAQ für Eigentümer", desc:"Pflichten & Chancen.", link:"#recht", icon:"bi-check2-circle"}
 ];
-
-function cardImage(topic){
-  const q = encodeURIComponent(topic || 'architecture');
-  return `https://source.unsplash.com/600x360/?${q}`;
-}
+ 
+ {title:"Immobilienpreise 2025", desc:"Entwicklung & Prognosen – interaktiv.", link:"#news", type:"chart"},
+  {title:"Fördermittel-Finder", desc:"KfW/BAFA kurz erklärt.", link:"#recht", type:"faq"},
+  {title:"Smart-Home Spartipps", desc:"Sinnvolle Geräte & Effekte.", link:"#smart", type:"table"},
+  {title:"Nebenkosten verstehen", desc:"Was ist umlagefähig?", link:"#recht", type:"faq"},
+  {title:"Mietrecht kompakt", desc:"§ 535, § 556 BGB einfach erklärt.", link:"#recht", type:"law"},
+  {title:"Mieten vs. Kaufen", desc:"Vergleich mit Beispielzahlen.", link:"#finanzen", type:"calc"},
+  {title:"Hypotheken-Rechner", desc:"Rate, Gesamtzins, Annuität.", link:"#finanzen", type:"calc_ann"},
+  {title:"Energie & Sanierung", desc:"Was lohnt sich wann?", link:"#smart", type:"gallery"},
+  {title:"WEG – Eigentümerwissen", desc:"Beschlüsse & Verwaltung leicht.", link:"#recht", type:"faq"},
+  {title:"Grundsteuer & Betriebskosten", desc:"Kurz & klar.", link:"#recht", type:"faq"},
+  {title:"Smart Meter Pflicht?", desc:"Was bedeutet das praktisch?", link:"#smart", type:"table"},
+  {title:"Interior Budget Tricks", desc:"Qualität für wenig Geld.", link:"#design", type:"gallery"},
+  {title:"Homestaging DIY", desc:"Vorher/Nachher & Checkliste.", link:"#design", type:"slider"},
+  {title:"Grundriss optimieren", desc:"Zonen, Licht, Wege.", link:"#design", type:"planner"},
+  {title:"Rendite-Hotspots", desc:"Wo lohnt sich Investment?", link:"#news", type:"chart"},
+  {title:"Finanzierungsirrtümer", desc:"10 Fehler vermeiden.", link:"#finanzen", type:"calc"},
+  {title:"Modernisierungsfahrplan", desc:"Schrittweise zur Effizienz.", link:"#smart", type:"gallery"},
+  {title:"Mietspiegel & Bezirke", desc:"Preisgefühl gewinnen.", link:"#news", type:"list"},
+  {title:"Versicherungen im Überblick", desc:"Was ist sinnvoll?", link:"#finanzen", type:"faq"},
+  {title:"Tiny House / Co-Living", desc:"Neue Wohnformen.", link:"#news", type:"list"},
+  {title:"Architektur-Inspiration", desc:"Galerie & Stile.", link:"#smart", type:"gallery"},
+  {title:"Energiepreise verstehen", desc:"Trends erkennen.", link:"#news", type:"chart"},
+  {title:"Checklisten (PDF)", desc:"Kauf, Übergabe, Vermietung.", link:"#recht", type:"faq"},
+  {title:"Glossar: Grundbuch, Erbpacht …", desc:"Begriffe einfach.", link:"#recht", type:"faq"},
+  {title:"Smart Locks & Sicherheit", desc:"Was lohnt sich?", link:"#smart", type:"table"},
+  {title:"Förderung Berlin", desc:"Lokal kompakt.", link:"#news", type:"list"},
+  {title:"Kaufnebenkosten", desc:"Rechner & Anteile.", link:"#finanzen", type:"calc"},
+  {title:"Zinsentwicklung", desc:"Historie & heute.", link:"#", type:"chart"},
+  {title:"FAQ für Mieter", desc:"Rechte & Pflichten.", link:"#recht", type:"faq"},
+  {title:"FAQ für Eigentümer", desc:"Pflichten & Chancen.", link:"#recht", type:"faq"}
+];
 
 function renderFeatures(){
   const grid = document.getElementById('featureGrid');
+  if(!grid) return;
   grid.innerHTML = FEATURES.map((f,i)=>`
-    <div class="card p-0 kachel overflow-hidden">
-      <div class="position-relative">
-        <img src="${cardImage(f.img)}" alt="${f.title}" class="w-100" style="aspect-ratio:3/2;object-fit:cover">
-        <span class="badge bg-light text-dark position-absolute m-2"><i class="bi ${f.icon} me-1"></i>${f.title}</span>
+    <div class="card p-3 kachel">
+      <div class="d-flex align-items-center gap-2 mb-1">
+        <i class="bi ${f.icon}" style="font-size:1.3rem"></i>
+        <h5 class="m-0">${f.title}</h5>
       </div>
-      <div class="p-3">
-        <p class="small-muted mb-2">${f.desc}</p>
-        <div class="d-flex gap-2">
-          <a href="${f.link}" class="btn btn-sm btn-outline-primary"><i class="bi bi-box-arrow-up-right me-1"></i>Öffnen</a>
-          <button class="btn btn-sm btn-accent" onclick="openFeature(${i})"><i class="bi bi-stars me-1"></i>Interaktiv</button>
-        </div>
+      <p class="small-muted mb-2">${f.desc}</p>
+      <div class="d-flex gap-2">
+        <a href="${f.link}" class="btn btn-sm btn-outline-primary">Öffnen</a>
+        <button class="btn btn-sm btn-accent" onclick="openFeature(${i})">Interaktiv</button>
       </div>
     </div>
   `).join('');
 }
-
 function openFeature(i){
   const f = FEATURES[i];
   const body = document.getElementById('featureBody');
@@ -377,35 +383,6 @@ function openFeature(i){
   if(f.type==='faq'){renderFAQ('faqModal')}
 }
 
-function openFeature(i){
-  const f = FEATURES[i];
-  const body = document.getElementById('featureBody');
-  document.getElementById('featureTitle').textContent = f.title;
-  document.getElementById('featureLink').href = f.link || '#';
-  // simple widgets inside modal:
-  const widgets = {
-    chart:`<canvas id="modalChart" height="180"></canvas><p class="small-muted mt-2">Demo-Chart – nutze <code>data/charts.json</code> für echte Daten.</p>`,
-    faq:`<input class="form-control" placeholder="Suchbegriff (z. B. Nebenkosten)" oninput="filterFAQ(this.value)"><div id="faqModal" class="mt-3"></div>`,
-    law:`<div class="input-group"><input id="lawIn2" class="form-control" placeholder="§ 556 BGB"><button class="btn btn-dark" onclick="explainLaw(true)">Erklären</button></div><div id="lawOut2" class="mt-3"></div>`,
-    calc:`<div class="row g-2 mt-1"><div class="col"><input id="mieteX" class="form-control" placeholder="Miete/Monat" value="1500"></div><div class="col"><input id="preisX" class="form-control" placeholder="Kaufpreis" value="520000"></div><div class="col"><input id="eqX" class="form-control" placeholder="Eigenkapital" value="80000"></div></div><button class="btn btn-primary mt-2" onclick="rentBuy(true)">Vergleichen</button><div id="rbOut2" class="mt-3"></div>`,
-    calc_ann:`<div class="row g-2 mt-1"><div class="col"><input id="loanX" class="form-control" placeholder="Kreditsumme" value="350000"></div><div class="col"><input id="rateX" class="form-control" placeholder="Zins %" value="3.8"></div><div class="col"><input id="yearsX" class="form-control" placeholder="Laufzeit" value="25"></div></div><button class="btn btn-primary mt-2" onclick="calcAnn(true)">Berechnen</button><div id="annOut2" class="mt-3"></div>`,
-    table:`<div class="table-responsive"><table class="table table-sm"><thead><tr><th>Gerät</th><th>Nutzen</th><th>Preis</th><th>Ersparnis</th></tr></thead><tbody id="smartTableModal"></tbody></table></div>`,
-    gallery:`<div class="grid cols-3" id="galleryModal"></div>`,
-    slider:`<div class="figure-compare"><img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=1600"><div class="clip" id="clipM" style="width:50%"><img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?q=80&w=1600"></div><input type="range" min="0" max="100" value="50" oninput="document.getElementById('clipM').style.width=this.value+'%';"></div>`,
-    planner:`<p class="small-muted">Öffne <strong>Design</strong> &gt; Grundriss-Uploader, um ein Bild zu laden und Blöcke zu platzieren.</p>`,
-    list:`<div id="listModal" class="small"></div>`
-  };
-  body.innerHTML = widgets[f.type] || `<p>Interaktive Ansicht für dieses Thema folgt.</p>`;
-  const modal = new bootstrap.Modal('#featureModal'); modal.show();
-  // fill modal tables/galleries
-  if(f.type==='table'){renderSmart('smartTableModal')}
-  if(f.type==='gallery'){renderGallery('galleryModal')}
-  if(f.type==='chart'){setTimeout(()=>drawDemoChart('modalChart'),50)}
-  if(f.type==='list'){renderListFromNews('listModal')}
-  if(f.type==='faq'){renderFAQ('faqModal')}
-}
-
-/* ============= NEWS ============= */
 async function loadNews(){
   const list = document.getElementById('news-list');
   const data = await fetchJSON('data/news.json');
@@ -420,7 +397,6 @@ async function loadNews(){
     <a href="${n.link||'#'}" target="_blank" rel="noopener">${n.title}</a>
     <div class="small-muted">${fmtDate(n.date)} · ${(new URL(n.link||'https://example.com')).hostname}</div>
   </li>`).join('');
-  // Top5 Partial (optional)
   try{
     const r = await fetch('partials/top5.html',{cache:'no-store'});
     document.getElementById('top5-container').innerHTML = r.ok ? await r.text() : 'Noch kein Top-5 Snippet.';
@@ -430,8 +406,7 @@ async function renderListFromNews(targetId){
   const el=document.getElementById(targetId);
   const data=await fetchJSON('data/news.json');
   if(!data){el.textContent='Keine Daten.';return;}
-  const html = data.slice(0,8).map(n=>`<div><a href="${n.link}" target="_blank">${n.title}</a> <span class="small-muted">· ${fmtDate(n.date)}</span></div>`).join('');
-  el.innerHTML = html;
+  el.innerHTML = data.slice(0,8).map(n=>`<div><a href="${n.link}" target="_blank">${n.title}</a> <span class="small-muted">· ${fmtDate(n.date)}</span></div>`).join('');
 }
 function searchSite(){
   const q=document.getElementById('newsQuery').value.toLowerCase();
@@ -445,147 +420,87 @@ function searchSite(){
   })();
 }
 
-/* ============= RECHT & FAQ ============= */
-const FAQ = [
-  {q:"Was bedeutet § 535 BGB kurz?", a:"Mietvertrag: Vermieter stellt Gebrauch der Mietsache sicher, Mieter zahlt Miete und geht pfleglich mit der Sache um."},
-  {q:"Was sind Betriebskosten?", a:"Laufende Kosten (z. B. Heizung, Wasser, Müll). Umlage nur, wenn vertraglich vereinbart (BetrKV)."},
-  {q:"Was ist die WEG-Versammlung?", a:"Treffen der Eigentümergemeinschaft, dort werden Beschlüsse zur Verwaltung gefasst (WEG)."}
-];
-function renderFAQ(target='faqList'){
-  const el = document.getElementById(target);
-  el.innerHTML = FAQ.map(f=>`<details class="mb-2"><summary><strong>${f.q}</strong></summary><p class="mb-1">${f.a}</p></details>`).join('');
-}
-const LAW_DB = {
-  "§ 535 BGB":"Vermieter muss die Wohnung in brauchbarem Zustand überlassen & erhalten; Mieter zahlt Miete und geht sorgfältig mit der Wohnung um.",
-  "§ 556 BGB":"Regelt Betriebskosten: Umlage ist möglich, wenn vereinbart; Abrechnung meist jährlich, Fristen beachten.",
-  "WEG-Beschluss":"Entscheidungen der Eigentümer, z. B. Instandhaltung. Form & Mehrheit sind wichtig, sonst anfechtbar."
-};
+const FAQ=[{q:"Was bedeutet § 535 BGB kurz?",a:"Mietvertrag: Vermieter stellt Gebrauch sicher, Mieter zahlt Miete und behandelt die Wohnung pfleglich."},
+{q:"Was sind Betriebskosten?",a:"Laufende Kosten (Heizung, Wasser, Müll). Umlage nur, wenn vertraglich vereinbart (BetrKV)."},
+{q:"Was ist die WEG-Versammlung?",a:"Treffen der Eigentümer; dort werden Beschlüsse zur Verwaltung gefasst (WEG)."}];
+function renderFAQ(target='faqList'){ const el=document.getElementById(target);
+  el.innerHTML = FAQ.map(f=>`<details class="mb-2"><summary><strong>${f.q}</strong></summary><p class="mb-1">${f.a}</p></details>`).join(''); }
+const LAW_DB={"§ 535 BGB":"Vermieter überlässt & erhält die Wohnung; Mieter zahlt Miete & behandelt sie sorgfältig.",
+"§ 556 BGB":"Regelt Betriebskosten: Umlage möglich, wenn vereinbart; Abrechnung meist jährlich.",
+"WEG-Beschluss":"Entscheidungen der Eigentümer über Verwaltung/Instandhaltung; Form/Mehrheit wichtig."};
 async function explainLaw(inModal=false){
-  const id = inModal? 'lawIn2':'lawInput';
-  const out = inModal? 'lawOut2':'lawOut';
-  const key = (document.getElementById(id).value||'').trim();
-  const lawData = await fetchJSON('data/law.json'); // optionaler externer Speicher
-  const map = {...LAW_DB};
+  const id=inModal?'lawIn2':'lawInput'; const out=inModal?'lawOut2':'lawOut';
+  const key=(document.getElementById(id).value||'').trim();
+  const lawData=await fetchJSON('data/law.json'); const map={...LAW_DB};
   if(Array.isArray(lawData)){ lawData.forEach(x=>{ if(x.paragraph&&x.explanation) map[x.paragraph]=x.explanation; }); }
-  const txt = map[key] || "Keine Kurz-Erklärung lokal vorhanden. Versuche allgemeine Begriffe oder pflege <code>data/law.json</code>.";
+  const txt=map[key]||"Keine Kurz-Erklärung lokal vorhanden. Pflege <code>data/law.json</code>.";
   document.getElementById(out).innerHTML = `<div class="alert alert-light border"><div><strong>${key||"–"}</strong></div><div class="mt-2">${txt}</div><div class="small-muted mt-2">*Keine Rechtsberatung.*</div></div>`;
 }
-function filterFAQ(term){
-  term=(term||'').toLowerCase();
-  const el=document.getElementById('faqModal');
-  const list=FAQ.filter(f=>(f.q+f.a).toLowerCase().includes(term));
-  el.innerHTML = list.map(f=>`<div class="mb-2"><strong>${f.q}</strong><div>${f.a}</div></div>`).join('') || '<span class="small-muted">Keine Treffer.</span>';
-}
+function filterFAQ(term){ term=(term||'').toLowerCase();
+  const el=document.getElementById('faqModal'); const list=FAQ.filter(f=>(f.q+f.a).toLowerCase().includes(term));
+  el.innerHTML = list.map(f=>`<div class="mb-2"><strong>${f.q}</strong><div>${f.a}</div></div>`).join('') || '<span class="small-muted">Keine Treffer.</span>'; }
 
-/* ============= FINANZ ============= */
 function calcAnn(inModal=false){
-  const loan = +document.getElementById(inModal?'loanX':'loan').value||0;
-  const rate = (+document.getElementById(inModal?'rateX':'rate').value||0)/100/12;
-  const n = (+document.getElementById(inModal?'yearsX':'years').value||0)*12;
-  const ann = rate>0 ? loan*rate/(1-Math.pow(1+rate,-n)) : loan/n;
-  const total = ann*n;
-  const out = inModal?'annOut2':'annOut';
-  document.getElementById(out).innerHTML = `
-    <div class="alert alert-light border">
-      <div><strong>Monatsrate:</strong> ${ann.toFixed(2)} €</div>
-      <div><strong>Gesamtzahlung:</strong> ${total.toFixed(2)} €</div>
-    </div>`;
+  const loan=+document.getElementById(inModal?'loanX':'loan').value||0;
+  const rate=(+document.getElementById(inModal?'rateX':'rate').value||0)/100/12;
+  const n=(+document.getElementById(inModal?'yearsX':'years').value||0)*12;
+  const ann=rate>0?loan*rate/(1-Math.pow(1+rate,-n)):loan/n; const total=ann*n;
+  const out=inModal?'annOut2':'annOut';
+  document.getElementById(out).innerHTML=`<div class="alert alert-light border"><div><strong>Monatsrate:</strong> ${ann.toFixed(2)} €</div><div><strong>Gesamtzahlung:</strong> ${total.toFixed(2)} €</div></div>`;
 }
 function rentBuy(inModal=false){
-  const m = +document.getElementById(inModal?'mieteX':'rent').value||0;
-  const p = +document.getElementById(inModal?'preisX':'price').value||0;
-  const eq = +document.getElementById(inModal?'eqX':'eq').value||0;
-  const nk = p*0.09; // grob: 9% NK
-  const kredit = Math.max(0,p-nk-eq);
-  const hint = kredit<=0? "Kauf ist durch Eigenkapital/NK gedeckt – rechne laufende Kosten!":"Kauf benötigt Finanzierung ~ "+kredit.toLocaleString('de-DE')+" €";
-  const out = inModal?'rbOut2':'rbOut';
-  document.getElementById(out).innerHTML = `<div class="alert alert-light border">
-    <div><strong>Miete/Jahr:</strong> ${(m*12).toLocaleString('de-DE')} €</div>
-    <div><strong>Kaufnebenkosten (~9%):</strong> ${nk.toLocaleString('de-DE')} €</div>
-    <div><strong>Benötigter Kredit:</strong> ${kredit.toLocaleString('de-DE')} €</div>
-    <div class="mt-2">${hint}</div>
-  </div>`;
+  const m=+document.getElementById(inModal?'mieteX':'rent').value||0;
+  const p=+document.getElementById(inModal?'preisX':'price').value||0;
+  const eq=+document.getElementById(inModal?'eqX':'eq').value||0;
+  const nk=p*0.09; const kredit=Math.max(0,p-nk-eq);
+  const hint=kredit<=0?"Kauf durch Eigenkapital/NK gedeckt – laufende Kosten prüfen!":"Benötigter Kredit ~ "+kredit.toLocaleString('de-DE')+" €";
+  const out=inModal?'rbOut2':'rbOut';
+  document.getElementById(out).innerHTML=`<div class="alert alert-light border"><div><strong>Miete/Jahr:</strong> ${(m*12).toLocaleString('de-DE')} €</div><div><strong>Kaufnebenkosten (~9%):</strong> ${nk.toLocaleString('de-DE')} €</div><div><strong>Benötigter Kredit:</strong> ${kredit.toLocaleString('de-DE')} €</div><div class="mt-2">${hint}</div></div>`;
 }
 
-/* ============= SMART LIVING ============= */
-const SMART = [
-  {g:"Thermostat", n:"Heiz-Thermostat", price:"€ 60–200", save:"5–12%/Jahr"},
-  {g:"Licht", n:"LED + Bewegungsmelder", price:"€ 20–150", save:"2–6%/Jahr"},
-  {g:"Steckdosen", n:"Schaltbare Steckdosen", price:"€ 25–80", save:"1–3%/Jahr"},
-  {g:"PV-Balkon", n:"Balkonkraftwerk", price:"€ 600–1200", save:"bis 15%/Jahr"}
-];
-function renderSmart(target='smartTable'){
-  const el=document.getElementById(target);
-  el.innerHTML = SMART.map(s=>`<tr><td>${s.n}</td><td>${s.g}</td><td>${s.price}</td><td>${s.save}</td></tr>`).join('');
-}
+const SMART=[{g:"Thermostat",n:"Heiz-Thermostat",price:"€ 60–200",save:"5–12%/Jahr"},
+{g:"Licht",n:"LED + Bewegungsmelder",price:"€ 20–150",save:"2–6%/Jahr"},
+{g:"Steckdosen",n:"Schaltbare Steckdosen",price:"€ 25–80",save:"1–3%/Jahr"},
+{g:"PV-Balkon",n:"Balkonkraftwerk",price:"€ 600–1200",save:"bis 15%/Jahr"}];
+function renderSmart(target='smartTable'){ const el=document.getElementById(target);
+  el.innerHTML=SMART.map(s=>`<tr><td>${s.n}</td><td>${s.g}</td><td>${s.price}</td><td>${s.save}</td></tr>`).join(''); }
 function renderGallery(target='gallery'){
-  const el=document.getElementById(target);
-  const topics=["smart home","interior","architecture","minimal","cozy","energy"];
-  el.innerHTML = topics.map(t=>`<img class="img-fluid rounded" alt="${t}" loading="lazy" src="https://source.unsplash.com/400x300/?${encodeURIComponent(t)}">`).join('');
+  const el=document.getElementById(target); const topics=["smart home","interior","architecture","minimal","cozy","energy"];
+  el.innerHTML=topics.map(t=>`<img class="img-fluid rounded" alt="${t}" loading="lazy" src="https://source.unsplash.com/400x300/?${encodeURIComponent(t)}">`).join('');
 }
 
-/* ============= HOMESTAGING / PLANER ============= */
 let planImg=null, blocks=[];
-function loadPlan(e){
-  const file=e.target.files[0]; if(!file)return;
-  const reader = new FileReader();
-  reader.onload = ()=>{ planImg=new Image(); planImg.onload=drawPlan; planImg.src=reader.result; };
-  reader.readAsDataURL(file);
-}
-function drawPlan(){
-  const c=document.getElementById('plannerCanvas'); const ctx=c.getContext('2d');
+function loadPlan(e){ const file=e.target.files[0]; if(!file)return; const r=new FileReader();
+  r.onload=()=>{ planImg=new Image(); planImg.onload=drawPlan; planImg.src=r.result; }; r.readAsDataURL(file); }
+function drawPlan(){ const c=document.getElementById('plannerCanvas'); const ctx=c.getContext('2d');
   ctx.clearRect(0,0,c.width,c.height);
-  if(planImg){
-    const r=Math.min(c.width/planImg.width, c.height/planImg.height);
-    const w=planImg.width*r, h=planImg.height*r;
-    ctx.drawImage(planImg,(c.width-w)/2,(c.height-h)/2,w,h);
-  }
+  if(planImg){ const q=Math.min(c.width/planImg.width,c.height/planImg.height); const w=planImg.width*q,h=planImg.height*q; ctx.drawImage(planImg,(c.width-w)/2,(c.height-h)/2,w,h); }
   blocks.forEach(b=>{ ctx.fillStyle='rgba(29,185,84,.25)'; ctx.fillRect(b.x,b.y,b.w,b.h); ctx.strokeStyle='rgba(29,185,84,.9)'; ctx.strokeRect(b.x,b.y,b.w,b.h); });
 }
 function addBlock(){ blocks.push({x:40+blocks.length*20,y:40,w:80,h:50}); drawPlan(); }
 function clearBlocks(){ blocks=[]; drawPlan(); }
 
-/* ============= CHAT (lokal) ============= */
 function ask(){
   const q=(document.getElementById('q').value||'').toLowerCase();
-  const out=document.getElementById('answers');
-  const hits=[];
+  const out=document.getElementById('answers'); const hits=[];
   FAQ.forEach(f=>{ if((f.q+f.a).toLowerCase().includes(q)) hits.push(`<div class="mb-2"><strong>${f.q}</strong><div>${f.a}</div></div>`); });
-  (async()=>{
-    const news=await fetchJSON('data/news.json')||[];
-    news.forEach(n=>{ if((n.title||'').toLowerCase().includes(q)) hits.push(`<div>News: <a href="${n.link}" target="_blank">${n.title}</a></div>`); });
-    out.innerHTML = hits.length? hits.join('') : '<div class="small-muted">Keine passenden Einträge gefunden.</div>';
-  })();
+  (async()=>{ const news=await fetchJSON('data/news.json')||[]; news.forEach(n=>{ if((n.title||'').toLowerCase().includes(q)) hits.push(`<div>News: <a href="${n.link}" target="_blank">${n.title}</a></div>`); });
+    out.innerHTML=hits.length?hits.join(''):'<div class="small-muted">Keine passenden Einträge gefunden.</div>'; })();
 }
 
-/* ============= CHARTS ============= */
 async function drawDemoChart(id='zinsChart'){
-  const ctx=document.getElementById(id);
-  if(!ctx) return;
-  let series=null;
-  const charts=await fetchJSON('data/charts.json');
-  if(charts && charts.zins){ series = charts.zins; }
-  else { // Fallback Demo
-    const base=[2.1,2.4,2.8,3.1,3.5,3.7,3.9,4.0,3.8,3.6,3.5,3.4];
-    series={labels:["Jan","Feb","Mrz","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"], data:base};
-  }
-  new Chart(ctx,{type:'line',
-    data:{labels:series.labels,datasets:[{label:'Zins p. a. (%)',data:series.data,tension:.25}]},
-    options:{plugins:{legend:{display:false}}, scales:{y:{ticks:{callback:v=>v+'%'}}}}
-  });
+  const ctx=document.getElementById(id); if(!ctx) return; let series=null;
+  const charts=await fetchJSON('data/charts.json'); if(charts&&charts.zins){ series=charts.zins; }
+  else { const base=[2.1,2.4,2.8,3.1,3.5,3.7,3.9,4.0,3.8,3.6,3.5,3.4]; series={labels:["Jan","Feb","Mrz","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"],data:base}; }
+  new Chart(ctx,{type:'line',data:{labels:series.labels,datasets:[{label:'Zins p. a. (%)',data:series.data,tension:.25}]},options:{plugins:{legend:{display:false}},scales:{y:{ticks:{callback:v=>v+'%'}}}}});
 }
 
-/* ============= INIT ============= */
 document.addEventListener('DOMContentLoaded', async ()=>{
-  renderFeatures();
-  renderFAQ();
-  renderSmart();
-  renderGallery();
-  loadNews();
-  drawDemoChart();
+  renderFeatures(); renderFAQ(); renderSmart(); renderGallery(); loadNews(); drawDemoChart();
 });
 </script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+HTML
+
