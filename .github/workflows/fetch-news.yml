@@ -1,7 +1,7 @@
 name: Update News
 on:
   schedule:
-    - cron: "17 */6 * * *"  # alle 6h
+    - cron: "17 */6 * * *"   # alle 6h
   workflow_dispatch:
 
 jobs:
@@ -11,69 +11,43 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-      - name: Install deps
-        run: |
-          npm init -y >/dev/null 2>&1 || true
-          npm install xml2js@0.6.2 --no-audit --no-fund
-
+        with: { node-version: '18' }
       - name: Fetch RSS -> data/news.json
         run: |
           node - <<'NODE'
-          const https=require('https'), fs=require('fs'), {parseString}=require('xml2js');
+          const https=require('https'), fs=require('fs'), {parseStringPromise}=require('xml2js');
           const feeds=[
             "https://www.tagesschau.de/xml/rss2/",
             "https://www.heise.de/rss/heise-atom.xml",
             "https://www.cleanenergywire.org/rss.xml"
           ];
-          function get(u){return new Promise(res=>{
-            https.get(u,r=>{let d='';r.on('data',c=>d+=c);r.on('end',()=>res({ok:true,body:d}));}).on('error',()=>res({ok:false,body:''}));
-          });}
+          function get(u){ return new Promise(res=>https.get(u,r=>{let d='';r.on('data',c=>d+=c);r.on('end',()=>res(d));}).on('error',()=>res(''))); }
           (async()=>{
             let all=[];
-            for(const u of feeds){
-              const r=await get(u);
-              if(!r.ok) continue;
-              await new Promise(done=>{
-                parseString(r.body,(e,j)=>{
-                  if(e||!j) return done();
-                  const items=(j.rss?.channel?.[0]?.item||j.feed?.entry||[]).map(it=>({
-                    title: (it.title?.[0]||it.title)||'Ohne Titel',
-                    link: (it.link?.[0]?.href||it.link?.[0]||it.id?.[0]||'#'),
-                    date: (it.pubDate?.[0]||it.updated?.[0]||new Date().toISOString()),
-                    source: (new URL((it.link?.[0]?.href||it.link?.[0]||'https://example.com'))).hostname
-                  }));
-                  all=all.concat(items);
-                  done();
-                });
-              });
+            for(const f of feeds){
+              try{
+                const xml=await get(f); if(!xml) continue;
+                const js=await parseStringPromise(xml);
+                const items=(js.rss?.channel?.[0]?.item || js.feed?.entry || []).slice(0,20);
+                const rows = items.map(it=>({
+                  title: (it.title?.[0] && it.title[0]._ ) || it.title?.[0] || "Ohne Titel",
+                  link: (it.link?.[0]?.$.href) || it.link?.[0] || "#",
+                  date: (it.pubDate?.[0]) || (it.updated?.[0]) || new Date().toISOString(),
+                  source: (new URL((it.link?.[0]?.$.href)||it.link?.[0]||'https://example.com')).hostname
+                }));
+                all = all.concat(rows);
+              }catch(e){}
             }
-            all=all.filter(x=>x.title&&x.link).slice(0,40);
             fs.mkdirSync('data',{recursive:true});
-            fs.writeFileSync('data/news.json',JSON.stringify(all,null,2));
-            console.log('Wrote data/news.json with',all.length,'items');
+            fs.writeFileSync('data/news.json', JSON.stringify(all.slice(0,80),null,2));
+            console.log("OK, geschrieben:", all.length);
           })();
           NODE
-
-      - name: Build partials/top5.html
+      - name: Commit & Push
         run: |
-          node - <<'NODE'
-          const fs=require('fs');
-          const news=require('./data/news.json');
-          const top5=(news||[]).slice(0,5).map(n=>`<li><a target="_blank" rel="noopener" href="${n.link}">${n.title}</a> <small>· ${new Date(n.date).toLocaleDateString('de-DE')}</small></li>`).join('\n');
-          fs.mkdirSync('partials',{recursive:true});
-          fs.writeFileSync('partials/top5.html', `<ul class="mb-0">\n${top5||'<li>noch keine Daten</li>'}\n</ul>\n`);
-          console.log('partials/top5.html written');
-          NODE
-
-      - name: Commit & push
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/news.json partials/top5.html || true
-          git commit -m "chore: auto update news & top5 [skip ci]" || echo "nichts zu committen"
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add data/news.json
+          git commit -m "chore: auto-update news.json" || echo "nichts zu committen"
           git push
