@@ -1,7 +1,8 @@
 [
-  {"title":"Sanierung: Förderung im Fokus","link":"https://example.com/foerderung","date":"2025-01-05"},
-  {"title":"Energie: Wärmepumpe – Faktencheck","link":"https://example.com/waermepumpe","date":"2025-01-08"},
-  {"title":"EEG-News kompakt","link":"https://example.com/eeg","date":"2025-01-10"},
-  {"title":"Zinsen & Finanzierung kurz erklärt","link":"https://example.com/zinsen","date":"2025-01-12"},
-  {"title":"Mieter: Rechte & Pflichten","link":"https://example.com/mieter","date":"2025-01-14"}
+  {"title":"Sanierung & Förderung im Fokus","link":"themen/sanierung.html","date":"2025-09-15T08:10:00Z"},
+  {"title":"Energie: Wärmepumpe – Faktencheck","link":"themen/waermepumpe.html","date":"2025-09-14T08:10:00Z"},
+  {"title":"EEG-News kompakt","link":"themen/eeg.html","date":"2025-09-13T08:10:00Z"},
+  {"title":"Zinsen & Finanzierung kurz erklärt","link":"themen/zinsen.html","date":"2025-09-12T08:10:00Z"},
+  {"title":"Mieter: Rechte & Pflichten","link":"themen/mieterrecht.html","date":"2025-09-11T08:10:00Z"},
+  {"title":"Smart-Living 2025 – KI spart Energie","link":"themen/smartliving2025.html","date":"2025-09-10T08:10:00Z"}
 ]
