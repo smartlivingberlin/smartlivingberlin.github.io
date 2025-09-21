@@ -1,0 +1,39 @@
+<!doctype html><html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EEG & Eigenstrom – kompakt</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>body{background:#f7f9fc} .wrap{max-width:900px;margin:auto;padding:24px}</style>
+</head><body><div class="wrap">
+<a class="btn btn-sm btn-outline-secondary mb-3" href="../index.html#smart">← Zurück</a>
+<h1 class="h3 mb-3">EEG &amp; Eigenstrom</h1>
+<div class="mb-2">Sprache:
+  <button class="btn btn-sm btn-light" onclick="setLang('de')">DE</button>
+  <button class="btn btn-sm btn-light" onclick="setLang('en')">EN</button>
+  <button class="btn btn-sm btn-light" onclick="setLang('ru')">RU</button>
+</div>
+
+<div data-lang="de">
+  <p><strong>Grundidee:</strong> PV-Strom selbst nutzen, Überschuss einspeisen. Mieterstrom/Teilanlagen sind möglich, brauchen aber klare Abrechnung.</p>
+  <p><strong>Technik:</strong> Wechselrichter, Zählerkonzepte (2-Richtungs-/Summenzähler), ggf. Speicher. Netzanschluss beim VNB anmelden.</p>
+  <p><strong>Recht/Steuer:</strong> Anmeldung beim Marktstammdatenregister, Umsatz-/Einkommensteuer je nach Modell. Seit 2023 viele Erleichterungen.</p>
+  <div class="small text-muted">Quellen: BMWK · Bundesnetzagentur · Marktstammdatenregister</div>
+</div>
+
+<div data-lang="en" hidden>
+  <p><strong>Idea:</strong> Use PV power on site, export surplus. Tenant power possible with proper metering/billing.</p>
+  <p><strong>Tech:</strong> Inverters, metering concepts, optional batteries. Coordinate grid connection with DSO.</p>
+  <p><strong>Law/Tax:</strong> Registration, VAT/income tax depending on scheme. Many simplifications since 2023.</p>
+  <div class="small text-muted">Sources: BMWK · Federal Network Agency</div>
+</div>
+
+<div data-lang="ru" hidden>
+  <p><strong>Идея:</strong> Использовать солнечную энергию на месте, излишки продавать в сеть. «Электричество для арендаторов» возможно при корректном учёте/расчётах.</p>
+  <p><strong>Техника:</strong> Инверторы, схемы счётчиков, по желанию аккумулятор. Подключение согласовать с сетевой компанией.</p>
+  <p><strong>Право/налоги:</strong> Регистрация, НДС/подоходный — в зависимости от модели. С 2023 года — упрощения.</p>
+  <div class="small text-muted">Источники: BMWK · Федеральное агентство сетей</div>
+</div>
+</div>
+<script>
+function setLang(l){ for(const el of document.querySelectorAll('[data-lang]')) el.hidden = el.dataset.lang!==l; }
+(() => { const q=new URLSearchParams(location.search).get('lang')||'de'; setLang(q); })();
+</script></body></html>

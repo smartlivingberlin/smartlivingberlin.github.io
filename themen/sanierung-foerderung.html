@@ -1,0 +1,39 @@
+<!doctype html><html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sanierung & Förderung – kompakt</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>body{background:#f7f9fc} .wrap{max-width:900px;margin:auto;padding:24px}</style>
+</head><body><div class="wrap">
+<a class="btn btn-sm btn-outline-secondary mb-3" href="../index.html#news">← Zurück</a>
+<h1 class="h3 mb-3">Sanierung & Förderung</h1>
+<div class="mb-2">Sprache:
+  <button class="btn btn-sm btn-light" onclick="setLang('de')">DE</button>
+  <button class="btn btn-sm btn-light" onclick="setLang('en')">EN</button>
+  <button class="btn btn-sm btn-light" onclick="setLang('ru')">RU</button>
+</div>
+
+<div data-lang="de">
+  <p><strong>Förderziele:</strong> Energieverbrauch senken, CO₂ reduzieren, Gebäude zukunftsfähig machen. Priorität haben Hülle (Dämmung, Fenster) und Heizung.</p>
+  <p><strong>Programme:</strong> KfW-Kredite/Zuschüsse (z. B. BEG), BAFA-Förderung für Wärmepumpen/Heizungen, Länderprogramme. Kombinationen sind möglich, aber Reihenfolge und Anträge vorher prüfen.</p>
+  <p><strong>Praxis:</strong> Erst Energieberatung (i. d. R. gefördert), dann Maßnahmenplan. Angebote vergleichen, Gesamtwirtschaftlichkeit beachten (Energiepreis-Szenarien, Instandhaltung).</p>
+  <div class="small text-muted">Quellen: kfw.de · bafa.de · Verbraucherzentralen</div>
+</div>
+
+<div data-lang="en" hidden>
+  <p><strong>Goals:</strong> Cut energy use and CO₂, make buildings future-proof. Start with envelope (insulation, windows) and heating.</p>
+  <p><strong>Programs:</strong> KfW loans/grants (BEG), BAFA grants for heat pumps/heating, plus state programs. Combining is possible — check order and eligibility first.</p>
+  <p><strong>Practice:</strong> Begin with an energy audit, then a step-by-step plan. Compare quotes and consider lifetime cost (energy price scenarios, maintenance).</p>
+  <div class="small text-muted">Sources: kfw.de · bafa.de · consumer advice centers</div>
+</div>
+
+<div data-lang="ru" hidden>
+  <p><strong>Цели:</strong> Снижение энергопотребления и CO₂, подготовка здания к будущему. Сначала «оболочка» (утепление, окна) и отопление.</p>
+  <p><strong>Программы:</strong> Кредиты/гранты KfW (BEG), субсидии BAFA на тепловые насосы и др., региональные программы. Возможны комбинации — порядок и условия проверьте заранее.</p>
+  <p><strong>Практика:</strong> Сначала энерго-аудит, затем поэтапный план. Сравнивайте сметы, учитывайте полную стоимость владения.</p>
+  <div class="small text-muted">Источники: kfw.de · bafa.de · консультационные центры</div>
+</div>
+</div>
+<script>
+function setLang(l){ for(const el of document.querySelectorAll('[data-lang]')) el.hidden = el.dataset.lang!==l; }
+(() => { const q=new URLSearchParams(location.search).get('lang')||'de'; setLang(q); })();
+</script></body></html>
