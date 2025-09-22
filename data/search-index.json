@@ -1,189 +1,204 @@
 {
   "docs": [
     {
-      "title": "mieten-kaufen",
-      "url": "themen/mieten-kaufen.html",
-      "text": " Mieten vs. Kaufen &larr; Zurück Mieten vs. Kaufen Vergleiche Mietzahlung (inkl. Steigerung) mit Eigentumskosten (Zins, Tilgung, Instandhaltung, Verwaltung, Rücklagen). Vergleiche Mietzahlung (inkl. Steigerung) mit Eigentumskosten (Zins, Tilgung, Instandhaltung, Verwaltung, Rücklagen). Opportunity-Kosten des Eigenkapitals berücksichtigen (was würde das Geld alternativ erwirtschaften?). Eigenbedarf, Flexibilität und Lebensplanung spielen neben Zahlen eine große Rolle. *Keine Rechtsberatung.* Inhalte sind vereinfachte Erläuterungen. Quellen / weiterführend Verbraucherzentrale – Mieten/Kaufen Bundesbank – Immobilienfinanzierung "
-    },
-    {
-      "title": "grundriss-tricks",
-      "url": "themen/grundriss-tricks.html",
-      "text": " Grundriss: Tricks & Praxis &larr; Zurück Grundriss: Tricks & Praxis Zonierung (Tag/Nacht/Service), Blickachsen, Tageslicht und Laufwege entscheiden über Qualität mehr als qm. Zonierung (Tag/Nacht/Service), Blickachsen, Tageslicht und Laufwege entscheiden über Qualität mehr als qm. Möblierungsraster früh mitdenken: Türanschläge, Steckdosen, Möbeltiefen. Vorher/Nachher: kleine Eingriffe (Wanddurchbruch, Schiebetür, Stauraum) mit großer Wirkung. *Keine Rechtsberatung.* Inhalte sind vereinfachte Erläuterungen. Quellen / weiterführend Bauordnungen (LBO, Abstände) "
+      "title": "auktion",
+      "url": "themen/auktion.html",
+      "text": "Bieterverfahren (Light) \n \n  \n &larr; Zurück \n Bieterverfahren (Light) \n Gebote öffentlich per GitHub-Issue – nur freigegebene Gebote zählen. \n \n \n   So geht’s:  Klicke auf  Gebot abgeben  und fülle die Vorlage. \n  Gültige Gebote werden mit  approved  markiert.\n \n \n   Gebot abgeben \n   Alle Gebote \n \n Hinweis: Demo/Light – keine Rechtsbindungswirkung. \n \n(function(){\n  const q = new URLSearchParams(document.currentScript.src.split('?')[1]||'');\n  const owner = q.get('owner')||''; const repo = q.get('repo')||'';\n  const base = owner && repo ? `https://github.com/${owner}/${repo}` : '';\n  const body = encodeURIComponent([\n    \"## Objekt / Project\",\n    \"- Adresse / Link:\",\n    \"- Kurzbeschreibung:\",\n    \"- Mein Gebot (EUR):\",\n    \"- Kontaktdaten:\",\n    \"\",\n    \"_Ich akzeptiere, dass nur 'approved'-Gebote zählen._\"\n  ].join(\"\\\\n\"));\n  const title = encodeURIComponent(\"Gebot: [Objekt] [€ Betrag]\");\n  if(base){\n    document.getElementById('newBid').href = `${base}/issues/new?title=${title}&labels=gebot&body=${body}`;\n    document.getElementById('allBids').href = `${base}/issues?q=is%3Aissue+label%3Agebot`;\n  }\n})();"
     },
     {
       "title": "balkonkraftwerk",
       "url": "themen/balkonkraftwerk.html",
-      "text": " Balkonkraftwerk – Leitfaden ← Zurück Als PDF drucken Balkonkraftwerk – Leitfaden 1. Technik: Mini-PV mit Wechselrichter (typ. 300–800 W). Steckerfertig, Einspeisung in den Haushaltskreis. 2. Auswahl: Ausrichtung, Verschattung, Befestigung, Zähler (Rücklaufsperre) prüfen. Sicherheit: Montage und Windlast beachten. 3. Wirtschaftlichkeit: Eigenverbrauch ist Schlüssel. Grobe Amortisation oft 5–8 Jahre – abhängig von Strompreis und Nutzung. Quellen PV-Grundlagen (neutral) Sicherheits-/Montagehinweise Vergleichsrechner Eigenverbrauch *Keine Rechts- oder Finanzberatung.* "
+      "text": "Balkonkraftwerk – Leitfaden \n \n \n \n   \n \n\n  ← Zurück  Als PDF drucken  \n Balkonkraftwerk – Leitfaden \n  1. Technik:  Mini-PV mit Wechselrichter (typ. 300–800 W). Steckerfertig, Einspeisung in den Haushaltskreis. \n  2. Auswahl:  Ausrichtung, Verschattung, Befestigung, Zähler (Rücklaufsperre) prüfen. Sicherheit: Montage und Windlast beachten. \n  3. Wirtschaftlichkeit:  Eigenverbrauch ist Schlüssel. Grobe Amortisation oft 5–8 Jahre – abhängig von Strompreis und Nutzung. \n  Quellen   PV-Grundlagen (neutral)  Sicherheits-/Montagehinweise  Vergleichsrechner Eigenverbrauch  \n *Keine Rechts- oder Finanzberatung.*"
     },
     {
-      "title": "kaufnebenkosten",
-      "url": "themen/kaufnebenkosten.html",
-      "text": " Kaufnebenkosten kompakt ← Zurück Als PDF drucken Kaufnebenkosten kompakt 1. Bestandteile: Grunderwerbsteuer, Notar, Grundbuch; evtl. Makler, Finanzierungskosten. 2. Planung: Typisch 8–12 % des Kaufpreises. In die Liquiditätsplanung einrechnen; Eigenkapitalquote beachten. 3. Vergleich: Unterschiedliche Steuersätze/Regionen; Notarkosten nach Gegenstandswert. Quellen Notarkosten-Tabellen (allgemein) Grunderwerbsteuer-Übersichten Neutrale Kaufleitfäden *Keine Rechts- oder Finanzberatung.* "
-    },
-    {
-      "title": "energie",
-      "url": "themen/energie.html",
-      "text": " Smart-Home Spartipps &larr; Zurück Smart-Home Spartipps Kleine Geräte, große Wirkung: Thermostate, LED, schaltbare Stecker. 1) Schnellstart Heizkörperthermostate, LED-Umrüstung, Standby-Lasten reduzieren. 2) Steuerung Zeitschaltprofile, Bewegungsmelder, Szenen für An/Abwesenheit. 3) Kontrolle Verbrauch messen (Zwischenstecker), Daten prüfen, Maßnahmen nachschärfen. Hinweis: Inhalte sind vereinfachte Erläuterungen in Alltagssprache. *Keine Rechts- oder Finanzberatung.* "
-    },
-    {
-      "title": "nebenkosten",
-      "url": "themen/nebenkosten.html",
-      "text": " Nebenkosten Überblick body{max-width:1000px;margin:auto;padding:2rem} .figure{border:1px solid #e8ecf3;border-radius:12px;overflow:hidden} .figure img{width:100%;height:auto;display:block} .small-muted{color:#6c757d} &larr; Zurück Nebenkosten Überblick Welche Kosten sind umlagefähig? Welche nicht? Überblick Umlagefähig u. a.: Wasser/Abwasser, Heizung, Müll, Hausreinigung, Hausmeister (ohne Verwaltung). Praxis Nicht umlagefähig: Instandhaltung, Verwaltung, Rücklagen – diese trägt der Vermieter. Tipp Abrechnung: Fristen/Transparenz; Belegeinsicht möglich. Quellen & Links BetrKV – Betriebskostenverordnung Mietrecht Ratgeber (allg.) *Hinweis: Keine Rechts- oder Finanzberatung. Inhalte in Alltagssprache zusammengefasst.* "
-    },
-    {
-      "title": "wohnenneu",
-      "url": "themen/wohnenneu.html",
-      "text": " Neue Wohnformen: Tiny/Co-Living &larr; Zurück Neue Wohnformen: Tiny/Co-Living Flexibel wohnen: geteilter Raum, modulare Möbel, kleine Grundrisse – worauf achten? 1) Konzept Gemeinschaftsflächen sparen private Fläche. Wichtig: Schallschutz, Privatzonen, Stauraum. 2) Verträge Nutzungsregeln, Reinigung, Nebenkostenverteilung vorher klären. 3) Praxis Multifunktionsmöbel, Tageslicht, gute Lüftung. Brandschutz & Fluchtwege beachten. Hinweis: Inhalte sind vereinfachte Erläuterungen in Alltagssprache. *Keine Rechts- oder Finanzberatung.* "
-    },
-    {
-      "title": "glossar",
-      "url": "themen/glossar.html",
-      "text": " Glossar Immobilien body{max-width:1000px;margin:auto;padding:2rem} .figure{border:1px solid #e8ecf3;border-radius:12px;overflow:hidden} .figure img{width:100%;height:auto;display:block} .small-muted{color:#6c757d} &larr; Zurück Glossar Immobilien Schwierige Begriffe kurz erklärt. Überblick Annuität: gleichbleibende Kreditrate. Beleihung: Anteil der Bankfinanzierung am Objektwert. Praxis WEG: Wohnungseigentumsgemeinschaft, Beschlüsse in Eigentümerversammlung. Tipp ZVG: Zwangsversteigerung – gerichtliches Verwertungsverfahren. Quellen & Links BGB – Gesetze im Internet WEG – Recht (Überblick) *Hinweis: Keine Rechts- oder Finanzberatung. Inhalte in Alltagssprache zusammengefasst.* "
-    },
-    {
-      "title": "immobilienpreise",
-      "url": "themen/immobilienpreise.html",
-      "text": " Immobilienpreise & Rendite body{max-width:1000px;margin:auto;padding:2rem} .figure{border:1px solid #e8ecf3;border-radius:12px;overflow:hidden} .figure img{width:100%;height:auto;display:block} .small-muted{color:#6c757d} &larr; Zurück Immobilienpreise & Rendite Wie entwickeln sich Preise? Was bedeutet Rendite? Überblick Rendite grob: Jahresnettokaltmiete durch Kaufpreis. Leerstand, Instandhaltung und Risiko berücksichtigen. Praxis Treiber: Zinsniveau, Einkommen, Baukosten, Angebot/Nachfrage. Mikrolage entscheidend. Tipp Langfristig ist Cashflow-Qualität wichtiger als einmalige Preissteigerungen. Quellen & Links Statistisches Bundesamt – Bau/Preise vdp-Index (Immobilienpreise) *Hinweis: Keine Rechts- oder Finanzberatung. Inhalte in Alltagssprache zusammengefasst.* "
+      "title": "checklisten",
+      "url": "themen/checklisten.html",
+      "text": "Checklisten (PDF) – Überblick \n \n  \n &larr; Zurück \n Checklisten (PDF) – Überblick \n Kauf, Übergabe, Vermietung – was nicht fehlen darf. \n \n Abschnitt 1  Kauf: Finanzierung, Unterlagen, Energie, Mängelprotokoll. \n Abschnitt 2  Übergabe: Zählerstände, Schlüssel, Protokoll, Fotos. \n Abschnitt 3  Vermietung: Bonität, Mietvertrag, Übergabeprotokoll. \n Quelle:  https://www.immowelt.de/"
     },
     {
       "title": "eeg-kompakt",
       "url": "themen/eeg-kompakt.html",
-      "text": " EEG-News kompakt &larr; Zurück EEG-News kompakt Einspeisevergütung und Rahmenbedingungen ändern sich regelmäßig. Prüfe aktuelle Vergütungssätze, Anlagenklassen und Meldepflichten (Marktstammdatenregister). Einspeisevergütung und Rahmenbedingungen ändern sich regelmäßig. Prüfe aktuelle Vergütungssätze, Anlagenklassen und Meldepflichten (Marktstammdatenregister). Für Balkonkraftwerke gelten vereinfachte Regeln. Achte auf Netzverträglichkeit und Zähler. Wirtschaftlichkeit hängt von Eigenverbrauch und Investkosten ab. Speicher nur mit sauberer Rechnung. *Keine Rechtsberatung.* Inhalte sind vereinfachte Erläuterungen. Quellen / weiterführend Bundesnetzagentur – EEG MaStR "
-    },
-    {
-      "title": "energiepreise",
-      "url": "themen/energiepreise.html",
-      "text": " Energiepreise & Strom sparen body{max-width:1000px;margin:auto;padding:2rem} .figure{border:1px solid #e8ecf3;border-radius:12px;overflow:hidden} .figure img{width:100%;height:auto;display:block} .small-muted{color:#6c757d} &larr; Zurück Energiepreise & Strom sparen Trends erkennen & Kosten senken. Überblick Tarifwechsel bringt oft 200–400 € Ersparnis pro Jahr. Boni/Preisgarantien prüfen. Praxis Geräte mit hoher Effizienzklasse und Lastmanagement (Smart Plugs) einsetzen. Tipp Eigenverbrauch mit Balkon-PV erhöhen (rechtliche Rahmenbedingungen beachten). Quellen & Links BNetzA – Monitoring Verbraucherzentrale – Strom sparen *Hinweis: Keine Rechts- oder Finanzberatung. Inhalte in Alltagssprache zusammengefasst.* "
-    },
-    {
-      "title": "zvg",
-      "url": "themen/zvg.html",
-      "text": " Zwangsversteigerung (ZVG) – Schnellüberblick body{max-width:1000px;margin:auto;padding:2rem} .figure{border:1px solid #e8ecf3;border-radius:12px;overflow:hidden} .figure img{width:100%;height:auto;display:block} .small-muted{color:#6c757d} &larr; Zurück Zwangsversteigerung (ZVG) – Schnellüberblick Ablauf, Risiken, Vorbereitung – kurz & verständlich. Überblick Ablauf: Termin finden, Gutachten lesen, Sicherheitsleistung, Gebot im Termin. Risiken (Altlasten, Mietverhältnisse) prüfen. Praxis Vorbereitung: Finanzierung klären, Grundbuch/Gutachten verstehen, Fragen vorab an Rechtspfleger. Tipp Strategie: Maximalgebot vorher festlegen, nicht überbieten, Nebenkosten (GrESt, Gerichtskosten) mitrechnen. Quellen & Links ZVG-Portale (Gerichte/Länder) Justizportal des Bundes/Länder *Hinweis: Keine Rechts- oder Finanzberatung. Inhalte in Alltagssprache zusammengefasst.* "
-    },
-    {
-      "title": "homestaging",
-      "url": "themen/homestaging.html",
-      "text": " Homestaging DIY &larr; Zurück Homestaging DIY Zielgruppen-Look definieren (Farben, Materialien, Licht). Weniger ist mehr: Freiräume schaffen. Zielgruppen-Look definieren (Farben, Materialien, Licht). Weniger ist mehr: Freiräume schaffen. Regel der Drittel: 1/3 Statement, 1/3 Funktion, 1/3 Ruhe. Pflanzen & Textilien für Wärme. Vorher/Nachher dokumentieren: Fotos aus gleicher Perspektive, gleiches Licht. *Keine Rechtsberatung.* Inhalte sind vereinfachte Erläuterungen. Quellen / weiterführend Inspiration (Unsplash) "
-    },
-    {
-      "title": "auktion",
-      "url": "themen/auktion.html",
-      "text": " Bieterverfahren (Light) &larr; Zurück Bieterverfahren (Light) Gebote öffentlich per GitHub-Issue – nur freigegebene Gebote zählen. So geht’s: Klicke auf Gebot abgeben und fülle die Vorlage. Gültige Gebote werden mit approved markiert. Gebot abgeben Alle Gebote Hinweis: Demo/Light – keine Rechtsbindungswirkung. (function(){ const q = new URLSearchParams(document.currentScript.src.split('?')[1]||''); const owner = q.get('owner')||''; const repo = q.get('repo')||''; const base = owner && repo ? `https://github.com/${owner}/${repo}` : ''; const body = encodeURIComponent([ \"## Objekt / Project\", \"- Adresse / Link:\", \"- Kurzbeschreibung:\", \"- Mein Gebot (EUR):\", \"- Kontaktdaten:\", \"\", \"_Ich akzeptiere, dass nur 'approved'-Gebote zählen._\" ].join(\"\\\\n\")); const title = encodeURIComponent(\"Gebot: [Objekt] [€ Betrag]\"); if(base){ document.getElementById('newBid').href = `${base}/issues/new?title=${title}&labels=gebot&body=${body}`; document.getElementById('allBids').href = `${base}/issues?q=is%3Aissue+label%3Agebot`; } })(); "
-    },
-    {
-      "title": "hypotheken-rechner",
-      "url": "themen/hypotheken-rechner.html",
-      "text": " Hypotheken-Rechner &larr; Zurück Hypotheken-Rechner Annuitätenformel: Rate = K·i / (1 − (1+i)^−n). i = Monatszins, n = Monate. Unsere Seite rechnet das exemplarisch. Annuitätenformel: Rate = K·i / (1 − (1+i)^−n). i = Monatszins, n = Monate. Unsere Seite rechnet das exemplarisch. Sondertilgung und Tilgungssatzwechsel können Gesamtkosten deutlich verändern. Effektivzins beachten (alle Kosten), nicht nur Nominalzins. *Keine Rechtsberatung.* Inhalte sind vereinfachte Erläuterungen. Quellen / weiterführend Bundesbank – Zinserläuterungen "
-    },
-    {
-      "title": "einreichen",
-      "url": "themen/einreichen.html",
-      "text": " Projekt einreichen ← Zurück Als PDF drucken Projekt einreichen Beschreibe Dein Projekt/Angebot kurz & verständlich. Nach Prüfung veröffentlichen wir es in „Projekte“. Formular öffnen (GitHub) "
-    },
-    {
-      "title": "mieter-rechte",
-      "url": "themen/mieter-rechte.html",
-      "text": " Mieter: Rechte & Pflichten &larr; Zurück Mieter: Rechte & Pflichten § 535 BGB: Vermieter stellt die Mietsache bereit und erhält sie instand; Mieter zahlt die Miete und geht pfleglich mit der Sache um. § 535 BGB: Vermieter stellt die Mietsache bereit und erhält sie instand; Mieter zahlt die Miete und geht pfleglich mit der Sache um. Betriebskosten (§ 556 BGB) sind nur umlagefähig, wenn im Vertrag vereinbart; Abrechnung üblich jährlich, Fristen beachten. Bei Mängeln: Mängelanzeige, Frist setzen, Minderungsrechte prüfen. Dokumentation ist entscheidend. *Keine Rechtsberatung.* Inhalte sind vereinfachte Erläuterungen. Quellen / weiterführend BGB § 535 / § 556 (dejure.org) BetrKV – Betriebskostenverordnung "
+      "text": "EEG-News kompakt \n \n  \n &larr; Zurück \n EEG-News kompakt \n Kurzüberblick zu Einspeisevergütung, Eigenverbrauch & Balkonkraftwerken. \n \n Abschnitt 1  Volleinspeiser erhalten feste Vergütungssätze – Eigenverbrauch spart Netzstrom. \n Abschnitt 2  Balkonkraftwerke bis 800 W (geplant 800–1200 W) vereinfachen Einstieg. \n Abschnitt 3  Netzbetreiber-Meldung & Marktstammdatenregister nicht vergessen. \n Quelle:  https://www.marktstammdatenregister.de/"
     },
     {
       "title": "eeg",
       "url": "themen/eeg.html",
-      "text": " EEG & Eigenstrom – Überblick ← Zurück Als PDF drucken EEG & Eigenstrom – Überblick 1. Grundlagen: PV-Anlagen speisen Strom ein oder erhöhen Eigenverbrauch. Betrachtet werden Vergütung, Abgaben und Zähler-Konzepte. 2. Optionen: Volleinspeisung vs. Überschusseinspeisung vs. Mieterstrom. Jede Option hat andere Mess-/Vertragsanforderungen. 3. Praxis: Lastprofil analysieren (Tagesverlauf), ggf. Speicher dimensionieren. Sicherheits- und Installationsregeln beachten. Quellen Allgemeine EEG-Infoseiten & Leitfäden PV-Planungshilfen & Sicherheitsregeln Mieterstrom-Modelle – neutrale Übersichten *Keine Rechts- oder Finanzberatung.* "
+      "text": "EEG & Eigenstrom – Überblick \n  \n  \n \n   \n \n\n  ← Zurück  Als PDF drucken  \n EEG & Eigenstrom – Überblick \n  1. Grundlagen:  PV-Anlagen speisen Strom ein oder erhöhen Eigenverbrauch. Betrachtet werden Vergütung, Abgaben und Zähler-Konzepte. \n  2. Optionen:  Volleinspeisung vs. Überschusseinspeisung vs. Mieterstrom. Jede Option hat andere Mess-/Vertragsanforderungen. \n  3. Praxis:  Lastprofil analysieren (Tagesverlauf), ggf. Speicher dimensionieren. Sicherheits- und Installationsregeln beachten. \n  Quellen \n \n   Allgemeine EEG-Infoseiten & Leitfäden \n   PV-Planungshilfen & Sicherheitsregeln \n   Mieterstrom-Modelle – neutrale Übersichten \n \n *Keine Rechts- oder Finanzberatung.*"
     },
     {
-      "title": "zinsen",
-      "url": "themen/zinsen.html",
-      "text": " Zinsen & Finanzierung – Einordnung ← Zurück Als PDF drucken Zinsen & Finanzierung – Einordnung 1. Einflussfaktoren: Kapitalmarkt, Inflationserwartung, Bankmargen. Für Käufer wichtig: Tilgungssatz, Zinsbindung, Sondertilgung. 2. Szenarien: Annuitäten bleiben konstant, aber Zinsbindung läuft aus – plane Anschlussfinanzierung frühzeitig (Forward-Optionen prüfen). 3. Risiko: Puffer fürs Haushaltseinkommen, Nebenkosten und Instandhaltung einplanen. Zinsänderungs-Stress-Test hilft bei der Entscheidung. Quellen Grundlagen Annuitätenrechnung (Lehrmaterial) Unabhängige Marktberichte zu Bauzinsen Finanzierungsleitfäden (neutral) *Keine Rechts- oder Finanzberatung.* "
+      "title": "einreichen",
+      "url": "themen/einreichen.html",
+      "text": "Projekt einreichen \n \n \n \n   \n \n\n    ← Zurück  Als PDF drucken  \n   Projekt einreichen \n   Beschreibe Dein Projekt/Angebot kurz & verständlich. Nach Prüfung veröffentlichen wir es in „Projekte“. \n   Formular öffnen (GitHub)"
     },
     {
-      "title": "mieterrecht",
-      "url": "themen/mieterrecht.html",
-      "text": " Mieterrechte – kompakt erklärt ← Zurück Als PDF drucken Mieterrechte – kompakt 1. Betriebskosten: Umlage nur, wenn vereinbart. Jahresabrechnung, Fristen und Nachvollziehbarkeit sind Pflicht. 2. Mängel & Minderung: Mängel anzeigen, Frist setzen, Dokumentation sammeln. Minderungsquote ist Einzelfall – Orientierung an Rechtsprechung. 3. Kündigung & Übergabe: Form, Fristen, Protokolle. Kaution und Zustand bei Rückgabe sauber dokumentieren. Quellen Standardkommentare & neutrale Ratgeber zum Mietrecht Gerichtliche Entscheidungen (öffentlich zugängliche Leitsätze) Betriebskostenverordnung (allgemeine Hinweise) *Keine Rechtsberatung.* "
-    },
-    {
-      "title": "versicherungen",
-      "url": "themen/versicherungen.html",
-      "text": " Versicherungen rund ums Wohnen body{max-width:1000px;margin:auto;padding:2rem} .figure{border:1px solid #e8ecf3;border-radius:12px;overflow:hidden} .figure img{width:100%;height:auto;display:block} .small-muted{color:#6c757d} &larr; Zurück Versicherungen rund ums Wohnen Welche Versicherungen sind sinnvoll? Überblick Wohngebäude (Eigentümer): Schutz bei Brand, Leitungswasser, Sturm/Hagel. Praxis Hausrat (Mieter/Eigentümer): Einbruch, Vandalismus, Brand – Neuwert/Versicherungssumme prüfen. Tipp Privathaftpflicht: Schäden an Dritten; sehr wichtig und günstig. Quellen & Links Verbraucherzentrale – Versicherungen GDV – Infos *Hinweis: Keine Rechts- oder Finanzberatung. Inhalte in Alltagssprache zusammengefasst.* "
-    },
-    {
-      "title": "foerdermittel",
-      "url": "themen/foerdermittel.html",
-      "text": " Fördermittel kompakt body{max-width:1000px;margin:auto;padding:2rem} .figure{border:1px solid #e8ecf3;border-radius:12px;overflow:hidden} .figure img{width:100%;height:auto;display:block} .small-muted{color:#6c757d} &larr; Zurück Fördermittel kompakt Welche Stellen fördern Sanierung & Energieeffizienz? Überblick KfW: zinsgünstige Kredite/Zuschüsse für Bau, Kauf, Sanierung – Bedingungen je Programm. Praxis BAFA: Zuschüsse für Einzelmaßnahmen (Hülle/Heizung). Länder/Kommunen bieten Zusatzprogramme. Tipp Wichtig: Antragstellung vor Auftrag. Technische Mindestanforderungen beachten. Quellen & Links KfW Programme Förder.Navi (Beispiel Bund/Länder) *Hinweis: Keine Rechts- oder Finanzberatung. Inhalte in Alltagssprache zusammengefasst.* "
-    },
-    {
-      "title": "foerderung-berlin",
-      "url": "themen/foerderung-berlin.html",
-      "text": " Förderung 2025 Berlin – Kompakt ← Zurück Als PDF drucken Förderung 2025 Berlin – Kompakt 1. Überblick: Programme für Effizienz, Heizung, Beratung, PV. Prüfe Kumulierbarkeit und Reihenfolge (Antrag vor Auftrag). 2. Nachweise: Technische Mindestanforderungen, Fachunternehmer-/Energie-Nachweise und Fotos. 3. Praxis: Zeitfenster & Budgets beachten. Alternativ-Szenarien vorbereiten, falls Töpfe leer. Quellen Öffentliche Förderportale (Berlin/Brandenburg) Technik-Leitfäden der Programme Beratungsstellen (neutral) *Keine Rechts- oder Finanzberatung.* "
-    },
-    {
-      "title": "sanierung",
-      "url": "themen/sanierung.html",
-      "text": " Sanierung & Förderung – Kurz erklärt ← Zurück Als PDF drucken Sanierung & Förderung (Kurz erklärt) 1. Strategie: Priorisiere Maßnahmen nach Wirkung pro Euro: Dämmung (Hülle), Fenster, Luftdichtheit und schließlich Heizung. Eine saubere Reihenfolge verhindert Rebound-Effekte und spart langfristig Betriebskosten. 2. Wirtschaftlichkeit: Rechne einfache Amortisationszeiten und betrachte Nebeneffekte (Komfort, Werterhalt, Schimmelprävention). Für Entscheidungen helfen Vor-/Nachher-Vergleiche und ein einfacher Energiebedarfs-Abschätzrechner. 3. Förderung: Prüfe Förderprogramme (z. B. für Effizienzmaßnahmen, Einzelmaßnahmen, Energieberatung). Dokumentation (Vorher/Nachher, Rechnungen) und technische Mindestanforderungen sind entscheidend. Quellen (neutral, allgemein) Förderprogramme & Energieeffizienz – öffentliche Informationsportale Technische Mindestanforderungen – übliche Förderleitfäden Bauphysik-Grundlagen – Standardliteratur Dämmung/Feuchteschutz *Keine Rechts- oder Finanzberatung.* "
-    },
-    {
-      "title": "sanierung-foerderung",
-      "url": "themen/sanierung-foerderung.html",
-      "text": " Sanierung & Förderung im Fokus &larr; Zurück Sanierung & Förderung im Fokus Warum Reihenfolge zählt: Erst Gebäudehülle (Dämmung, Fenster), dann Anlagentechnik (Heizung), dann Erzeugung (PV). So vermeidest du Fehlinvestitionen und nutzt Synergien. Warum Reihenfolge zählt: Erst Gebäudehülle (Dämmung, Fenster), dann Anlagentechnik (Heizung), dann Erzeugung (PV). So vermeidest du Fehlinvestitionen und nutzt Synergien. Förderscout: Prüfe KfW-Programme (z. B. Effizienzhaus-Stufen) und BAFA-Zuschüsse (z. B. Wärmepumpe). Wichtig sind technische Mindestanforderungen und Antrag vor Auftragsvergabe. Praxis: Lass eine Wirtschaftlichkeitsbetrachtung erstellen (Invest vs. Energieeinsparung). Förderfähige Baubegleitung kann die Umsetzung beschleunigen. *Keine Rechtsberatung.* Inhalte sind vereinfachte Erläuterungen. Quellen / weiterführend KfW – Wohngebäude-Förderung BAFA – Bundesförderung für effiziente Gebäude "
-    },
-    {
-      "title": "sanierungsfahrplan-altbau",
-      "url": "themen/sanierungsfahrplan-altbau.html",
-      "text": " Sanierungsfahrplan Altbau ← Zurück Als PDF drucken Sanierungsfahrplan Altbau 1. Diagnose: Wärmebilder, Feuchtemessungen, Bauteilaufbauten. Prioritäten: Hülle vor Technik. 2. Sequenz: Dach/Fassade/Fenster → Luftdichtheit → Lüftung → Heizung. Jede Stufe dokumentieren. 3. Kontrolle: Blower-Door, Schallschutz, Brandschutz; Finanzierung und Förderung pro Stufe prüfen. Quellen Altbau-Sanierungsleitfäden Mess-/Prüfverfahren (neutral) Förder-Roadmaps *Keine Rechts- oder Finanzberatung.* "
-    },
-    {
-      "title": "waermepumpe",
-      "url": "themen/waermepumpe.html",
-      "text": " Energie: Wärmepumpe — Faktencheck &larr; Zurück Energie: Wärmepumpe — Faktencheck Wärmepumpen arbeiten effizient, wenn die Vorlauftemperatur niedrig ist (Fußboden- oder große Heizkörper). Ein hydraulischer Abgleich ist Pflicht und verbessert die Jahresarbeitszahl. Wärmepumpen arbeiten effizient, wenn die Vorlauftemperatur niedrig ist (Fußboden- oder große Heizkörper). Ein hydraulischer Abgleich ist Pflicht und verbessert die Jahresarbeitszahl. Schallemissionen, Aufstellort und Stromtarif beachten. PV-Kopplung senkt Betriebskosten deutlich. Vorab: Heizlastberechnung nach Gebäudezustand. Austauschpauschalen ohne Konzept führen oft zu Enttäuschungen. *Keine Rechtsberatung.* Inhalte sind vereinfachte Erläuterungen. Quellen / weiterführend BAFA – Wärmepumpen VDI 4645 (Planung) "
-    },
-    {
-      "title": "immobilienpreise-2025",
-      "url": "themen/immobilienpreise-2025.html",
-      "text": " Immobilienpreise 2025 &larr; Zurück Immobilienpreise 2025 Preisniveaus unterscheiden sich stark regional. Lage, Lage, Lage gilt weiterhin: Mikrostandort schlägt Durchschnittswerte. Preisniveaus unterscheiden sich stark regional. Lage, Lage, Lage gilt weiterhin: Mikrostandort schlägt Durchschnittswerte. Zinsen, Einkommen, Baukosten und Regulierung beeinflussen die Nachfrage. Achte auf Mietentwicklung und Leerstandsdaten. Für Invest: Nettoanfangsrendite, Instandhaltung, Leerstandsrisiko und Exit-Szenarien kalkulieren. *Keine Rechtsberatung.* Inhalte sind vereinfachte Erläuterungen. Quellen / weiterführend Destatis – Bau/Preise Gutachterausschüsse (BORIS/GIS) "
-    },
-    {
-      "title": "zins-und-finanzierung",
-      "url": "themen/zins-und-finanzierung.html",
-      "text": " Zinsen & Finanzierung kurz erklärt &larr; Zurück Zinsen & Finanzierung kurz erklärt Annuitätendarlehen kombinieren Zins und Tilgung zu konstanter Rate. Hohe Anfangstilgung verkürzt die Gesamtlaufzeit. Annuitätendarlehen kombinieren Zins und Tilgung zu konstanter Rate. Hohe Anfangstilgung verkürzt die Gesamtlaufzeit. Zinsbindung wählen passend zur Risikotoleranz. Sondertilgungen geben Flexibilität. Nebenkosten (Grunderwerbsteuer, Notar, Grundbuch, Makler) vorab einplanen. Puffer schützt vor Nachfinanzierung. *Keine Rechtsberatung.* Inhalte sind vereinfachte Erläuterungen. Quellen / weiterführend Bundesbank – Zinsstatistik Verbraucherzentrale – Baufinanzierung "
-    },
-    {
-      "title": "smartliving2025",
-      "url": "themen/smartliving2025.html",
-      "text": " Smart-Living 2025 – kleine Geräte, große Wirkung ← Zurück Als PDF drucken Smart-Living 2025 – kleine Geräte, große Wirkung 1. Quick Wins: Smarte Thermostate, LED, Präsenzsensoren senken Verbräuche mit wenig Invest. Messbare Effekte durch einfache Routinen. 2. Komfort & Sicherheit: Szenen (Anwesenheit/Abwesenheit), smarte Schlösser, Rauch-/Wasserwarnung – Mehrwert über die reine Ersparnis hinaus. 3. Roadmap: Start mit Standard-Protokollen, später Integration von PV/Heizung. Achte auf Datenschutz und lokale Steuerung, wo möglich. Quellen Unabhängige Geräte-Vergleiche Interoperabilitäts-Guides (z. B. offene Standards) Energie-Sparpotenziale – neutrale Übersichten *Keine Rechts- oder Finanzberatung.* "
-    },
-    {
-      "title": "homestaging-checkliste",
-      "url": "themen/homestaging-checkliste.html",
-      "text": " Homestaging DIY – Checkliste ← Zurück Als PDF drucken Homestaging DIY – Checkliste 1. Basics: Entrümpeln, neutralisieren, Licht. Fokuswände sparsam, Stoffe & Pflanzen für Wärme. 2. Fototauglich: Blickachsen freihalten, Dreieck aus „Hauptmöbel – Lichtquelle – Akzent“. Natürliche Farben + 1 Akzentfarbe. 3. Besichtigung: Gerüche, Temperatur, Tageslicht betonen. Kleine Mängel vorher beheben; Accessoires reduzieren. Quellen Fotografie-Basics Interior Staging-Guides (neutral) Farbwirkung & Kontrast "
-    },
-    {
-      "title": "projekte",
-      "url": "themen/projekte.html",
-      "text": " Projekte Übersicht &larr; Zurück Projekte Übersicht Hier können Ideen, Immobilien & Designs vorgestellt werden. Tipp: Bald interaktive Projekt-Einreichung über GitHub-Issues. "
-    },
-    {
-      "title": "smart",
-      "url": "themen/smart.html",
-      "text": " Smart Living – Geräte & Tipps body{max-width:1000px;margin:auto;padding:2rem} .figure{border:1px solid #e8ecf3;border-radius:12px;overflow:hidden} .figure img{width:100%;height:auto;display:block} .small-muted{color:#6c757d} &larr; Zurück Smart Living – Geräte & Tipps Welche Geräte sparen Kosten & bringen Komfort? Überblick Thermostate und smarte Heizungssteuerung sparen 10–20 % Heizkosten. Praxis LED + Präsenzmelder + Zeitpläne reduzieren Stromkosten und erhöhen Komfort. Tipp Sensoren (Wasser/Brand/CO) erhöhen Sicherheit und können Schäden mindern. Quellen & Links Stiftung Warentest – Smart Home VDE – Sicherheit Smart Home *Hinweis: Keine Rechts- oder Finanzberatung. Inhalte in Alltagssprache zusammengefasst.* "
+      "title": "energie",
+      "url": "themen/energie.html",
+      "text": "Energie sparen im Alltag \n \n  \n &larr; Zurück \n Energie sparen im Alltag \n Wie lassen sich Kosten senken und die Umwelt schonen? \n \n Abschnitt 1  Haushaltsgeräte machen rund 30 % des Stromverbrauchs aus. Moderne A+++ Geräte sparen bis zu 50 % Energie. \n Abschnitt 2  Heizung optimieren: Schon 1 °C weniger Raumtemperatur spart ca. 6 % Heizkosten. \n Abschnitt 3  Regelmäßige Wartung der Heizungsanlage erhöht Effizienz und Lebensdauer. \n Quelle:  https://www.verbraucherzentrale.de"
     },
     {
       "title": "energieausweis",
       "url": "themen/energieausweis.html",
-      "text": " Energieausweis einfach erklärt ← Zurück Als PDF drucken Energieausweis – einfach erklärt 1. Arten: Bedarfs- vs. Verbrauchsausweis. Bedarf basiert auf Modellrechnung, Verbrauchsausweis auf gemessenen Verbräuchen. 2. Nutzung: Pflicht bei Verkauf/Vermietung; Kennwerte und Effizienzklasse erleichtern Vergleich. 3. Verbesserung: Ausweis als Startpunkt: Maßnahmenliste ableiten und Prioritäten festlegen. Quellen Neutrale Infos Energieausweis Rechtliche Rahmenhinweise Leitfäden Effizienzklassen "
+      "text": "Energieausweis einfach erklärt \n \n \n \n   \n \n\n  ← Zurück  Als PDF drucken  \n Energieausweis – einfach erklärt \n  1. Arten:  Bedarfs- vs. Verbrauchsausweis. Bedarf basiert auf Modellrechnung, Verbrauchsausweis auf gemessenen Verbräuchen. \n  2. Nutzung:  Pflicht bei Verkauf/Vermietung; Kennwerte und Effizienzklasse erleichtern Vergleich. \n  3. Verbesserung:  Ausweis als Startpunkt: Maßnahmenliste ableiten und Prioritäten festlegen. \n  Quellen   Neutrale Infos Energieausweis  Rechtliche Rahmenhinweise  Leitfäden Effizienzklassen"
+    },
+    {
+      "title": "energiepreise",
+      "url": "themen/energiepreise.html",
+      "text": "Energiepreise verstehen \n \n  \n &larr; Zurück \n Energiepreise verstehen \n Warum schwanken Preise & wie schützt man sich? \n \n Abschnitt 1  Terminmarkt, CO₂-Preis, Netzgebühren – alle wirken auf Endpreis. \n Abschnitt 2  Lange Laufzeiten sichern, aber flexibel bleiben (Sonderkündigungen). \n Abschnitt 3  Eigenverbrauch (PV/Batterie) reduziert Abhängigkeit. \n Quelle:  https://www.bundesnetzagentur.de/"
+    },
+    {
+      "title": "foerdermittel",
+      "url": "themen/foerdermittel.html",
+      "text": "Fördermittel kompakt \n \n \nbody{max-width:1000px;margin:auto;padding:2rem}\n.figure{border:1px solid #e8ecf3;border-radius:12px;overflow:hidden}\n.figure img{width:100%;height:auto;display:block}\n.small-muted{color:#6c757d}\n \n  \n &larr; Zurück \n Fördermittel kompakt \n Welche Stellen fördern Sanierung & Energieeffizienz? \n \n   \n \n\n Überblick \n KfW: zinsgünstige Kredite/Zuschüsse für Bau, Kauf, Sanierung – Bedingungen je Programm. \n Praxis \n BAFA: Zuschüsse für Einzelmaßnahmen (Hülle/Heizung). Länder/Kommunen bieten Zusatzprogramme. \n Tipp \n Wichtig: Antragstellung vor Auftrag. Technische Mindestanforderungen beachten. \n\n \n Quellen & Links \n \n    KfW Programme  \n    Förder.Navi (Beispiel Bund/Länder)  \n \n\n *Hinweis: Keine Rechts- oder Finanzberatung. Inhalte in Alltagssprache zusammengefasst.*"
+    },
+    {
+      "title": "foerderung-berlin",
+      "url": "themen/foerderung-berlin.html",
+      "text": "Förderung Berlin – kompakt \n \n  \n &larr; Zurück \n Förderung Berlin – kompakt \n Landesprogramme ergänzen Bundesförderung. \n \n Abschnitt 1  IBB-Programme für Sanierung & Neubau prüfen. \n Abschnitt 2  Kombinationen & Rangfolge der Anträge beachten. \n Abschnitt 3  Beratung über Energie- und Mieterberatungstellen. \n Quelle:  https://www.ibb.de/"
+    },
+    {
+      "title": "glossar",
+      "url": "themen/glossar.html",
+      "text": "Glossar – Grundbuch, Erbpacht & Co. \n \n  \n &larr; Zurück \n Glossar – Grundbuch, Erbpacht & Co. \n Fachbegriffe in einfacher Sprache. \n \n Abschnitt 1  Grundbuch: Abt. I Eigentum, Abt. II Lasten, Abt. III Grundpfandrechte. \n Abschnitt 2  Erbpacht: langfristiges Nutzungsrecht statt Kauf; Erbpachtzins beachten. \n Abschnitt 3  Teilungserklärung: regelt Sondereigentum und Gemeinschaftsflächen. \n Quelle:  https://de.wikipedia.org/wiki/Grundbuch"
+    },
+    {
+      "title": "grundriss-tricks",
+      "url": "themen/grundriss-tricks.html",
+      "text": "Grundriss optimieren – schnell spürbar \n \n  \n &larr; Zurück \n Grundriss optimieren – schnell spürbar \n Zonen, Wege, Licht: kleine Eingriffe, große Wirkung. \n \n Abschnitt 1  Wege freihalten, Blickachsen öffnen; Möbel modular planen. \n Abschnitt 2  Tageslicht: Arbeitsflächen ans Fenster; dunkle Zonen aufhellen. \n Abschnitt 3  Vorher/Nachher testen: Skizze, digitale Tools, Fotos – dann entscheiden. \n Quelle:  https://www.detail.de/"
+    },
+    {
+      "title": "homestaging-checkliste",
+      "url": "themen/homestaging-checkliste.html",
+      "text": "Homestaging DIY – Checkliste \n \n \n \n   \n \n\n  ← Zurück  Als PDF drucken  \n Homestaging DIY – Checkliste \n  1. Basics:  Entrümpeln, neutralisieren, Licht. Fokuswände sparsam, Stoffe & Pflanzen für Wärme. \n  2. Fototauglich:  Blickachsen freihalten, Dreieck aus „Hauptmöbel – Lichtquelle – Akzent“. Natürliche Farben + 1 Akzentfarbe. \n  3. Besichtigung:  Gerüche, Temperatur, Tageslicht betonen. Kleine Mängel vorher beheben; Accessoires reduzieren. \n  Quellen   Fotografie-Basics Interior  Staging-Guides (neutral)  Farbwirkung & Kontrast"
+    },
+    {
+      "title": "homestaging",
+      "url": "themen/homestaging.html",
+      "text": "Homestaging DIY – Vorher/Nachher \n \n  \n &larr; Zurück \n Homestaging DIY – Vorher/Nachher \n Mit wenig Budget Wirkung erzeugen. \n \n Abschnitt 1  Entrümpeln, neutrale Farben, natürliche Materialien. \n Abschnitt 2  Lichtpunkte setzen: Fenster frei, warmweiß 2700–3000 K. \n Abschnitt 3  Kleine Upgrades: Farbe, Textilien, Pflanzen – fototauglich machen. \n Quelle:  https://www.homestaging-verband.de/"
+    },
+    {
+      "title": "hypotheken-rechner",
+      "url": "themen/hypotheken-rechner.html",
+      "text": "Hypotheken-Rechner – Erklärung \n \n  \n &larr; Zurück \n Hypotheken-Rechner – Erklärung \n So liest du Annuität, Zinsanteil & Restschuld. \n \n Abschnitt 1  Annuität = Zins + Tilgung; Rate bleibt konstant, Tilgungsanteil steigt. \n Abschnitt 2  Sondertilgungen verkürzen Laufzeit stark – Vertragsklauseln prüfen. \n Abschnitt 3  Restschuld nach Zinsbindung für Anschlusskredit kalkulieren. \n Quelle:  https://de.wikipedia.org/wiki/Annuit%C3%A4tendarlehen"
+    },
+    {
+      "title": "immobilienpreise-2025",
+      "url": "themen/immobilienpreise-2025.html",
+      "text": "Immobilienpreise 2025 – Trends \n \n  \n &larr; Zurück \n Immobilienpreise 2025 – Trends \n Was bewegt den Markt? Zinsen, Einkommen, Angebot. \n \n Abschnitt 1  Zinsniveau bremst, aber Knappheit stützt Lagen mit hoher Nachfrage. \n Abschnitt 2  Energiezustand beeinflusst Preise stark (Sanierungsbedarf einpreisen). \n Abschnitt 3  Regionen differenzieren: Mikrolage & ÖPNV-Anbindung beachten. \n Quelle:  https://www.destatis.de/"
+    },
+    {
+      "title": "immobilienpreise",
+      "url": "themen/immobilienpreise.html",
+      "text": "Immobilienpreise & Rendite \n \n \nbody{max-width:1000px;margin:auto;padding:2rem}\n.figure{border:1px solid #e8ecf3;border-radius:12px;overflow:hidden}\n.figure img{width:100%;height:auto;display:block}\n.small-muted{color:#6c757d}\n \n  \n &larr; Zurück \n Immobilienpreise & Rendite \n Wie entwickeln sich Preise? Was bedeutet Rendite? \n \n   \n \n\n Überblick \n Rendite grob: Jahresnettokaltmiete durch Kaufpreis. Leerstand, Instandhaltung und Risiko berücksichtigen. \n Praxis \n Treiber: Zinsniveau, Einkommen, Baukosten, Angebot/Nachfrage. Mikrolage entscheidend. \n Tipp \n Langfristig ist Cashflow-Qualität wichtiger als einmalige Preissteigerungen. \n\n \n Quellen & Links \n \n    Statistisches Bundesamt – Bau/Preise  \n    vdp-Index (Immobilienpreise)  \n \n\n *Hinweis: Keine Rechts- oder Finanzberatung. Inhalte in Alltagssprache zusammengefasst.*"
+    },
+    {
+      "title": "kaufnebenkosten",
+      "url": "themen/kaufnebenkosten.html",
+      "text": "Kaufnebenkosten – transparent \n \n  \n &larr; Zurück \n Kaufnebenkosten – transparent \n Mit diesen Posten solltest du rechnen. \n \n Abschnitt 1  Grunderwerbsteuer je nach Bundesland 3,5–6,5 %. \n Abschnitt 2  Notar & Grundbuch ca. 1,5–2 %. \n Abschnitt 3  Maklercourtage regional unterschiedlich, oft 3,57 % je Seite. \n Quelle:  https://grundsteuer.de/"
+    },
+    {
+      "title": "mieten-kaufen",
+      "url": "themen/mieten-kaufen.html",
+      "text": "Mieten vs. Kaufen – schneller Vergleich \n \n  \n &larr; Zurück \n Mieten vs. Kaufen – schneller Vergleich \n Wie vergleicht man fair? Rate vs. Miete, Nebenkosten, Wertentwicklung. \n \n Abschnitt 1  Kaufen: Tilgungsanteil baut Vermögen auf – aber hohe Anfangskosten. \n Abschnitt 2  Mieten: flexibel, kein Instandhaltungsrisiko – aber keine Vermögensbildung. \n Abschnitt 3  Vergleich über 15–20 Jahre rechnet Zins, Instandhaltung & Wertentwicklung ein. \n Quelle:  https://www.vzbv.de/"
+    },
+    {
+      "title": "mieter-rechte",
+      "url": "themen/mieter-rechte.html",
+      "text": "Mieter – Rechte & Pflichten (kurz) \n \n  \n &larr; Zurück \n Mieter – Rechte & Pflichten (kurz) \n Wesentliches aus BGB §§ 535 ff. in Alltagssprache. \n \n Abschnitt 1  Mängel anzeigen: Vermieter muss instand halten; Minderung nur bei erheblichen Mängeln. \n Abschnitt 2  Betriebskosten: nur umlagefähige Positionen laut BetrKV; transparente Abrechnung. \n Abschnitt 3  Kaution max. 3 Nettokaltmieten, in Raten möglich. \n Quelle:  https://www.gesetze-im-internet.de/bgb/"
+    },
+    {
+      "title": "mieterrecht",
+      "url": "themen/mieterrecht.html",
+      "text": "Mieterrechte – kompakt erklärt \n  \n  \n \n   \n \n\n  ← Zurück  Als PDF drucken  \n Mieterrechte – kompakt \n  1. Betriebskosten:  Umlage nur, wenn vereinbart. Jahresabrechnung, Fristen und Nachvollziehbarkeit sind Pflicht. \n  2. Mängel & Minderung:  Mängel anzeigen, Frist setzen, Dokumentation sammeln. Minderungsquote ist Einzelfall – Orientierung an Rechtsprechung. \n  3. Kündigung & Übergabe:  Form, Fristen, Protokolle. Kaution und Zustand bei Rückgabe sauber dokumentieren. \n  Quellen \n \n   Standardkommentare & neutrale Ratgeber zum Mietrecht \n   Gerichtliche Entscheidungen (öffentlich zugängliche Leitsätze) \n   Betriebskostenverordnung (allgemeine Hinweise) \n \n *Keine Rechtsberatung.*"
+    },
+    {
+      "title": "mietspiegel-bezirke",
+      "url": "themen/mietspiegel-bezirke.html",
+      "text": "Mietspiegel & Bezirke – Orientierung \n \n  \n &larr; Zurück \n Mietspiegel & Bezirke – Orientierung \n So findest du eine faire Miete. \n \n Abschnitt 1  Offiziellen Mietspiegel & Lage-Karten nutzen. \n Abschnitt 2  Baualtersklasse, Ausstattung und Lagepunkte beachten. \n Abschnitt 3  Vergleichswohnungen sammeln & dokumentieren. \n Quelle:  https://www.stadtentwicklung.berlin.de/"
     },
     {
       "title": "mietspiegel",
       "url": "themen/mietspiegel.html",
-      "text": " Mietspiegel lesen – so geht's ← Zurück Als PDF drucken Mietspiegel lesen – so geht's 1. Zuordnung: Baualtersklasse, Wohnlage, Größe, Ausstattung. Spannen statt fester Werte. 2. Einordnung: Merkmale addieren/subtrahieren (Lage, Ausstattung). Immer Dokumentation aufbewahren. 3. Streitfall: Vergleichswohnungen & Begründung vorbereiten; Fristen wahren. Quellen Neutrale Leitfäden Mietspiegel Beispielrechnungen Rechtsprechungsübersichten *Keine Rechtsberatung.* "
+      "text": "Mietspiegel lesen – so geht's \n \n \n \n   \n \n\n  ← Zurück  Als PDF drucken  \n Mietspiegel lesen – so geht's \n  1. Zuordnung:  Baualtersklasse, Wohnlage, Größe, Ausstattung. Spannen statt fester Werte. \n  2. Einordnung:  Merkmale addieren/subtrahieren (Lage, Ausstattung). Immer Dokumentation aufbewahren. \n  3. Streitfall:  Vergleichswohnungen & Begründung vorbereiten; Fristen wahren. \n  Quellen   Neutrale Leitfäden Mietspiegel  Beispielrechnungen  Rechtsprechungsübersichten  \n *Keine Rechtsberatung.*"
+    },
+    {
+      "title": "nebenkosten",
+      "url": "themen/nebenkosten.html",
+      "text": "Nebenkosten Überblick \n \n \nbody{max-width:1000px;margin:auto;padding:2rem}\n.figure{border:1px solid #e8ecf3;border-radius:12px;overflow:hidden}\n.figure img{width:100%;height:auto;display:block}\n.small-muted{color:#6c757d}\n \n  \n &larr; Zurück \n Nebenkosten Überblick \n Welche Kosten sind umlagefähig? Welche nicht? \n \n   \n \n\n Überblick \n Umlagefähig u. a.: Wasser/Abwasser, Heizung, Müll, Hausreinigung, Hausmeister (ohne Verwaltung). \n Praxis \n Nicht umlagefähig: Instandhaltung, Verwaltung, Rücklagen – diese trägt der Vermieter. \n Tipp \n Abrechnung: Fristen/Transparenz; Belegeinsicht möglich. \n\n \n Quellen & Links \n \n    BetrKV – Betriebskostenverordnung  \n    Mietrecht Ratgeber (allg.)  \n \n\n *Hinweis: Keine Rechts- oder Finanzberatung. Inhalte in Alltagssprache zusammengefasst.*"
+    },
+    {
+      "title": "projekte",
+      "url": "themen/projekte.html",
+      "text": "Projekte & Beispiele – einreichen & entdecken \n \n  \n &larr; Zurück \n Projekte & Beispiele – einreichen & entdecken \n Community-Showcase: Immobilien, Handwerk, Design, Ideen. \n \n Abschnitt 1  Reiche dein Projekt über „Projekt einreichen“ ein. \n Abschnitt 2  Wir prüfen Urheberrechte & Inhalt, veröffentlichen nach Freigabe. \n Abschnitt 3  Lerne von Best Practices – Vorher/Nachher & Kostenrahmen. \n Quelle:  https://github.com/"
+    },
+    {
+      "title": "sanierung-foerderung",
+      "url": "themen/sanierung-foerderung.html",
+      "text": "Sanierung & Förderung im Fokus \n \n  \n &larr; Zurück \n Sanierung & Förderung im Fokus \n Welche Maßnahmen lohnen, welche Zuschüsse (KfW/BAFA) passen? Kurz & verständlich. \n \n Abschnitt 1  Energieberatung (iSFP) bringt bis zu 5 % Extra-Zuschuss. Erst prüfen, dann beauftragen. \n Abschnitt 2  Förderfähige Pakete: Dämmung, Fenster, Heizung (Wärmepumpe) – Kombinationen beachten. \n Abschnitt 3  Achte auf Antragszeitpunkt: Förderung vor Auftrag! Danach Umsetzung & Nachweis. \n Quelle:  https://www.kfw.de/"
+    },
+    {
+      "title": "sanierung",
+      "url": "themen/sanierung.html",
+      "text": "Sanierung & Förderung – Kurz erklärt \n  \n  \n \n   \n \n\n  ← Zurück  Als PDF drucken  \n Sanierung & Förderung (Kurz erklärt) \n  1. Strategie:  Priorisiere Maßnahmen nach Wirkung pro Euro: Dämmung (Hülle), Fenster, Luftdichtheit und schließlich Heizung. Eine saubere Reihenfolge verhindert Rebound-Effekte und spart langfristig Betriebskosten. \n  2. Wirtschaftlichkeit:  Rechne einfache Amortisationszeiten und betrachte Nebeneffekte (Komfort, Werterhalt, Schimmelprävention). Für Entscheidungen helfen Vor-/Nachher-Vergleiche und ein einfacher Energiebedarfs-Abschätzrechner. \n  3. Förderung:  Prüfe Förderprogramme (z. B. für Effizienzmaßnahmen, Einzelmaßnahmen, Energieberatung). Dokumentation (Vorher/Nachher, Rechnungen) und technische Mindestanforderungen sind entscheidend. \n  Quellen (neutral, allgemein) \n \n   Förderprogramme & Energieeffizienz – öffentliche Informationsportale \n   Technische Mindestanforderungen – übliche Förderleitfäden \n   Bauphysik-Grundlagen – Standardliteratur Dämmung/Feuchteschutz \n \n *Keine Rechts- oder Finanzberatung.*"
+    },
+    {
+      "title": "sanierungsfahrplan-altbau",
+      "url": "themen/sanierungsfahrplan-altbau.html",
+      "text": "Sanierungsfahrplan Altbau \n \n \n \n   \n \n\n  ← Zurück  Als PDF drucken  \n Sanierungsfahrplan Altbau \n  1. Diagnose:  Wärmebilder, Feuchtemessungen, Bauteilaufbauten. Prioritäten: Hülle vor Technik. \n  2. Sequenz:  Dach/Fassade/Fenster → Luftdichtheit → Lüftung → Heizung. Jede Stufe dokumentieren. \n  3. Kontrolle:  Blower-Door, Schallschutz, Brandschutz; Finanzierung und Förderung pro Stufe prüfen. \n  Quellen   Altbau-Sanierungsleitfäden  Mess-/Prüfverfahren (neutral)  Förder-Roadmaps  \n *Keine Rechts- oder Finanzberatung.*"
+    },
+    {
+      "title": "smart",
+      "url": "themen/smart.html",
+      "text": "Smart Home Lösungen \n \n  \n &larr; Zurück \n Smart Home Lösungen \n Wie Technik den Alltag einfacher macht. \n \n Abschnitt 1  Smart Thermostate senken Heizkosten um bis zu 15 %. Steuerung per App. \n Abschnitt 2  Intelligente Beleuchtung spart Strom und sorgt für Komfort. \n Abschnitt 3  Sicherheitslösungen: Kameras, Sensoren und Türschlösser erhöhen Schutz. \n Quelle:  https://www.smarthome-deutschland.de"
+    },
+    {
+      "title": "smartliving2025",
+      "url": "themen/smartliving2025.html",
+      "text": "Smart-Living 2025 – kleine Geräte, große Wirkung \n  \n  \n \n   \n \n\n  ← Zurück  Als PDF drucken  \n Smart-Living 2025 – kleine Geräte, große Wirkung \n  1. Quick Wins:  Smarte Thermostate, LED, Präsenzsensoren senken Verbräuche mit wenig Invest. Messbare Effekte durch einfache Routinen. \n  2. Komfort & Sicherheit:  Szenen (Anwesenheit/Abwesenheit), smarte Schlösser, Rauch-/Wasserwarnung – Mehrwert über die reine Ersparnis hinaus. \n  3. Roadmap:  Start mit Standard-Protokollen, später Integration von PV/Heizung. Achte auf Datenschutz und lokale Steuerung, wo möglich. \n  Quellen \n \n   Unabhängige Geräte-Vergleiche \n   Interoperabilitäts-Guides (z. B. offene Standards) \n   Energie-Sparpotenziale – neutrale Übersichten \n \n *Keine Rechts- oder Finanzberatung.*"
+    },
+    {
+      "title": "smartmeter",
+      "url": "themen/smartmeter.html",
+      "text": "Smart Meter – was bedeutet das? \n \n  \n &larr; Zurück \n Smart Meter – was bedeutet das? \n Messstellenbetrieb, Pflichten & Chancen. \n \n Abschnitt 1  Pflicht rollt stufenweise – moderne Zähler ermöglichen Lastmanagement. \n Abschnitt 2  Transparenz: Verbrauch live sehen, Einsparungen ableiten. \n Abschnitt 3  Datenschutz: Messstellenbetreiber & Zugriffsrechte kennen. \n Quelle:  https://www.bundesnetzagentur.de/"
     },
     {
       "title": "submit",
       "url": "themen/submit.html",
-      "text": " Projekt einreichen &larr; Zurück Projekt einreichen Kostenlos vorstellen – wir prüfen & veröffentlichen. Reiche dein Projekt per GitHub-Issue ein. Urheberrechte bestätigst du mit dem Absenden. Projekt einreichen Alle Einreichungen (function(){ const q = new URLSearchParams(document.currentScript.src.split('?')[1]||''); const owner = q.get('owner')||''; const repo = q.get('repo')||''; const base = owner && repo ? `https://github.com/${owner}/${repo}` : ''; const body = encodeURIComponent([ \"## Projekt-Typ (Immobilie/Handwerk/Design/Idee)\", \"- Titel:\", \"- Kurzbeschreibung:\", \"- Medien/Links:\", \"- Kontaktdaten:\", \"\", \"_Ich bestätige die Rechte an den eingereichten Inhalten._\" ].join(\"\\\\n\")); const title = encodeURIComponent(\"Projekt: [Titel]\"); if(base){ document.getElementById('newProject').href = `${base}/issues/new?title=${title}&labels=projekt&body=${body}`; document.getElementById('allProjects').href = `${base}/issues?q=is%3Aissue+label%3Aprojekt`; } })(); "
+      "text": "Projekt einreichen \n \n  \n &larr; Zurück \n Projekt einreichen \n Zeige dein Projekt kostenlos der Community. \n \n Abschnitt 1  Immobilien, Handwerk, Design oder Energieideen – alles ist willkommen. \n Abschnitt 2  Einfach Projektbeschreibung hochladen, wir prüfen & veröffentlichen. \n Abschnitt 3  So erhältst du Feedback, Sichtbarkeit und vielleicht neue Partner. \n Quelle:  https://github.com"
     },
     {
       "title": "vermietung-rechtssicher",
       "url": "themen/vermietung-rechtssicher.html",
-      "text": " Vermietung rechtssicher starten ← Zurück Als PDF drucken Vermietung rechtssicher starten 1. Vertrag & Unterlagen: Muster prüfen, Anlagen (Hausordnung, BK-Aufstellung), Übergabeprotokoll vorbereiten. 2. Auswahl: Objektive Kriterien, DSGVO beachten. Bonitätsprüfung mit Einwilligung. 3. Betrieb: Abrechnungstermine, Instandhaltung, Kommunikation strukturieren (Tickets, Fristen). Quellen Neutrale Vermietungsleitfäden DSGVO-Hinweise Vermietung Checklisten Übergabe *Keine Rechtsberatung.* "
+      "text": "Vermietung rechtssicher starten \n \n \n \n   \n \n\n  ← Zurück  Als PDF drucken  \n Vermietung rechtssicher starten \n  1. Vertrag & Unterlagen:  Muster prüfen, Anlagen (Hausordnung, BK-Aufstellung), Übergabeprotokoll vorbereiten. \n  2. Auswahl:  Objektive Kriterien, DSGVO beachten. Bonitätsprüfung mit Einwilligung. \n  3. Betrieb:  Abrechnungstermine, Instandhaltung, Kommunikation strukturieren (Tickets, Fristen). \n  Quellen   Neutrale Vermietungsleitfäden  DSGVO-Hinweise Vermietung  Checklisten Übergabe  \n *Keine Rechtsberatung.*"
+    },
+    {
+      "title": "versicherungen",
+      "url": "themen/versicherungen.html",
+      "text": "Versicherungen im Überblick \n \n  \n &larr; Zurück \n Versicherungen im Überblick \n Welche Policen sind für Immobilieneigentümer sinnvoll? \n \n Abschnitt 1  Wohngebäudeversicherung schützt gegen Feuer, Leitungswasser und Sturm. \n Abschnitt 2  Hausratversicherung deckt Schäden an Möbeln und Einrichtung. \n Abschnitt 3  Haftpflichtversicherung ist Pflicht für Vermieter, um sich gegen Schadensersatzansprüche abzusichern. \n Quelle:  https://www.gdv.de"
+    },
+    {
+      "title": "waermepumpe",
+      "url": "themen/waermepumpe.html",
+      "text": "Energie: Wärmepumpe – Faktencheck \n \n  \n &larr; Zurück \n Energie: Wärmepumpe – Faktencheck \n Wann lohnt sich eine Wärmepumpe? Wichtige Kennzahlen & Praxispunkte. \n \n Abschnitt 1  Vorlauftemperatur  \n Abschnitt 2  JAZ/SCOP > 3 anstreben; richtige Dimensionierung & Hydraulik sind entscheidend. \n Abschnitt 3  Förderung kombiniert mit Eigenstrom (PV) senkt Betriebskosten deutlich. \n Quelle:  https://www.bafa.de/"
+    },
+    {
+      "title": "wohnenneu",
+      "url": "themen/wohnenneu.html",
+      "text": "Neue Wohnformen – Tiny, Co-Living, Umbau \n \n  \n &larr; Zurück \n Neue Wohnformen – Tiny, Co-Living, Umbau \n Flexibel wohnen und Flächen klug nutzen. \n \n Abschnitt 1  Tiny-Häuser: genehmigungs- & energierechtliche Anforderungen beachten. \n Abschnitt 2  Co-Living: Kosten teilen, Gemeinschaft nutzen; klare Hausregeln wichtig. \n Abschnitt 3  Bestand umbauen: Förderung für Umbau statt Neubau prüfen. \n Quelle:  https://www.bmwsb.bund.de/"
+    },
+    {
+      "title": "zins-und-finanzierung",
+      "url": "themen/zins-und-finanzierung.html",
+      "text": "Zinsen & Finanzierung – einfach erklärt \n \n  \n &larr; Zurück \n Zinsen & Finanzierung – einfach erklärt \n Wie wirken Sollzins, Tilgung und Laufzeit auf Rate & Gesamtkosten? \n \n Abschnitt 1  Faustregel: Tilgung ≥ 2 % p. a. – bei höherem Zins besser 3–4 %. \n Abschnitt 2  Zinsbindung wählen: 10–15 Jahre gibt Planungssicherheit; Forward-Option prüfen. \n Abschnitt 3  Nebenkosten einrechnen: Notar, Grunderwerbsteuer, Makler – i. d. R. 8–12 %. \n Quelle:  https://www.bundesbank.de/"
+    },
+    {
+      "title": "zinsen",
+      "url": "themen/zinsen.html",
+      "text": "Zinsen & Finanzierung – Einordnung \n  \n  \n \n   \n \n\n  ← Zurück  Als PDF drucken  \n Zinsen & Finanzierung – Einordnung \n  1. Einflussfaktoren:  Kapitalmarkt, Inflationserwartung, Bankmargen. Für Käufer wichtig: Tilgungssatz, Zinsbindung, Sondertilgung. \n  2. Szenarien:  Annuitäten bleiben konstant, aber Zinsbindung läuft aus – plane Anschlussfinanzierung frühzeitig (Forward-Optionen prüfen). \n  3. Risiko:  Puffer fürs Haushaltseinkommen, Nebenkosten und Instandhaltung einplanen. Zinsänderungs-Stress-Test hilft bei der Entscheidung. \n  Quellen \n \n   Grundlagen Annuitätenrechnung (Lehrmaterial) \n   Unabhängige Marktberichte zu Bauzinsen \n   Finanzierungsleitfäden (neutral) \n \n *Keine Rechts- oder Finanzberatung.*"
+    },
+    {
+      "title": "zvg",
+      "url": "themen/zvg.html",
+      "text": "Zwangsversteigerung (ZVG) – Schnellüberblick \n \n \nbody{max-width:1000px;margin:auto;padding:2rem}\n.figure{border:1px solid #e8ecf3;border-radius:12px;overflow:hidden}\n.figure img{width:100%;height:auto;display:block}\n.small-muted{color:#6c757d}\n \n  \n &larr; Zurück \n Zwangsversteigerung (ZVG) – Schnellüberblick \n Ablauf, Risiken, Vorbereitung – kurz & verständlich. \n \n   \n \n\n Überblick \n Ablauf: Termin finden, Gutachten lesen, Sicherheitsleistung, Gebot im Termin. Risiken (Altlasten, Mietverhältnisse) prüfen. \n Praxis \n Vorbereitung: Finanzierung klären, Grundbuch/Gutachten verstehen, Fragen vorab an Rechtspfleger. \n Tipp \n Strategie: Maximalgebot vorher festlegen, nicht überbieten, Nebenkosten (GrESt, Gerichtskosten) mitrechnen. \n\n \n Quellen & Links \n \n    ZVG-Portale (Gerichte/Länder)  \n    Justizportal des Bundes/Länder  \n \n\n *Hinweis: Keine Rechts- oder Finanzberatung. Inhalte in Alltagssprache zusammengefasst.*"
     }
   ]
 }
