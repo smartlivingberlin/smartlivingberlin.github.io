@@ -104,7 +104,7 @@ footer{padding:24px 0;color:#666}
 <section id="dashboard" class="section">
   <div class="container">
     <h2 class="mb-3" data-i18n="bk_title"><span data-i18n="dashboard.title">Baukasten – 30 Themen</span></h2>
-    <p class="small-muted" data-i18n="bk_hint">Klicke auf <strong data-i18n="btn.interact"><span data-i18n="btn.interact">Interaktiv</span></strong> – jedes Thema öffnet ein Tool, eine Liste oder eine Erklärung.</p>
+    <p class="small-muted" data-i18n="bk_hint">Klicke auf <strong data-i18n="btn.interact"><span data-i18n="btn.interact"><span data-i18n="btn.interact">Interaktiv</span></span></strong> – jedes Thema öffnet ein Tool, eine Liste oder eine Erklärung.</p>
     <div id="featureGrid" class="grid cols-3"></div>
   </div>
 </section>
@@ -548,8 +548,8 @@ function renderFeatures(){
       </div>
       <p class="small-muted mb-2">${f.desc}</p>
       <div class="d-flex gap-2">
-        <a href="${f.link}" class="btn btn-sm btn-outline-primary" data-i18n="btn.open"><span data-i18n="btn.open">Öffnen</span></a>
-        <button class="btn btn-sm btn-accent" onclick="openFeature(${i})" data-i18n="btn.interact"><span data-i18n="btn.interact">Interaktiv</span></button>
+        <a href="${f.link}" class="btn btn-sm btn-outline-primary" data-i18n="btn.open"><span data-i18n="btn.open"><span data-i18n="btn.open">Öffnen</span></span></a>
+        <button class="btn btn-sm btn-accent" onclick="openFeature(${i})" data-i18n="btn.interact"><span data-i18n="btn.interact"><span data-i18n="btn.interact">Interaktiv</span></span></button>
       </div>
     </div>
   `).join('');
