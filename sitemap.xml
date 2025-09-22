@@ -68,7 +68,7 @@
   </url>
   <url>
     <loc>https://smartlivingberlin.github.io/index.html</loc>
-    <lastmod>2025-09-21</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -93,6 +93,18 @@
   <url>
     <loc>https://smartlivingberlin.github.io/partials/weather.html</loc>
     <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartlivingberlin.github.io/templates/base.html</loc>
+    <lastmod>2025-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartlivingberlin.github.io/templates/thema.html</loc>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -133,7 +145,25 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://smartlivingberlin.github.io/themen/energiepreise.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartlivingberlin.github.io/themen/foerdermittel.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://smartlivingberlin.github.io/themen/foerderung-berlin.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartlivingberlin.github.io/themen/glossar.html</loc>
     <lastmod>2025-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -151,7 +181,37 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://smartlivingberlin.github.io/themen/homestaging.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartlivingberlin.github.io/themen/hypotheken-rechner.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartlivingberlin.github.io/themen/immobilienpreise-2025.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartlivingberlin.github.io/themen/immobilienpreise.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://smartlivingberlin.github.io/themen/kaufnebenkosten.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartlivingberlin.github.io/themen/mieten-kaufen.html</loc>
     <lastmod>2025-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -205,6 +265,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://smartlivingberlin.github.io/themen/smart.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://smartlivingberlin.github.io/themen/smartliving2025.html</loc>
     <lastmod>2025-09-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -218,6 +284,12 @@
   </url>
   <url>
     <loc>https://smartlivingberlin.github.io/themen/vermietung-rechtssicher.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smartlivingberlin.github.io/themen/versicherungen.html</loc>
     <lastmod>2025-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
