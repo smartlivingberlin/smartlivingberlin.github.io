@@ -245,9 +245,9 @@ footer{padding:28px 0;color:#667}
         <div class="card p-3">
           <h5>Vorher / Nachher (Slider)</h5>
           <div class="figure-compare mb-2">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600" alt="Vorher">
+            <img decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600" alt="Vorher">
             <div class="clip" id="afterClip" style="width:50%">
-              <img src="https://images.unsplash.com/photo-1616594039964-ae9021a80b7b?q=80&w=1600" alt="Nachher">
+              <img decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1616594039964-ae9021a80b7b?q=80&w=1600" alt="Nachher">
             </div>
             <input type="range" min="0" max="100" value="50" oninput="document.getElementById('afterClip').style.width=this.value+'%';" aria-label="Schieberegler Vorher/Nachher">
           </div>
@@ -382,7 +382,7 @@ function openFeature(i){
     calc_ann:`<div class="row g-2 mt-1"><div class="col"><input id="loanX" class="form-control" placeholder="Kreditsumme" value="350000"></div><div class="col"><input id="rateX" class="form-control" placeholder="Zins %" value="3.8"></div><div class="col"><input id="yearsX" class="form-control" placeholder="Laufzeit" value="25"></div></div><button class="btn btn-primary mt-2" onclick="calcAnn(true)">Berechnen</button><div id="annOut2" class="mt-3"></div>`,
     table:`<div class="table-responsive"><table class="table table-sm"><thead><tr><th>Gerät</th><th>Nutzen</th><th>Preis</th><th>Ersparnis</th></tr></thead><tbody id="smartTableModal"></tbody></table></div>`,
     gallery:`<div class="grid cols-3" id="galleryModal"></div>`,
-    slider:`<div class="figure-compare"><img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=1600"><div class="clip" id="clipM" style="width:50%"><img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?q=80&w=1600"></div><input type="range" min="0" max="100" value="50" oninput="document.getElementById('clipM').style.width=this.value+'%';"></div>`,
+    slider:`<div class="figure-compare"><img decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=1600"><div class="clip" id="clipM" style="width:50%"><img decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?q=80&w=1600"></div><input type="range" min="0" max="100" value="50" oninput="document.getElementById('clipM').style.width=this.value+'%';"></div>`,
     planner:`<p class="small-muted">Öffne <strong>Design</strong> → Grundriss, um ein Bild zu laden und Blöcke zu setzen.</p>`,
     list:`<div id="listModal" class="small"></div>`
   };
@@ -500,7 +500,7 @@ function renderSmart(target='smartTable'){
 function renderGallery(target='gallery'){
   const el=document.getElementById(target);
   const topics=["smart home","interior","architecture","minimal","cozy","energy"];
-  el.innerHTML = topics.map(t=>`<img class="img-fluid rounded" alt="${t}" loading="lazy" src="https://source.unsplash.com/400x300/?${encodeURIComponent(t)}">`).join('');
+  el.innerHTML = topics.map(t=>`<img decoding="async" class="img-fluid rounded" alt="${t}" loading="lazy" src="https://source.unsplash.com/400x300/?${encodeURIComponent(t)}">`).join('');
 }
 
 /* ===== Grundriss ===== */
