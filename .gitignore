@@ -11,3 +11,9 @@ reports/
 *.zip
 reports/archives/
 backups/
+# --- SLB defaults ---
+snapshots/
+reports/
+archives/
+*.tar.gz
+*.zip
