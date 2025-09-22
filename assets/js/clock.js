@@ -1,13 +1,19 @@
 (function(){
-  const fmt = new Intl.DateTimeFormat('de-DE',{
-    weekday:'short', day:'2-digit', month:'2-digit', year:'numeric',
-    hour:'2-digit', minute:'2-digit', second:'2-digit'
-  });
-  function tick(){
-    const el = document.getElementById('liveClock');
+  function t(){
+    const el=document.getElementById('liveClock');
     if(!el) return;
-    const now = new Date();
-    el.textContent = fmt.format(now);
+    const d=new Date();
+    el.textContent=d.toLocaleString('de-DE',{dateStyle:'medium', timeStyle:'short'});
   }
-  window.addEventListener('DOMContentLoaded', ()=>{ tick(); setInterval(tick,1000); });
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const nav=document.querySelector('.navbar .container');
+    if(!nav) return;
+    let span=document.getElementById('liveClock');
+    if(!span){
+      span=document.createElement('span'); span.id='liveClock';
+      span.className='ms-3 text-light small';
+      nav.appendChild(span);
+    }
+    t(); setInterval(t, 60000);
+  });
 })();
