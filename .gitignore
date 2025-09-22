@@ -3,3 +3,9 @@ package-lock.json
 node_modules
 .backups/
 snapshots/
+
+# ignore local archives & reports
+snapshots/
+reports/
+*.tar.gz
+*.zip
