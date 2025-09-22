@@ -9,3 +9,5 @@ snapshots/
 reports/
 *.tar.gz
 *.zip
+reports/archives/
+backups/
