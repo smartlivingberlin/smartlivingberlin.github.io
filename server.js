@@ -3,7 +3,6 @@ const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
 const path = require('path');
-const fs = require('fs').promises;
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,14 +12,16 @@ app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors());
 app.use(compression());
 app.use(express.json());
-app.use(express.static('.'));
+
+// Statische Dateien servieren
+app.use(express.static(__dirname));
 
 // API Routes
 app.get('/api/health', (req, res) => {
     res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-app.post('/api/chat', async (req, res) => {
+app.post('/api/chat', (req, res) => {
     const { message } = req.body;
     const responses = {
         'kaufnebenkosten': 'In Berlin betragen die Kaufnebenkosten ca. 9-12%: Grunderwerbsteuer (6%), Notar (1-1,5%), Grundbuch (0,5%), Makler (3,57%).',
@@ -42,21 +43,6 @@ app.post('/api/chat', async (req, res) => {
     res.json({ response, timestamp: new Date().toISOString() });
 });
 
-app.get('/api/market-data', async (req, res) => {
-    const berlinData = {
-        avgPrice: 5850,
-        trend: '+2.3%',
-        hotDistricts: ['Mitte', 'Prenzlauer Berg', 'Charlottenburg'],
-        lastUpdate: new Date().toISOString()
-    };
-    res.json(berlinData);
-});
-
-// Fallback für alle anderen Routen
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 SmartLiving Berlin läuft auf http://localhost:${PORT}` );
 });
