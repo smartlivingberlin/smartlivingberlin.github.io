@@ -1,5 +1,35 @@
 [
-  {"title":"Sanierung & Förderung im Fokus","link":"themen/sanierung-foerderung.html","date":"2025-09-21"},
-  {"title":"Energie: Wärmepumpe – Faktencheck","link":"themen/waermepumpe.html","date":"2025-09-20"},
-  {"title":"EEG-News kompakt","link":"themen/eeg-kompakt.html","date":"2025-09-18"}
+  {
+    "title": "Berlin Immobilienmarkt Update 24.09.2025",
+    "link": "themen/marktupdate-berlin.html",
+    "date": "2025-09-24",
+    "category": "Marktdaten"
+  },
+  {
+    "title": "Smart Home Trends 2025 - Was lohnt sich wirklich?",
+    "link": "themen/smart-home-trends-2025.html",
+    "date": "2025-09-24",
+    "category": "Smart Living"
+  },
+  {
+    "title": "Mietrecht Berlin: Neue BGH-Urteile erklärt",
+    "link": "themen/mietrecht-bgh-urteile.html",
+    "date": "2025-09-24",
+    "category": "Recht"
+  },
+  {
+    "title": "Sanierung & Förderung im Fokus",
+    "link": "themen/sanierung-foerderung.html",
+    "date": "2025-09-21"
+  },
+  {
+    "title": "Energie: Wärmepumpe – Faktencheck",
+    "link": "themen/waermepumpe.html",
+    "date": "2025-09-20"
+  },
+  {
+    "title": "EEG-News kompakt",
+    "link": "themen/eeg-kompakt.html",
+    "date": "2025-09-18"
+  }
 ]
