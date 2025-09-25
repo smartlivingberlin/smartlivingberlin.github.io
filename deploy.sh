@@ -1,24 +1,15 @@
 #!/bin/bash
 set -e
+cd "$(dirname "$0")"
+test -f index.html || { echo "❌ index.html fehlt!"; exit 1; }
 
-# 1) Projektordner öffnen
-cd ~/smartliving.berlin || { echo "❌ Projektordner fehlt!"; exit 1; }
+STAMP=$(date +'%Y-%m-%d_%H-%M-%S')
+# Lokales, ignoriertes Backup (sicher)
+tar -czf "backup-$STAMP.tar.gz" . --exclude='.git' --exclude='*.tar.gz' || true
 
-# 2) Prüfen
-if [ ! -f index.html ]; then
-  echo "❌ index.html fehlt im Projektordner!"
-  exit 1
-fi
-
-# 3) Backup (klein, nur lokale Sicherheit, nicht ins Repo)
-STAMP=$(date +"%Y-%m-%d_%H-%M-%S")
-tar -czf backup-$STAMP.tar.gz . --exclude=".git" --exclude="*.tar.gz" || true
-
-# 4) Git commit & push
 git add -A
 git commit -m "🚀 Auto-Deploy $STAMP" || echo "ℹ️ Nichts zu committen."
 git pull --rebase origin main || true
 git push origin main
 
-# 5) Online-Link
-echo "✅ Fertig! Online prüfen: https://smartlivingberlin.github.io/"
+echo "✅ Online: https://smartlivingberlin.github.io/"
