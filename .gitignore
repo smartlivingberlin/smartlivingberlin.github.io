@@ -17,3 +17,5 @@ reports/
 archives/
 *.tar.gz
 *.zip
+backup-*.tar.gz
+*.tar.gz

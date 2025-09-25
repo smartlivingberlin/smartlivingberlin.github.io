@@ -1,14 +1,6 @@
 [
-  {
-    "slug": "beispiel-2-zimmer-prenzlauer-berg",
-    "title": "Beispiel: 2-Zimmer Prenzlauer Berg",
-    "category": "Wohnung",
-    "location": "Berlin",
-    "price": "1.450 € kalt",
-    "description": "Helle Altbauwohnung, 58 m², renoviert. Balkon, EBK.",
-    "images": ["https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1600"],
-    "contact": "muster@example.com",
-    "page": "angebote/beispiel-2-zimmer-prenzlauer-berg.html",
-    "date": "2025-09-21T10:00:00.000Z"
-  }
+ { "title":"3-Zi Altbau, Prenzlauer Berg", "price":"€ 645.000", "location":"Berlin-Pankow", "category":"Kauf",
+   "images":["https://source.unsplash.com/800x600/?interior,berlin"], "page":"#" },
+ { "title":"Möbliertes Loft, Kreuzberg", "price":"€ 1.890 kalt", "location":"Berlin-Kreuzberg", "category":"Miete",
+   "images":["https://source.unsplash.com/800x600/?loft,industrial"], "page":"#" }
 ]
