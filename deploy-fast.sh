@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
-msg="${*:-Quick deploy}"
+STAMP=$(date +'%Y%m%d-%H%M%S')
 git add -A
-git commit -m "$msg" || echo "ℹ️ Nichts zu committen"
+git commit -m "Auto: Inhalte & Assets aktualisiert ${STAMP}" || true
 git push origin main
 echo "✅ Online: https://smartlivingberlin.github.io/"
