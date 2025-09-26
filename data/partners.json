@@ -1,0 +1,16 @@
+[
+  {
+    "name": "ABC Architekten",
+    "focus": "Nachhaltiges Bauen",
+    "region": "Berlin",
+    "contact": "info@abc-architekten.de",
+    "website": "https://abc-architekten.de"
+  },
+  {
+    "name": "Green Finance GmbH",
+    "focus": "Immobilienfinanzierung & Crowdfunding",
+    "region": "Deutschland",
+    "contact": "kontakt@greenfinance.de",
+    "website": "https://greenfinance.de"
+  }
+]
