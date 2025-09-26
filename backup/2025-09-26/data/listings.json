@@ -1,0 +1,26 @@
+[
+  {
+    "title": "3-Zimmer Altbauwohnung in Prenzlauer Berg",
+    "price": "€ 645.000",
+    "location": "Berlin-Prenzlauer Berg",
+    "category": "Kauf",
+    "images": ["https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=800&q=80"],
+    "page": "https://example.com/listing-berlin-altbau-3zimmer"
+  },
+  {
+    "title": "Modernes Loft in Kreuzberg (Miete)",
+    "price": "€ 1.890 kalt",
+    "location": "Berlin-Kreuzberg",
+    "category": "Miete",
+    "images": ["https://images.unsplash.com/photo-1600585155226-4e6b30c34ea5?w=800&q=80"],
+    "page": "https://example.com/listing-berlin-loft-kreuzberg"
+  },
+  {
+    "title": "Balkonkraftwerk 800W Komplettset",
+    "price": "€ 699",
+    "location": "Berlin",
+    "category": "Smart Living",
+    "images": ["https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800&q=80"],
+    "page": "https://example.com/listing-balkonkraftwerk"
+  }
+]

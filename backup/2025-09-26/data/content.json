@@ -1,0 +1,67 @@
+{
+  "listings": [
+    {
+      "title": "3-Zi Altbau, Prenzlauer Berg",
+      "price": "€ 645.000",
+      "location": "Berlin-Pankow",
+      "category": "Kauf",
+      "images": ["https://source.unsplash.com/800x600/?interior,berlin"],
+      "page": "#"
+    },
+    {
+      "title": "Möbliertes Loft, Kreuzberg",
+      "price": "€ 1.890 kalt",
+      "location": "Berlin-Kreuzberg",
+      "category": "Miete",
+      "images": ["https://source.unsplash.com/800x600/?loft,industrial"],
+      "page": "#"
+    },
+    {
+      "title": "Balkonkraftwerk 800W Set",
+      "price": "€ 699",
+      "location": "Berlin",
+      "category": "Smart Living",
+      "images": ["https://source.unsplash.com/800x600/?solar,panel"],
+      "page": "#"
+    }
+  ],
+  "faq": [
+    {"q": "Was bedeutet § 535 BGB kurz?", "a": "Vermieter: Gebrauch gewährleisten & instand halten; Mieter: Miete zahlen, Wohnung pfleglich behandeln."},
+    {"q": "Betriebskosten verständlich?", "a": "Laufende Kosten wie Heizung, Wasser, Müll. Umlage nur bei vertraglicher Vereinbarung (BetrKV)."},
+    {"q": "Kaution – wie viel & wann zurück?", "a": "Bis 3 Nettokaltmieten; Rückzahlung i. d. R. in 3–6 Monaten, angemessene Prüf-/Abrechnungsfrist."}
+  ],
+  "laws": [
+    {"paragraph": "§ 535 BGB", "explanation": "Überlassen und Erhalten der Mietsache; Mieter zahlt Miete und behandelt die Wohnung sorgfältig."},
+    {"paragraph": "§ 556 BGB", "explanation": "Betriebskosten: Umlage möglich, wenn vereinbart; jährliche Abrechnung, Fristen beachten."},
+    {"paragraph": "WEG-Beschluss", "explanation": "Beschlüsse der Eigentümergemeinschaft; Form, Mehrheit und ordnungsgemäße Verwaltung sind entscheidend."}
+  ],
+  "news": [
+    {"title": "Smart-Living 2025: KI hilft beim Energiesparen", "link": "#", "date": "2025-09-20"},
+    {"title": "Berlin: Sanierungsförderung erweitert", "link": "#", "date": "2025-09-18"},
+    {"title": "Zinsen stabilisieren sich leicht", "link": "#", "date": "2025-09-15"}
+  ],
+  "charts": {
+    "zins": {
+      "labels": ["Jan","Feb","Mrz","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"],
+      "data":   [2.1,2.4,2.8,3.2,3.5,3.7,3.9,4.0,3.7,3.5,3.4,3.3]
+    },
+    "energie": {
+      "labels": ["Q1","Q2","Q3","Q4"],
+      "data":   [101.2, 98.5, 97.8, 98.4]
+    }
+  },
+  "smart_devices": [
+    {"g":"Thermostat","n":"Heiz-Thermostat","price":"€ 60–200","save":"5–12%/Jahr"},
+    {"g":"Licht","n":"LED + Bewegungsmelder","price":"€ 20–150","save":"2–6%/Jahr"},
+    {"g":"Steckdosen","n":"Schaltbare Steckdosen","price":"€ 25–80","save":"1–3%/Jahr"},
+    {"g":"PV-Balkon","n":"Balkonkraftwerk","price":"€ 600–1200","save":"bis 15%/Jahr"}
+  ],
+  "gallery_topics": ["smart home","interior","architecture","minimal","cozy","energy"],
+  "top5": [
+    "Zinsentwicklung",
+    "Förderung Berlin",
+    "Mieten vs. Kaufen",
+    "Smart-Home Spartipps",
+    "Homestaging DIY"
+  ]
+}
