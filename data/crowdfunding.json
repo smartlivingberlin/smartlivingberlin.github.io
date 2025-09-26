@@ -1,18 +1,3 @@
 [
-  {
-    "title": "Solarfassade für Altbau",
-    "description": "Nachrüstung einer denkmalgeschützten Fassade mit innovativen PV-Modulen. Gesucht werden 50.000 €.",
-    "goal": 50000,
-    "current": 12000,
-    "status": "Offen",
-    "link": "https://github.com/smartlivingberlin/smartlivingberlin.github.io/issues/new?template=crowdfunding-projekt.yml"
-  },
-  {
-    "title": "Tiny-House-Siedlung in Brandenburg",
-    "description": "Planung eines nachhaltigen Co-Living-Dorfes mit 20 Tiny Houses. Ziel: 150.000 € Finanzierung.",
-    "goal": 150000,
-    "current": 34000,
-    "status": "In Planung",
-    "link": "https://github.com/smartlivingberlin/smartlivingberlin.github.io/issues/new?template=crowdfunding-projekt.yml"
-  }
+  {"title":"Demo Solar","description":"PV an Fassade","goal":50000,"current":8000,"status":"Offen","link":"#"}
 ]
