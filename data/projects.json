@@ -5,12 +5,16 @@
     "status": "Offen",
     "link": "https://github.com/smartlivingberlin/smartlivingberlin.github.io/issues/new?template=projekt-vorschlagen.yml",
     "lat": 52.5208,
-    "lng": 13.4095
+    "lng": 13.4095,
+    "category": "",
+    "region": ""
   },
   {
     "title": "Aufstockung Altbau Prenzlauer Berg",
     "description": "Projektidee: Aufstockung eines Altbaus mit Holzmodulen. Wir suchen Architekten und Finanzierungspartner.",
     "status": "In Planung",
-    "link": "https://github.com/smartlivingberlin/smartlivingberlin.github.io/issues/new?template=projekt-vorschlagen.yml"
+    "link": "https://github.com/smartlivingberlin/smartlivingberlin.github.io/issues/new?template=projekt-vorschlagen.yml",
+    "category": "",
+    "region": ""
   }
 ]

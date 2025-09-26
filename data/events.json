@@ -6,13 +6,17 @@
     "description": "Die größte Immobilienmesse in Berlin mit internationalen Ausstellern.",
     "link": "https://beispiel-immobilienmesse.de",
     "lat": 52.5208,
-    "lng": 13.4095
+    "lng": 13.4095,
+    "category": "",
+    "region": ""
   },
   {
     "title": "Smart Home Expo Berlin",
     "date": "2026-02-20",
     "location": "CityCube Berlin",
     "description": "Neuheiten im Bereich Smart Living, Energieeffizienz und Automatisierung.",
-    "link": "https://beispiel-smarthome-expo.de"
+    "link": "https://beispiel-smarthome-expo.de",
+    "category": "",
+    "region": ""
   }
 ]
