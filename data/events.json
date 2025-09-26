@@ -4,7 +4,9 @@
     "date": "2025-11-15",
     "location": "Messe Berlin",
     "description": "Die größte Immobilienmesse in Berlin mit internationalen Ausstellern.",
-    "link": "https://beispiel-immobilienmesse.de"
+    "link": "https://beispiel-immobilienmesse.de",
+    "lat": 52.5208,
+    "lng": 13.4095
   },
   {
     "title": "Smart Home Expo Berlin",

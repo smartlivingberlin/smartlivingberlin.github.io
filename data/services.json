@@ -4,7 +4,9 @@
     "category": "Elektriker",
     "region": "Berlin Mitte",
     "phone": "+49 30 1234567",
-    "website": "https://beispiel-elektro.de"
+    "website": "https://beispiel-elektro.de",
+    "lat": 52.5208,
+    "lng": 13.4095
   },
   {
     "name": "Sanitär Schulze",

@@ -3,7 +3,9 @@
     "title": "Kiezgarten: Urbanes Gartenprojekt in Neukölln",
     "description": "Wir suchen Investoren und Gartenliebhaber, um eine Brachfläche in einen Gemeinschaftsgarten zu verwandeln.",
     "status": "Offen",
-    "link": "https://github.com/smartlivingberlin/smartlivingberlin.github.io/issues/new?template=projekt-vorschlagen.yml"
+    "link": "https://github.com/smartlivingberlin/smartlivingberlin.github.io/issues/new?template=projekt-vorschlagen.yml",
+    "lat": 52.5208,
+    "lng": 13.4095
   },
   {
     "title": "Aufstockung Altbau Prenzlauer Berg",
