@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="de">
 <head>
+<link rel="manifest" href="/manifest.webmanifest">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -816,5 +817,6 @@
 <script src="assets/js/include.js"></script>
 <div id="shareSection" data-include="sections/share.html"></div>
 <script src="assets/js/share.js"></script>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("/sw.js");}</script>
 </body>
 </html>
