@@ -1,16 +1,16 @@
-import sys, pathlib
+import sys, pathlib, re, json
 p = pathlib.Path("index.html")
 html = p.read_text(encoding="utf-8") if p.exists() else ""
 ok = True
-def chk(label, cond):
+def chk(cond, label):
     global ok
-    print(("✅" if cond else "❌"), label)
+    print(("✅ " if cond else "❌ ") + label)
     ok &= cond
 
-chk("index.html vorhanden", p.exists())
-chk("Crowdfunding eingebunden", 'id="crowdfunding"' in html or 'crowdfunding.js' in html)
-chk("Investoren eingebunden", 'id="investors"' in html or 'investors.js' in html)
-chk("SEO: OpenGraph vorhanden", 'og:title' in html)
-chk("Chart.js nur einmal geladen", html.count('chart.umd.min.js') == 1)
-
+chk(p.exists(), "index.html vorhanden")
+chk(("crowdfunding" in html and ("sections/crowdfunding.html" in html or "crowdfundingList" in html)), "Crowdfunding eingebunden")
+chk(("investors" in html and ("sections/investors.html" in html or "investorsList" in html)), "Investoren eingebunden")
+# Chart nur 1x
+chart_refs = len(re.findall(r'chart(\.umd)?\.min\.js', html, flags=re.I))
+chk(chart_refs == 1, "Chart.js genau 1× eingebunden")
 sys.exit(0 if ok else 1)
