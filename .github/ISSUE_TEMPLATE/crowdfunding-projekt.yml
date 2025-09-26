@@ -1,0 +1,18 @@
+name: Crowdfunding Projekt einreichen
+description: Beschreibe dein Vorhaben – erscheint nach Prüfung in der Liste.
+labels: ["crowdfunding"]
+body:
+  - type: input
+    id: title
+    attributes: { label: Projekttitel }
+    validations: { required: true }
+  - type: textarea
+    id: description
+    attributes: { label: Kurzbeschreibung }
+    validations: { required: true }
+  - type: input
+    id: goal
+    attributes: { label: Funding-Ziel (€), placeholder: "50000" }
+  - type: input
+    id: link
+    attributes: { label: Projekt/Website Link }
