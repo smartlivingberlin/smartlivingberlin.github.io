@@ -1,6 +1,24 @@
 <!doctype html>
 <html lang="de">
 <head>
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="SmartLivingBerlin – Immobilien · Energie · Inspiration">
+
+<meta name="twitter:description" content="Recht, Finanzen, Smart Living – kompakt & interaktiv.">
+
+<meta name="twitter:image" content="https://source.unsplash.com/1200x630/?smart,home">
+<meta property="og:title" content="SmartLivingBerlin – Immobilien · Energie · Inspiration">
+
+<meta property="og:description" content="Einfach erklärt & interaktiv: Recht, Finanzen, Smart Living, Design. Immer aktuell.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://smartlivingberlin.github.io/">
+
+<meta property="og:image" content="https://source.unsplash.com/1200x630/?berlin,architecture">
+<link rel="canonical" href="https://smartlivingberlin.github.io/">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>SmartLivingBerlin – Immobilien · Energie · Inspiration</title>
@@ -103,7 +121,27 @@
     .before-after-slider .slider-handle {position:absolute;top:0;bottom:0;width:4px;background:white;cursor:ew-resize;left:50%;transform:translateX(-50%);box-shadow:0 0 10px rgba(0,0,0,0.5)}
     .before-after-slider .slider-handle div {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background:white;border-radius:50%;box-shadow:0 0 10px rgba(0,0,0,0.3)}
   </style>
-  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SmartLivingBerlin",
+  "url": "https://smartlivingberlin.github.io/",
+  "logo": "https://source.unsplash.com/256x256/?berlin,home"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://smartlivingberlin.github.io/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://smartlivingberlin.github.io/#news?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 </head>
 <body>
   <!-- Navigation bar.  Links scroll to sections on the same page. -->
@@ -753,5 +791,28 @@
   <script src="assets/js/master-fix.js"></script>
   <script src="assets/js/chat-enhancement.js"></script>
   <script src="assets/js/image-loader.js"></script>
+{% include 'sections/crowdfunding.html' %}
+
+{% include 'sections/investors.html' %}
+
+<script src="assets/js/crowdfunding.js"></script>
+
+<script src="assets/js/investors.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+{% include 'sections/crowdfunding.html' %}
+
+{% include 'sections/investors.html' %}
+
+<script src="assets/js/crowdfunding.js"></script>
+
+<script src="assets/js/investors.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div id="crowdfundingSection" data-include="sections/crowdfunding.html"></div>
+<div id="investorsSection" data-include="sections/investors.html"></div>
+<script src="assets/js/include.js"></script>
 </body>
 </html>
