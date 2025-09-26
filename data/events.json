@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Berlin Property Fair 2025",
+    "date": "2025-11-15",
+    "location": "Messe Berlin",
+    "description": "Die größte Immobilienmesse in Berlin mit internationalen Ausstellern.",
+    "link": "https://beispiel-immobilienmesse.de"
+  },
+  {
+    "title": "Smart Home Expo Berlin",
+    "date": "2026-02-20",
+    "location": "CityCube Berlin",
+    "description": "Neuheiten im Bereich Smart Living, Energieeffizienz und Automatisierung.",
+    "link": "https://beispiel-smarthome-expo.de"
+  }
+]
