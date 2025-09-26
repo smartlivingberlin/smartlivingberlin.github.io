@@ -1,1 +1,6 @@
-{"zins":{"labels":["Jan"],"data":[3.5]}}
+{
+  "zins": {
+    "labels": ["Jan", "Feb", "März", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
+    "data": [2.1, 2.4, 2.8, 3.2, 3.6, 3.8, 4.0, 3.9, 3.7, 3.5, 3.4, 3.3]
+  }
+}
