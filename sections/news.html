@@ -1,0 +1,23 @@
+<section id="news" class="section">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <h2 class="mb-3">Aktuelle Branchen-News</h2>
+      <span class="small text-muted">Quelle: <code>data/news.json</code></span>
+    </div>
+    <div class="row">
+      <div class="col-lg-8"><ul id="news-list" class="list-unstyled"></ul></div>
+      <div class="col-lg-4">
+        <div class="card p-3">
+          <h5>Top 5 der Woche</h5>
+          <div id="top5-container">Wird geladen …</div>
+        </div>
+        <div class="card p-3 mt-3">
+          <h6>Suche in News/FAQ</h6>
+          <input id="newsQuery" class="form-control" placeholder="z. B. Wärmepumpe">
+          <button class="btn btn-primary mt-2" id="btnNewsSearch">Suchen</button>
+          <div id="searchResult" class="mt-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

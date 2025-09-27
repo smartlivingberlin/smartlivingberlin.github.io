@@ -1,61 +1,59 @@
-#!/usr/bin/env python3
-"""
-Erweitertes RSS-Import-Skript.
-Neben Immobilien- und Energie-News können hier weitere Themenfeeds hinterlegt werden.
-NEWS_FEEDS enthält Quellen für allgemeine Immobilienmeldungen, Energie-News und Handwerker-Trends.
-"""
-import json
-import pathlib
-import feedparser
-from datetime import datetime
+import json, time, datetime as dt
+from urllib.request import urlopen
+import xml.etree.ElementTree as ET
 
-DATA_DIR = pathlib.Path(__file__).resolve().parents[1] / 'data'
-
-# RSS-Quellen (bitte nach Bedarf anpassen oder ergänzen)
-NEWS_FEEDS = [
-  "https://www.worldpropertyjournal.com/feeds/rss.xml",
-  "https://realestate.einnews.com/rss",
-  "https://www.connectcre.com/category/cre-market-news/feed/",
-  "https://rss.feedspot.com/europe_real_estate.xml"
+FEEDS = [
+  "https://www.tagesschau.de/xml/rss2",                 # breit (de)
+  "https://www.handwerk-magazin.de/rss.xml",            # Handwerk
+  "https://www.heise.de/hintergrund/rss/immobilien.atom" # Beispiel
 ]
 
-# Feed für Angebotslisten (hier Platzhalter – nur nutzen, wenn ein passender Feed vorhanden ist)
-LISTING_FEEDS = [
-  # Beispiel: "https://www.immobilienscout24.de/rss/listings.xml"
-]
+def parse_rss(url, limit=20):
+  try:
+    raw = urlopen(url, timeout=15).read()
+    try:
+      root = ET.fromstring(raw)
+    except:
+      return []
+    items=[]
+    for item in root.iterfind('.//item'):
+      title = (item.findtext('title') or '').strip()
+      link  = (item.findtext('link')  or '').strip()
+      date  = (item.findtext('{http://purl.org/dc/elements/1.1/}date') or item.findtext('pubDate') or '').strip()
+      items.append({"title":title, "link":link, "date":date or dt.datetime.utcnow().isoformat()})
+    return items[:limit]
+  except Exception:
+    return []
 
-def fetch_feed(url):
-    return feedparser.parse(url)
+all_items=[]
+for f in FEEDS:
+  all_items.extend(parse_rss(f, 20))
 
-def parse_entries(entries, limit=10):
-    items = []
-    for entry in entries[:limit]:
-        date = None
-        if entry.get('published_parsed'):
-            date = datetime(*entry.published_parsed[:6]).strftime('%Y-%m-%d')
-        items.append({
-            'title': entry.get('title','').strip(),
-            'link': entry.get('link','').strip(),
-            'date': date or datetime.utcnow().strftime('%Y-%m-%d'),
-            'source': entry.get('source',{}).get('title','') if entry.get('source') else ''
-        })
-    return items
+def norm_date(s):
+  try: return dt.datetime(*rfc822_parsedate(s)[:6]).isoformat()
+  except: 
+    try: return dt.datetime.fromisoformat(s).isoformat()
+    except: return dt.datetime.utcnow().isoformat()
 
-def update_news():
-    all_items = []
-    for url in NEWS_FEEDS:
-        parsed = fetch_feed(url)
-        if parsed.entries:
-            all_items.extend(parse_entries(parsed.entries, limit=5))
-    # Nach Datum sortieren (neueste zuerst)
-    all_items.sort(key=lambda x: x['date'], reverse=True)
-    (DATA_DIR/'news.json').write_text(json.dumps(all_items, indent=2, ensure_ascii=False))
+try:
+  # simple RFC822 parser fallback
+  from email.utils import parsedate as rfc822_parsedate
+except:
+  def rfc822_parsedate(_): return time.gmtime()
 
-def update_listings():
-    # Optional: Listings-Feeds verarbeiten
-    for url in LISTING_FEEDS:
-        pass
+# normalize date & sort
+for x in all_items:
+  x["date"] = norm_date(x.get("date",""))
 
-if __name__ == '__main__':
-    update_news()
-    update_listings()
+all_items = [x for x in all_items if x.get("title") and x.get("link")]
+all_items.sort(key=lambda x: x["date"], reverse=True)
+all_items = all_items[:60]
+
+with open('data/news.json','w',encoding='utf-8') as f:
+  json.dump(all_items, f, ensure_ascii=False, indent=2)
+
+# Top-5 HTML
+top5 = all_items[:5]
+html = "<ol class='mb-0'>" + "".join([f"<li><a target='_blank' rel='noopener' href='{x['link']}'>{x['title']}</a></li>" for x in top5]) + "</ol>"
+with open('partials/top5.html','w',encoding='utf-8') as f: f.write(html)
+print(f"Updated news.json ({len(all_items)}) & partials/top5.html")
