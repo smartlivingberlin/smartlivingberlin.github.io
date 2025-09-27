@@ -1,0 +1,18 @@
+<!doctype html><meta charset="utf-8"><title>SLB Cache-Reset</title>
+<h3>Cache & Service Worker werden entfernt…</h3>
+<script>
+(async ()=>{
+  try{
+    if('serviceWorker' in navigator){
+      const regs = await navigator.serviceWorker.getRegistrations();
+      for(const r of regs) await r.unregister();
+    }
+    if(window.caches){
+      const keys = await caches.keys();
+      for(const k of keys) await caches.delete(k);
+    }
+    localStorage.clear(); sessionStorage.clear();
+  }catch(e){}
+  setTimeout(()=> location.href = location.pathname.replace(/reset\.html.*/,'') + '?v=' + Date.now(), 600);
+})();
+</script>
