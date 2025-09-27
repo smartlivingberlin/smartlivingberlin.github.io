@@ -428,7 +428,7 @@
       <div class="card p-3">
         <div class="row g-2">
           <div class="col-lg-9">
-            <input id="q" class="form-control form-control-lg" placeholder="Frage zu Recht, <span data-i18n="nav_news">News</span>, Smart Living, Finanzen …">
+            <input id="q" class="form-control form-control-lg" placeholder="Frage zu Recht, News, Smart Living, Finanzen …">
           </div>
           <div class="col-lg-3 d-grid">
             <button class="btn btn-accent btn-lg" onclick="ask()">Antwort anzeigen</button>
@@ -606,11 +606,11 @@
       if(f.type==='table'){renderSmart('smartTableModal');}
       if(f.type==='gallery'){renderGallery('galleryModal');}
       if(f.type==='chart'){setTimeout(()=>drawDemoChart('modalChart'),50);}
-      if(f.type==='list'){renderListFrom<span data-i18n="nav_news">News</span>('listModal');}
+      if(f.type==='list'){renderListFromNews('listModal');}
       if(f.type==='faq'){renderFAQ('faqModal');}
     }
     // Render the news list and top 5 container
-    async function load<span data-i18n="nav_news">News</span>(){
+    async function loadNews(){
       const list=document.getElementById('news-list');
       const data=await fetchJSON('data/news.json');
       const items = Array.isArray(data) && data.length ? data.sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,12) : [
@@ -625,7 +625,7 @@
       }catch{ document.getElementById('top5-container').textContent = ''; }
     }
     // Render a list of news items in the modal (for list type features)
-    async function renderListFrom<span data-i18n="nav_news">News</span>(targetId){
+    async function renderListFromNews(targetId){
       const el=document.getElementById(targetId);
       const data=await fetchJSON('data/news.json');
       if(!data){el.textContent='Keine Daten.';return;}
@@ -787,7 +787,7 @@
       renderFAQ();
       renderSmart();
       renderGallery();
-      load<span data-i18n="nav_news">News</span>();
+      loadNews();
       loadListings();
       drawDemoChart();
     });
@@ -802,9 +802,7 @@
   <script src="assets/js/master-fix.js"></script>
   <script src="assets/js/chat-enhancement.js"></script>
   <script src="assets/js/image-loader.js"></script>
-{% include 'sections/crowdfunding.html' %}
 
-{% include 'sections/investors.html' %}
 
 <script src="assets/js/crowdfunding.js"></script>
 
@@ -812,9 +810,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-{% include 'sections/crowdfunding.html' %}
 
-{% include 'sections/investors.html' %}
 
 <script src="assets/js/crowdfunding.js"></script>
 
@@ -830,7 +826,6 @@
 <script>if("serviceWorker" in navigator){navigator.serviceWorker.register("/sw.js");}</script>
 <script src="assets/js/i18n.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="assets/js/chart.js"></script>
 <section id="debugSection" class="section bg-light"><div class="container"><h2>Debug-Ausgabe</h2><p>Wenn du diesen Block siehst, lädt die index.html korrekt. <strong>Scroll runter bis Crowdfunding/Investoren!</strong></p></div></section>
 
 <div id="chartsSection" data-include="sections/crowd_charts.html"></div>
