@@ -1,18 +1,15 @@
 (async function(){
-  const k='slb-lang';
-  const current = localStorage.getItem(k) || (navigator.language||'de').slice(0,2);
+  const cur = localStorage.getItem('lang') || 'de';
   async function load(lang){
-    try{
-      const r=await fetch(`lang/${lang}.json`,{cache:'no-store'});
-      if(!r.ok) return;
-      const map=await r.json();
-      for(const [id,val] of Object.entries(map)){
-        const el=document.getElementById(id);
-        if(el) el.innerHTML=val;
-      }
-    }catch(e){}
+    const r=await fetch(`lang/${lang}.json`,{cache:'no-store'}); return await r.json();
   }
-  function set(lang){ localStorage.setItem(k,lang); load(lang); }
-  window.SLB_I18N={set};
-  await load(current);
+  async function apply(lang){
+    const tr=await load(lang);
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const key=el.getAttribute('data-i18n'); if(tr[key]) el.textContent=tr[key];
+    });
+    localStorage.setItem('lang', lang);
+  }
+  window.setLang=apply;
+  document.addEventListener('DOMContentLoaded',()=>apply(cur));
 })();

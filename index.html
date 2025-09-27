@@ -159,8 +159,8 @@
       </button>
       <div id="mainNav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#dashboard">Baukasten</a></li>
-          <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dashboard"><span data-i18n="nav_baukasten">Baukasten</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#news"><span data-i18n="nav_news">News</span></a></li>
           <li class="nav-item"><a class="nav-link" href="#recht">Recht</a></li>
           <li class="nav-item"><a class="nav-link" href="#finanzen">Finanzen</a></li>
           <li class="nav-item"><a class="nav-link" href="#smart">Smart Living</a></li>
@@ -181,10 +181,10 @@
       <h1 class="display-5 fw-bold mb-2">Immobilien. Energie. Inspiration.</h1>
       <p class="lead mb-4">Einfach erklärt · Interaktiv · Für Eigentümer, Käufer, Mieter & Neugierige.</p>
       <div class="d-flex justify-content-center gap-3">
-        <a href="#dashboard" class="btn btn-accent btn-lg">Zum Baukasten</a>
+        <a href="#dashboard" class="btn btn-accent btn-lg">Zum <span data-i18n="nav_baukasten">Baukasten</span></a>
         <a href="#news" class="btn btn-outline-light btn-lg">Aktuelle Trends</a>
       </div>
-      <p class="small mt-3 text-white-50">Alles lokal &amp; kostenlos gehostet (GitHub Pages). News/Listen können automatisch aktualisiert werden.</p>
+      <p class="small mt-3 text-white-50">Alles lokal &amp; kostenlos gehostet (GitHub Pages). <span data-i18n="nav_news">News</span>/Listen können automatisch aktualisiert werden.</p>
       <div class="container mt-4">
         <div class="row justify-content-center">
           <div class="col-lg-6">
@@ -235,7 +235,7 @@
         </div></div>
         <div class="col-md-3"><div class="card h-100 text-center p-3 shadow-sm">
           <div class="icon-xl text-secondary"><i class="bi bi-newspaper"></i></div>
-          <h5 class="mt-2">News &amp; Trends</h5>
+          <h5 class="mt-2"><span data-i18n="nav_news">News</span> &amp; Trends</h5>
           <p class="small">Branche &amp; Lifestyle.</p>
           <a href="#news" class="btn btn-outline-primary btn-sm">Mehr</a>
         </div></div>
@@ -255,10 +255,10 @@
     </div>
   </section>
 
-  <!-- Baukasten mit 30 interaktiven Themen -->
+  <!-- <span data-i18n="nav_baukasten">Baukasten</span> mit 30 interaktiven Themen -->
   <section id="dashboard" class="section">
     <div class="container">
-      <h2 class="mb-3">Baukasten – 30 Themen</h2>
+      <h2 class="mb-3"><span data-i18n="nav_baukasten">Baukasten</span> – 30 Themen</h2>
       <p class="small-muted">Klicke auf <strong>Interaktiv</strong> – jedes Thema öffnet ein Tool, eine Liste oder eine Erklärung.</p>
       <div id="featureGrid" class="grid cols-3"></div>
     </div>
@@ -277,11 +277,11 @@
     </div>
   </section>
 
-  <!-- News -->
+  <!-- <span data-i18n="nav_news">News</span> -->
   <section id="news" class="section bg-white">
     <div class="container">
       <div class="d-flex align-items-center justify-content-between">
-        <h2 class="mb-3">Aktuelle Branchen‑News</h2>
+        <h2 class="mb-3">Aktuelle Branchen‑<span data-i18n="nav_news">News</span></h2>
         <span class="small-muted">Quelle: <code>data/news.json</code> · <a href="#chat">Frage dazu?</a></span>
       </div>
       <div class="row">
@@ -294,7 +294,7 @@
             <div id="top5-container" class="small-muted">Wird geladen …</div>
           </div>
           <div class="card p-3 mt-3">
-            <h6>Suche in News/FAQ</h6>
+            <h6>Suche in <span data-i18n="nav_news">News</span>/FAQ</h6>
             <input id="newsQuery" class="form-control" placeholder="z. B. Wärmepumpe">
             <button class="btn btn-primary mt-2" onclick="searchSite()">Suchen</button>
             <div id="searchResult" class="mt-2"></div>
@@ -427,14 +427,14 @@
       <div class="card p-3">
         <div class="row g-2">
           <div class="col-lg-9">
-            <input id="q" class="form-control form-control-lg" placeholder="Frage zu Recht, News, Smart Living, Finanzen …">
+            <input id="q" class="form-control form-control-lg" placeholder="Frage zu Recht, <span data-i18n="nav_news">News</span>, Smart Living, Finanzen …">
           </div>
           <div class="col-lg-3 d-grid">
             <button class="btn btn-accent btn-lg" onclick="ask()">Antwort anzeigen</button>
           </div>
         </div>
         <div id="answers" class="mt-3"></div>
-        <p class="small-muted mt-2 mb-0">Antworten nutzen lokale Daten (News/FAQ/Beispiele). Später optional mit KI‑API erweiterbar.</p>
+        <p class="small-muted mt-2 mb-0">Antworten nutzen lokale Daten (<span data-i18n="nav_news">News</span>/FAQ/Beispiele). Später optional mit KI‑API erweiterbar.</p>
       </div>
     </div>
   </section>
@@ -530,7 +530,7 @@
       try { const r = await fetch(url,{cache:'no-store'}); if(!r.ok) throw new Error(r.status); return await r.json(); }
       catch(e) { return null; }
     };
-    // Features (30 items) used by the Baukasten
+    // Features (30 items) used by the <span data-i18n="nav_baukasten">Baukasten</span>
     const FEATURES = [
       {title:"Immobilien Wissen", desc:"Kaufen, Verkaufen, Mieten – verständlich erklärt.", link:"#recht",  type:"faq",  icon:"bi-house-door"},
       {title:"Finanzen", desc:"Kredite, Förderung, Steuern kurz & klar.",             link:"#finanzen", type:"calc", icon:"bi-piggy-bank"},
@@ -605,11 +605,11 @@
       if(f.type==='table'){renderSmart('smartTableModal');}
       if(f.type==='gallery'){renderGallery('galleryModal');}
       if(f.type==='chart'){setTimeout(()=>drawDemoChart('modalChart'),50);}
-      if(f.type==='list'){renderListFromNews('listModal');}
+      if(f.type==='list'){renderListFrom<span data-i18n="nav_news">News</span>('listModal');}
       if(f.type==='faq'){renderFAQ('faqModal');}
     }
     // Render the news list and top 5 container
-    async function loadNews(){
+    async function load<span data-i18n="nav_news">News</span>(){
       const list=document.getElementById('news-list');
       const data=await fetchJSON('data/news.json');
       const items = Array.isArray(data) && data.length ? data.sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,12) : [
@@ -624,7 +624,7 @@
       }catch{ document.getElementById('top5-container').textContent = ''; }
     }
     // Render a list of news items in the modal (for list type features)
-    async function renderListFromNews(targetId){
+    async function renderListFrom<span data-i18n="nav_news">News</span>(targetId){
       const el=document.getElementById(targetId);
       const data=await fetchJSON('data/news.json');
       if(!data){el.textContent='Keine Daten.';return;}
@@ -637,7 +637,7 @@
       (async()=>{
         const news=await fetchJSON('data/news.json')||[];
         const hits=[];
-        news.forEach(n=>{ if((n.title||'').toLowerCase().includes(q)) hits.push('News: '+n.title); });
+        news.forEach(n=>{ if((n.title||'').toLowerCase().includes(q)) hits.push('<span data-i18n="nav_news">News</span>: '+n.title); });
         FAQ.forEach(f=>{ if((f.q+f.a).toLowerCase().includes(q)) hits.push('FAQ: '+f.q); });
         out.innerHTML = hits.length ? '<ul><li>'+hits.join('</li><li>')+'</li></ul>' : '<span class="small-muted">Keine Treffer.</span>';
       })();
@@ -718,7 +718,7 @@
     function drawPlan(){const c=document.getElementById('plannerCanvas'); const ctx=c.getContext('2d'); ctx.clearRect(0,0,c.width,c.height); if(planImg){const r=Math.min(c.width/planImg.width,c.height/planImg.height); const w=planImg.width*r,h=planImg.height*r; ctx.drawImage(planImg,(c.width-w)/2,(c.height-h)/2,w,h);} blocks.forEach(b=>{ ctx.fillStyle='rgba(40,199,111,.25)'; ctx.fillRect(b.x,b.y,b.w,b.h); ctx.strokeStyle='rgba(40,199,111,.9)'; ctx.strokeRect(b.x,b.y,b.w,b.h); });}
     function addBlock(){blocks.push({x:40+blocks.length*20,y:40,w:80,h:50}); drawPlan();}
     function clearBlocks(){blocks=[]; drawPlan();}
-    // Chat – simple local search through FAQ and News
+    // Chat – simple local search through FAQ and <span data-i18n="nav_news">News</span>
     function ask(){
       const q=(document.getElementById('q').value||'').toLowerCase();
       const out=document.getElementById('answers');
@@ -726,7 +726,7 @@
       FAQ.forEach(f=>{ if((f.q+f.a).toLowerCase().includes(q)) hits.push(`<div class="mb-2"><strong>${f.q}</strong><div>${f.a}</div></div>`); });
       (async()=>{
         const news=await fetchJSON('data/news.json')||[];
-        news.forEach(n=>{ if((n.title||'').toLowerCase().includes(q)) hits.push(`<div>News: <a href="${n.link}" target="_blank">${n.title}</a></div>`); });
+        news.forEach(n=>{ if((n.title||'').toLowerCase().includes(q)) hits.push(`<div><span data-i18n="nav_news">News</span>: <a href="${n.link}" target="_blank">${n.title}</a></div>`); });
         out.innerHTML = hits.length ? hits.join('') : '<div class="small-muted">Keine passenden Einträge gefunden.</div>';
       })();
     }
@@ -786,7 +786,7 @@
       renderFAQ();
       renderSmart();
       renderGallery();
-      loadNews();
+      load<span data-i18n="nav_news">News</span>();
       loadListings();
       drawDemoChart();
     });
