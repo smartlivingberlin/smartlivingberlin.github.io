@@ -1,10 +1,8 @@
-document.addEventListener('DOMContentLoaded', async ()=>{
-  const incs=[...document.querySelectorAll('[data-include]')];
-  await Promise.all(incs.map(async el=>{
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-include]').forEach(async el=>{
     try{
-      const url = el.getAttribute('data-include');
-      const r = await fetch(url,{cache:'no-store'});
-      el.innerHTML = r.ok ? await r.text() : `<!-- include failed: ${url} -->`;
-    }catch(e){ el.innerHTML=''; }
-  }));
+      const r = await fetch(el.getAttribute('data-include'), {cache:'no-store'});
+      el.innerHTML = r.ok ? await r.text() : '<div class="text-muted small">Snippet nicht gefunden.</div>';
+    }catch{ el.innerHTML = '<div class="text-muted small">Snippet Fehler.</div>'; }
+  });
 });
