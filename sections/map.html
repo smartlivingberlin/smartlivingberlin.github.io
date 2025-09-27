@@ -1,69 +1,15 @@
-<section id="map" class="section">
+<section id="map" class="section bg-white">
   <div class="container">
-    <h2 class="mb-3">Karte: Services, Projekte & Events</h2>
-
-    <div class="row g-3 align-items-end mb-3">
-      <div class="col-lg-4">
-        <label class="form-label">Suche (Titel, Kategorie, Region):</label>
-        <input id="mapSearch" type="search" class="form-control" placeholder="z. B. Elektriker, Kreuzberg, Tiny House">
-      </div>
-
-      <div class="col-lg-8">
-        <div class="row g-2">
-          <div class="col-12">
-            <div class="d-flex flex-wrap gap-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="fServices" checked>
-                <label class="form-check-label" for="fServices">Services 🔧</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="fProjects" checked>
-                <label class="form-check-label" for="fProjects">Projekte 🏗️</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="fEvents" checked>
-                <label class="form-check-label" for="fEvents">Events 📅</label>
-              </div>
-
-              <div class="ms-auto d-flex gap-2 flex-wrap">
-                <button id="btnExportCSV" class="btn btn-sm btn-outline-primary">CSV (sichtbar)</button>
-                <button id="btnExportAll" class="btn btn-sm btn-outline-secondary">CSV (alle)</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <label class="form-label">Kategorie Services:</label>
-            <select id="selCatService" class="form-select"><option value="">Alle</option></select>
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Kategorie Projekte:</label>
-            <select id="selCatProject" class="form-select"><option value="">Alle</option></select>
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Kategorie Events:</label>
-            <select id="selCatEvent" class="form-select"><option value="">Alle</option></select>
-          </div>
-
-          <div class="col-md-6">
-            <label class="form-label">Umkreisfilter (km):</label>
-            <div class="input-group">
-              <span class="input-group-text">km</span>
-              <input id="radiusKm" type="number" class="form-control" value="5" min="1" step="1">
-              <button id="btnGeo" class="btn btn-outline-success" type="button">Standort finden</button>
-              <div class="input-group-text">
-                <input class="form-check-input mt-0" type="checkbox" id="cbRadius" aria-label="Radius aktivieren">
-              </div>
-            </div>
-            <div class="form-text">Aktiviere das Kästchen, um den Umkreisfilter anzuwenden.</div>
-          </div>
-        </div>
-      </div>
+    <h2 class="mb-3">Karte &amp; Services</h2>
+    <div id="slbMap" style="height:420px;border-radius:12px"></div>
+    <div class="row g-2 mt-2">
+      <div class="col-md-4"><input id="mapSearch" class="form-control" placeholder="Suche (Titel/Ort/Kategorie)"></div>
+      <div class="col-md-3"><select id="mapCategory" class="form-select"><option value="">Alle Kategorien</option></select></div>
+      <div class="col-md-3"><select id="mapRadius" class="form-select">
+        <option value="0">Kein Umkreis</option><option value="1">1 km</option>
+        <option value="5">5 km</option><option value="10">10 km</option><option value="25">25 km</option>
+      </select></div>
+      <div class="col-md-2 d-grid"><button id="csvExport" class="btn btn-outline-secondary">CSV export</button></div>
     </div>
-
-    <div id="slbMap" style="height:470px;border-radius:12px;border:1px solid #e8ecf3;"></div>
-    <p class="small text-muted mt-2 mb-0">
-      Cluster aktiv · Radiusfilter optional · CSV exportiert sichtbare Marker <em>oder</em> alle Rohdaten.
-    </p>
   </div>
 </section>

@@ -1,32 +1,34 @@
 (async function(){
-  const el = document.getElementById('cfChart');
-  if(!el) return;
-  try{
-    const r = await fetch('data/crowdfunding.json',{cache:'no-store'});
-    const items = await r.json();
-    const labels = items.map(x=>x.title||'Projekt');
-    const goals  = items.map(x=>+x.goal||0);
-    const curr   = items.map(x=>+x.current||0);
-    const pct    = curr.map((v,i)=> Math.round(100 * v / (goals[i]||1)));
+  if(typeof Chart==='undefined') return;
+  let items=[];
+  try{ items = await fetch('data/crowdfunding.json',{cache:'no-store'}).then(r=>r.json()); }
+  catch(e){ items=[]; }
+  if(!Array.isArray(items) || !items.length){
+    items=[{title:'Demo Solar',status:'Offen',current:8000,goal:50000,date:'2025-09-20'},
+           {title:'Dachsanierung',status:'In Prüfung',current:0,goal:40000,date:'2025-09-18'},
+           {title:'Quartier E-Ladesäulen',status:'Finanziert',current:40000,goal:40000,date:'2025-08-30'}];
+  }
 
-    new Chart(el,{
-      type:'bar',
-      data:{
-        labels,
-        datasets:[
-          {label:'Ziel (€)',   data:goals, borderWidth:1},
-          {label:'Aktuell (€)',data:curr,  borderWidth:1},
-          {label:'% erreicht', data:pct,   type:'line', yAxisID:'y1', tension:.2}
-        ]
-      },
-      options:{
-        responsive:true,
-        scales:{
-          y:{beginAtZero:true, ticks:{callback:v=>v.toLocaleString('de-DE')+' €'}},
-          y1:{beginAtZero:true, position:'right', min:0, max:100, ticks:{callback:v=>v+'%'}}
-        },
-        plugins:{legend:{position:'bottom'}}
-      }
-    });
-  }catch(e){ console.error('Chart load failed', e); }
+  // Chart 1: nach Status
+  const byStatus = {};
+  items.forEach(x=>{ byStatus[x.status]=1+(byStatus[x.status]||0); });
+  new Chart(document.getElementById('cfByStatus'),{
+    type:'doughnut',
+    data:{labels:Object.keys(byStatus),datasets:[{data:Object.values(byStatus)}]},
+    options:{plugins:{legend:{position:'bottom'}}}
+  });
+
+  // Chart 2: Timeline (Summe "current")
+  const byDate = {};
+  items.forEach(x=>{
+    const d=(x.date||'').slice(0,10);
+    byDate[d]=(byDate[d]||0)+(x.current||0);
+  });
+  const labels=Object.keys(byDate).sort();
+  const data=labels.map(k=>byDate[k]);
+  new Chart(document.getElementById('cfTimeline'),{
+    type:'line',
+    data:{labels,datasets:[{label:'eingesammelt (€)',data,tension:.25}]},
+    options:{plugins:{legend:{display:false}}}
+  });
 })();

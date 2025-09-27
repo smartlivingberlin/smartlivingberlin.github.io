@@ -1,0 +1,33 @@
+/* BK styles */
+#baukasten{padding:40px 0}
+#baukasten .bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+#baukasten .bk-card{background:#fff;border:1px solid #e6ebf2;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04);transition:transform .15s}
+#baukasten .bk-card:hover{transform:translateY(-2px)}
+#baukasten img{width:100%;height:130px;object-fit:cover;display:block}
+#baukasten .bk-body{padding:12px}
+#baukasten h5{margin:0 0 6px 0;font-size:1.05rem}
+#baukasten p{margin:0 0 10px 0;color:#556}
+#baukasten .btn{display:inline-block;padding:6px 10px;background:#0a58ca;color:#fff;text-decoration:none;border-radius:8px}
+#baukasten .bk-empty{padding:16px;color:#667}
+/* BK styles */
+#baukasten{padding:40px 0}
+#baukasten .bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+#baukasten .bk-card{background:#fff;border:1px solid #e6ebf2;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04);transition:transform .15s}
+#baukasten .bk-card:hover{transform:translateY(-2px)}
+#baukasten img{width:100%;height:130px;object-fit:cover;display:block}
+#baukasten .bk-body{padding:12px}
+#baukasten h5{margin:0 0 6px 0;font-size:1.05rem}
+#baukasten p{margin:0 0 10px 0;color:#556}
+#baukasten .btn{display:inline-block;padding:6px 10px;background:#0a58ca;color:#fff;text-decoration:none;border-radius:8px}
+#baukasten .bk-empty{padding:16px;color:#667}
+/* smartliving base */
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#f7f9fc;color:#111}
+.container{max-width:1200px;margin:0 auto}
+a{color:#0a58ca;text-decoration:none} a:hover{text-decoration:underline}
+/* bauka mini */
+.bauka-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.bauka-card{border:1px solid #e8ecf3;border-radius:14px;background:#fff;overflow:hidden}
+.bauka-card img{width:100%;height:140px;object-fit:cover}
+.bauka-card .bx{padding:12px}
+.bauka-card .t{font-weight:600;margin:0 0 6px}
+.bauka-card .d{color:#6c757d;font-size:.92rem;margin:0}
