@@ -19,3 +19,4 @@ archives/
 *.zip
 backup-*.tar.gz
 *.tar.gz
+site_backups/
