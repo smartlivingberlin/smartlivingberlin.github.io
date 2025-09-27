@@ -9,15 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
-    :root{
-      --brand:#0a2540;
-      --accent:#28c76f;
-      --muted:#6c757d;
-      --bg:#f7f9fc;
-      --card:#ffffff;
-    }
-    html{scroll-behavior:smooth}
---brand:#0a2540;--accent:#28c76f;--muted:#6c757d;--bg:#f5f7fb;--card:#fff;}
+    :root{--brand:#0a2540;--accent:#28c76f;--muted:#6c757d;--bg:#f5f7fb;--card:#fff;}
     html,body{background:var(--bg);color:#111;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     .hero{background:linear-gradient(180deg,#0a2540,#0a2540c0),url('https://source.unsplash.com/1600x700/?architecture,interior') center/cover no-repeat;color:#fff;padding:64px 0}
     .section{padding:56px 0}
