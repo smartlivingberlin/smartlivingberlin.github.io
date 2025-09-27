@@ -1,5 +1,4 @@
 <section id="map-ui" class="section bg-white">
-  <div class="container"><div id="map" style="height:420px;border-radius:12px;"></div></div>
   <div class="container">
     <div class="d-flex align-items-center justify-content-between mb-2">
       <h2 class="mb-0">Berlin &amp; Umgebung – Karte</h2>
