@@ -1,0 +1,5 @@
+#themes .card{position:relative;min-height:220px;border-radius:14px;overflow:hidden;color:#fff;transition:transform .15s ease;}
+#themes .card::before{content:"";position:absolute;inset:0;background:var(--bg-img) center/cover no-repeat;transform:scale(1.04);transition:transform .3s ease;}
+#themes .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,37,64,.25),rgba(10,37,64,.75));}
+#themes .card:hover::before{transform:scale(1.08)}
+#themes .card h5,#themes .card p,#themes .card .btn{position:relative;z-index:2;text-shadow:0 2px 6px rgba(0,0,0,.45);}
