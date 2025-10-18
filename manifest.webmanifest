@@ -1,0 +1,9 @@
+{
+  "name": "SmartLivingBerlin",
+  "short_name": "SLB",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a2540",
+  "theme_color": "#0a2540",
+  "icons": []
+}

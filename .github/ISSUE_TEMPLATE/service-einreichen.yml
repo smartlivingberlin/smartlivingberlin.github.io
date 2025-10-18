@@ -1,0 +1,17 @@
+name: Handwerker/Service einreichen
+description: Unternehmen für die Services-Liste vorschlagen.
+labels: ["service"]
+body:
+  - type: input
+    id: name
+    attributes: { label: Firmenname }
+    validations: { required: true }
+  - type: input
+    id: category
+    attributes: { label: Kategorie, placeholder: "Elektriker, Sanitär, ..." }
+  - type: input
+    id: region
+    attributes: { label: Region/Stadt }
+  - type: input
+    id: website
+    attributes: { label: Website }

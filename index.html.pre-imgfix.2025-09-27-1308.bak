@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>SmartLivingBerlin – Immobilien · Energie · KI</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Immobilien-Wissen, Smart Living, Finanzierung, Design & Homestaging – mit interaktiven Tools.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root{
+      --brand:#0a2540;
+      --accent:#28c76f;
+      --muted:#6c757d;
+      --bg:#f7f9fc;
+      --card:#ffffff;
+    }
+    html{scroll-behavior:smooth}
+--brand:#0a2540;--accent:#28c76f;--muted:#6c757d;--bg:#f5f7fb;--card:#fff;}
+    html,body{background:var(--bg);color:#111;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .hero{background:linear-gradient(180deg,#0a2540,#0a2540c0),url('https://source.unsplash.com/1600x700/?architecture,interior') center/cover no-repeat;color:#fff;padding:64px 0}
+    .section{padding:56px 0}
+    .grid{display:grid;gap:16px}
+    .cols-3{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+    .card{border:1px solid #e8ecf3;border-radius:14px;background:var(--card)}
+    .small-muted{color:var(--muted);font-size:.9rem}
+    #plannerCanvas{width:100%;max-width:640px;border:1px dashed #ccc;border-radius:12px;background:#fff}
+  </style>
+</head>
+<body>
+  <!-- Navigation (per JS nachgeladen) -->
+  <div id="nav-placeholder"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <h1 class="display-5 fw-bold mb-3">Immobilien. Energie. KI.</h1>
+          <p class="lead">Wissen in Alltagssprache, interaktive Tools & Automatisierung – für Eigentümer, Käufer, Mieter und Smart-Living-Fans.</p>
+          <a href="#dashboard" class="btn btn-success btn-lg me-2">Zum Baukasten</a>
+          <a href="#chat" class="btn btn-outline-light btn-lg">Frag die Seite</a>
+          <p class="small mt-2">Daten: lokale JSONs in <code>/data</code> (mit Fallbacks).</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="card p-3">
+            <canvas id="zinsChart" height="220" aria-label="Zinsentwicklung"></canvas>
+            <p class="small-muted mt-2 mb-0">Demo oder <code>data/charts.json</code>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BAUKASTEN -->
+  <section id="dashboard" class="section">
+    <div class="container">
+      <h2 class="mb-3">Baukasten – Schnellzugriff</h2>
+      <p class="small-muted">30 Themen mit Interaktion (Modal/Tool/Link).</p>
+      <div id="featureGrid" class="grid cols-3"></div>
+    </div>
+  </section>
+
+  <!-- ANGEBOTE -->
+  <section id="angebote" class="section bg-white">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="mb-3">Angebote & Projekte</h2>
+        <a class="btn btn-sm btn-primary" target="_blank" rel="noopener"
+           href="https://github.com/smartlivingberlin/smartlivingberlin.github.io/issues/new?template=einreichen.yml">+ Einreichen</a>
+      </div>
+      <div class="row" id="angeboteGrid"></div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news" class="section bg-white">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <h2 class="mb-3">Aktuelle Branchen-News</h2>
+        <span class="small-muted">Quelle: <code>data/news.json</code></span>
+      </div>
+      <div class="row">
+        <div class="col-lg-8"><ul id="news-list" class="list-unstyled"></ul></div>
+        <div class="col-lg-4">
+          <div class="card p-3">
+            <h5>Top 5 der Woche</h5>
+            <div id="top5-container" class="small-muted">Wird geladen …</div>
+          </div>
+          <div class="card p-3 mt-3">
+            <h6>Suche in News/FAQ</h6>
+            <input id="newsQuery" class="form-control" placeholder="z. B. Wärmepumpe">
+            <button class="btn btn-primary mt-2" onclick="searchSite()">Suchen</button>
+            <div id="searchResult" class="mt-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECHT, FINANZEN, SMART, DESIGN, CHAT (gekürzt – Funktionen bleiben) -->
+  <section id="recht" class="section"><div class="container">
+    <h2 class="mb-3">Recht & Wissen – in Alltagssprache</h2>
+    <div class="row g-3">
+      <div class="col-lg-6">
+        <div class="card p-3">
+          <label class="form-label">Paragraph suchen (z. B. § 535 BGB):</label>
+          <input id="lawInput" class="form-control" placeholder="§ 535 BGB">
+          <button class="btn btn-dark mt-2" onclick="explainLaw()">Erklären</button>
+          <div id="lawOut" class="mt-3"></div>
+        </div>
+      </div>
+      <div class="col-lg-6"><div class="card p-3"><h5>FAQ</h5><div id="faqList"></div></div></div>
+    </div>
+  </div></section>
+
+  <section id="finanzen" class="section bg-white"><div class="container"><h2 class="mb-3">Finanzierung & Rendite</h2>
+    <div class="row g-3">
+      <div class="col-lg-6"><div class="card p-3">
+        <h5>Hypotheken-Rechner</h5>
+        <div class="row g-2">
+          <div class="col"><label class="form-label">Kreditsumme (€)</label><input id="loan" class="form-control" type="number" value="350000"></div>
+          <div class="col"><label class="form-label">Zins p. a. (%)</label><input id="rate" class="form-control" type="number" value="3.8" step=".01"></div>
+          <div class="col"><label class="form-label">Laufzeit (J)</label><input id="years" class="form-control" type="number" value="25"></div>
+        </div>
+        <button class="btn btn-primary mt-2" onclick="calcAnn()">Berechnen</button>
+        <div id="annOut" class="mt-3"></div>
+      </div></div>
+      <div class="col-lg-6"><div class="card p-3">
+        <h5>Mieten vs. Kaufen</h5>
+        <div class="row g-2">
+          <div class="col"><label class="form-label">Miete/Monat (€)</label><input id="rent" class="form-control" type="number" value="1500"></div>
+          <div class="col"><label class="form-label">Kaufpreis (€)</label><input id="price" class="form-control" type="number" value="520000"></div>
+          <div class="col"><label class="form-label">Eigenkapital (€)</label><input id="eq" class="form-control" type="number" value="80000"></div>
+        </div>
+        <button class="btn btn-primary mt-2" onclick="rentBuy()">Vergleichen</button>
+        <div id="rbOut" class="mt-3"></div>
+      </div></div>
+    </div>
+  </div></section>
+
+  <section id="smart" class="section"><div class="container"><h2 class="mb-3">Smart Living</h2>
+    <div class="row">
+      <div class="col-lg-7"><div class="card p-3">
+        <div class="table-responsive">
+          <table class="table table-sm"><thead><tr><th>Gerät</th><th>Nutzen</th><th>Preis</th><th>Ersparnis</th></tr></thead><tbody id="smartTable"></tbody></table>
+        </div>
+      </div></div>
+      <div class="col-lg-5"><div class="card p-3">
+        <h5>Bild-Galerie</h5><div class="grid cols-3" id="gallery"></div>
+      </div></div>
+    </div>
+  </div></section>
+
+  <section id="design" class="section bg-white"><div class="container"><h2 class="mb-3">Design & Grundriss</h2>
+    <div class="row g-3">
+      <div class="col-lg-6"><div class="card p-3">
+        <h5>Vorher/Nachher</h5>
+        <div class="position-relative overflow-hidden rounded-3">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600" class="w-100" alt="Vorher">
+        </div>
+      </div></div>
+      <div class="col-lg-6"><div class="card p-3">
+        <h5>Grundriss-Uploader</h5>
+        <input type="file" accept="image/*" class="form-control" onchange="loadPlan(event)">
+        <canvas id="plannerCanvas" class="mt-3" height="420" aria-label="Grundriss Fläche"></canvas>
+        <div class="mt-2">
+          <button class="btn btn-sm btn-secondary me-2" onclick="addBlock()">+ Möbel-Block</button>
+          <button class="btn btn-sm btn-outline-danger" onclick="clearBlocks()">Canvas leeren</button>
+        </div>
+      </div></div>
+    </div>
+  </div></section>
+
+  <section id="chat" class="section"><div class="container"><h2 class="mb-3">Frag die Seite</h2>
+    <div class="card p-3">
+      <div class="row g-2">
+        <div class="col-lg-9"><input id="q" class="form-control form-control-lg" placeholder="Frage zu Recht, News, Smart Living, Finanzen …"></div>
+        <div class="col-lg-3 d-grid"><button class="btn btn-success btn-lg" onclick="ask()">Antwort anzeigen</button></div>
+      </div>
+      <div id="answers" class="mt-3"></div>
+    </div>
+  </div></section>
+
+  <footer class="container section">
+    <div class="row">
+      <div class="col-lg-8"><p class="mb-1">© SmartLivingBerlin</p></div>
+      <div class="col-lg-4 text-lg-end"><span class="badge bg-light text-dark">Statisch & schnell</span></div>
+    </div>
+  </footer>
+
+  <!-- Modal für Baukasten -->
+  <div class="modal fade" id="featureModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header"><h5 id="featureTitle" class="modal-title">Thema</h5>
+          <button class="btn btn-close" data-bs-dismiss="modal" aria-label="Schließen"></button></div>
+        <div id="featureBody" class="modal-body"></div>
+        <div class="modal-footer">
+          <a id="featureLink" class="btn btn-success" target="_blank" rel="noopener">Mehr</a>
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  /* Utils */
+  const fmtDate = iso => { try{return new Date(iso).toLocaleDateString('de-DE')}catch{return ''} };
+  const fetchJSON = async (u)=>{ try{ const r=await fetch(u,{cache:'no-store'}); if(!r.ok) throw 0; return await r.json(); }catch(e){ return null; } };
+
+  /* Baukasten-Features */
+  const FEATURES = [
+    {title:"Immobilienpreise 2025", desc:"Entwicklung & Prognosen – interaktiv.", link:"#news", type:"chart", icon:"bi-graph-up"},
+    {title:"Fördermittel-Finder", desc:"KfW/BAFA kurz erklärt.", link:"#recht", type:"faq", icon:"bi-piggy-bank"},
+    {title:"Smart-Home Spartipps", desc:"Sinnvolle Geräte & Effekte.", link:"#smart", type:"table", icon:"bi-lightning"},
+    {title:"Mieten vs. Kaufen", desc:"Vergleich mit Beispielzahlen.", link:"#finanzen", type:"calc", icon:"bi-house-heart"},
+    {title:"Hypotheken-Rechner", desc:"Annuität & Gesamtzins.", link:"#finanzen", type:"calc_ann", icon:"bi-cash-coin"},
+    {title:"Energiepreise verstehen", desc:"Trends erkennen.", link:"#news", type:"chart", icon:"bi-activity"},
+    {title:"Glossar & FAQ", desc:"Begriffe einfach.", link:"#recht", type:"faq", icon:"bi-journal-text"}
+  ];
+  function renderFeatures(){
+    const grid=document.getElementById('featureGrid');
+    grid.innerHTML = FEATURES.map((f,i)=>`
+      <div class="card p-3">
+        <div class="d-flex align-items-center gap-3 mb-1">
+          <i class="bi ${f.icon} fs-3 text-success"></i>
+          <div><h5 class="mb-0">${f.title}</h5><small class="small-muted">${f.desc}</small></div>
+        </div>
+        <div class="d-flex gap-2 mt-2">
+          <a href="${f.link}" class="btn btn-sm btn-outline-primary">Öffnen</a>
+          <button class="btn btn-sm btn-success" onclick="openFeature(${i})">Interaktiv</button>
+        </div>
+      </div>`).join('');
+  }
+  function openFeature(i){
+    const f=FEATURES[i]; const body=document.getElementById('featureBody');
+    document.getElementById('featureTitle').textContent=f.title;
+    document.getElementById('featureLink').href=f.link||'#';
+    const widgets={
+      chart:`<canvas id="modalChart" height="180"></canvas><p class="small-muted mt-2">Demo-Chart – nutze <code>data/charts.json</code>.</p>`,
+      faq:`<div id="faqModal"></div>`,
+      calc:`<div class="row g-2 mt-1"><div class="col"><input id="mieteX" class="form-control" placeholder="Miete/Monat" value="1500"></div><div class="col"><input id="preisX" class="form-control" placeholder="Kaufpreis" value="520000"></div><div class="col"><input id="eqX" class="form-control" placeholder="Eigenkapital" value="80000"></div></div><button class="btn btn-primary mt-2" onclick="rentBuy(true)">Vergleichen</button><div id="rbOut2" class="mt-3"></div>`,
+      calc_ann:`<div class="row g-2 mt-1"><div class="col"><input id="loanX" class="form-control" placeholder="Kreditsumme" value="350000"></div><div class="col"><input id="rateX" class="form-control" placeholder="Zins %" value="3.8"></div><div class="col"><input id="yearsX" class="form-control" placeholder="Laufzeit" value="25"></div></div><button class="btn btn-primary mt-2" onclick="calcAnn(true)">Berechnen</button><div id="annOut2" class="mt-3"></div>`
+    };
+    body.innerHTML = widgets[f.type] || `<p>Interaktive Ansicht folgt.</p>`;
+    const m=new bootstrap.Modal('#featureModal'); m.show();
+    if(f.type==='chart'){ setTimeout(()=>drawDemoChart('modalChart'),50); }
+    if(f.type==='faq'){ renderFAQ('faqModal'); }
+  }
+
+  /* News */
+  async function loadNews(){
+    const list=document.getElementById('news-list');
+    const data=await fetchJSON('data/news.json');
+    const items=Array.isArray(data)&&data.length ? data.sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,12)
+      : [{title:"Demo: Smart-Living 2025 – KI spart Energie",link:"#",date:new Date().toISOString()}];
+    list.innerHTML = items.map(n=>`<li><a href="${n.link||'#'}" target="_blank" rel="noopener">${n.title}</a><div class="small-muted">${fmtDate(n.date)}</div></li>`).join('');
+    try{ const r=await fetch('partials/top5.html',{cache:'no-store'}); document.getElementById('top5-container').innerHTML=r.ok?await r.text():'–'; }catch{}
+  }
+
+  /* Recht/FAQ */
+  const FAQ = [
+    {q:"Was bedeutet § 535 BGB kurz?", a:"Vermieter: Gebrauch/Erhaltung; Mieter: Miete zahlen & pfleglich nutzen."},
+    {q:"Was sind Betriebskosten?", a:"Laufende Kosten (Heizung, Wasser, Müll). Umlage nur, wenn vereinbart (BetrKV)."}
+  ];
+  function renderFAQ(target='faqList'){ const el=document.getElementById(target); el.innerHTML=FAQ.map(f=>`<details class="mb-2"><summary><strong>${f.q}</strong></summary><p class="mb-1">${f.a}</p></details>`).join(''); }
+  const LAW_DB={"§ 535 BGB":"Überlassen & Erhalten der Mietsache; Miete zahlen.","§ 556 BGB":"Betriebskosten; Abrechnung & Umlage."};
+  async function explainLaw(){ const key=(document.getElementById('lawInput').value||'').trim(); const txt=LAW_DB[key]||"Keine Kurz-Erklärung vorhanden."; document.getElementById('lawOut').innerHTML=`<div class="alert alert-light border"><strong>${key||"–"}</strong><div class="mt-2">${txt}</div></div>`; }
+
+  /* Finanzen */
+  function calcAnn(inModal=false){ const loan=+document.getElementById(inModal?'loanX':'loan').value||0; const rate=(+document.getElementById(inModal?'rateX':'rate').value||0)/100/12; const n=(+document.getElementById(inModal?'yearsX':'years').value||0)*12; const ann=rate>0?loan*rate/(1-Math.pow(1+rate,-n)):loan/n; const out=inModal?'annOut2':'annOut'; document.getElementById(out).innerHTML=`<div class="alert alert-light border"><div><strong>Monatsrate:</strong> ${ann.toFixed(2)} €</div><div><strong>Gesamtzahlung:</strong> ${(ann*n).toFixed(2)} €</div></div>`; }
+  function rentBuy(inModal=false){ const m=+document.getElementById(inModal?'mieteX':'rent').value||0; const p=+document.getElementById(inModal?'preisX':'price').value||0; const eq=+document.getElementById(inModal?'eqX':'eq').value||0; const nk=p*0.09; const kredit=Math.max(0,p-nk-eq); const out=inModal?'rbOut2':'rbOut'; document.getElementById(out).innerHTML=`<div class="alert alert-light border"><div><strong>Miete/Jahr:</strong> ${(m*12).toLocaleString('de-DE')} €</div><div><strong>Kaufnebenkosten (~9%):</strong> ${nk.toLocaleString('de-DE')} €</div><div><strong>Benötigter Kredit:</strong> ${kredit.toLocaleString('de-DE')} €</div></div>`; }
+
+  /* Smart Living */
+  const SMART=[{g:"Thermostat",n:"Heiz-Thermostat",price:"€ 60–200",save:"5–12%/Jahr"},{g:"LED",n:"LED + Bewegungsmelder",price:"€ 20–150",save:"2–6%/Jahr"},{g:"PV-Balkon",n:"Balkonkraftwerk",price:"€ 600–1200",save:"bis 15%/Jahr"}];
+  function renderSmart(target='smartTable'){ const el=document.getElementById(target); el.innerHTML=SMART.map(s=>`<tr><td>${s.n}</td><td>${s.g}</td><td>${s.price}</td><td>${s.save}</td></tr>`).join(''); }
+  function renderGallery(target='gallery'){ const el=document.getElementById(target); const topics=["smart home","interior","architecture","minimal","cozy","energy"]; el.innerHTML=topics.map(t=>`<img class="img-fluid rounded" alt="${t}" loading="lazy" src="https://source.unsplash.com/400x300/?${encodeURIComponent(t)}">`).join(''); }
+
+  /* Grundriss */
+  let planImg=null, blocks=[]; function loadPlan(e){ const f=e.target.files[0]; if(!f)return; const r=new FileReader(); r.onload=()=>{ planImg=new Image(); planImg.onload=drawPlan; planImg.src=r.result; }; r.readAsDataURL(f); }
+  function drawPlan(){ const c=document.getElementById('plannerCanvas'); const ctx=c.getContext('2d'); ctx.clearRect(0,0,c.width,c.height); if(planImg){ const r=Math.min(c.width/planImg.width,c.height/planImg.height); const w=planImg.width*r,h=planImg.height*r; ctx.drawImage(planImg,(c.width-w)/2,(c.height-h)/2,w,h);} blocks.forEach(b=>{ ctx.fillStyle='rgba(40,199,111,.25)'; ctx.fillRect(b.x,b.y,b.w,b.h); ctx.strokeStyle='rgba(40,199,111,.9)'; ctx.strokeRect(b.x,b.y,b.w,b.h); }); }
+  function addBlock(){ blocks.push({x:40+blocks.length*20,y:40,w:80,h:50}); drawPlan(); }
+  function clearBlocks(){ blocks=[]; drawPlan(); }
+
+  /* Chat */
+  function ask(){ const q=(document.getElementById('q').value||'').toLowerCase(); const out=document.getElementById('answers'); const hits=[]; FAQ.forEach(f=>{ if((f.q+f.a).toLowerCase().includes(q)) hits.push(`<div class="mb-2"><strong>${f.q}</strong><div>${f.a}</div></div>`); }); (async()=>{ const news=await fetchJSON('data/news.json')||[]; news.forEach(n=>{ if((n.title||'').toLowerCase().includes(q)) hits.push(`<div>News: <a href="${n.link}" target="_blank">${n.title}</a></div>`); }); out.innerHTML=hits.length?hits.join(''):'<div class="small-muted">Keine passenden Einträge gefunden.</div>'; })(); }
+
+  /* Charts */
+  async function drawDemoChart(id='zinsChart'){ const ctx=document.getElementById(id); if(!ctx) return; let series=null; const charts=await fetchJSON('data/charts.json'); if(charts&&charts.zins){ series=charts.zins; } else { series={labels:["Jan","Feb","Mrz","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"], data:[2.1,2.4,2.8,3.1,3.5,3.7,3.9,4.0,3.8,3.6,3.5,3.4]}; } new Chart(ctx,{type:'line',data:{labels:series.labels,datasets:[{label:'Zins p. a. (%)',data:series.data,tension:.25}]},options:{plugins:{legend:{display:false}},scales:{y:{ticks:{callback:v=>v+'%'}}}}}); }
+
+  /* Init */
+  document.addEventListener('DOMContentLoaded', ()=>{ renderFeatures(); renderFAQ(); renderSmart(); renderGallery(); loadNews(); drawDemoChart(); });
+  </script>
+
+  <!-- Loader für Navigation -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/nav-loader.js"></script>
+<script src="assets/js/baukasten.js"></script>
+  <script src="assets/js/faq-extend.js"></script>
+  <script src="assets/js/chat-lite.js"></script>
+<div id="mapSection" data-include="sections/map.html"></div>
+<script src="assets/js/map.js"></script>
+<div id="chartsSection" data-include="sections/crowd_charts.html"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/cf_charts.js"></script>
+<script src="assets/js/feature-images.js"></script>
+<script src="assets/js/debug.js"></script>
+<script src="assets/js/news.js"></script>
+</body>
+</html>

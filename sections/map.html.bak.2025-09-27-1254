@@ -1,0 +1,47 @@
+<section id="map-ui" class="section bg-white">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <h2 class="mb-0">Berlin &amp; Umgebung – Karte</h2>
+      <div id="mapCount" class="small-muted">–</div>
+    </div>
+
+    <div class="row g-2 mb-2">
+      <div class="col-md-4">
+        <input id="mapSearch" class="form-control" placeholder="Suche (Titel/Ort/Kategorie)">
+      </div>
+      <div class="col-md-3">
+        <select id="mapCategory" class="form-select">
+          <option value="">Alle Kategorien</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select id="mapRadius" class="form-select">
+          <option value="0">Kein Umkreis</option>
+          <option value="5">5 km</option>
+          <option value="10">10 km</option>
+          <option value="15">15 km</option>
+          <option value="25">25 km</option>
+        </select>
+      </div>
+      <div class="col-md-2 d-grid">
+        <button id="csvExport" class="btn btn-outline-secondary">CSV export</button>
+      </div>
+    </div>
+
+    <div class="row g-2 mb-3">
+      <div class="col-md-6">
+        <div class="d-flex align-items-center gap-2">
+          <label class="small text-muted">Cluster-Größe</label>
+          <input id="clusterSize" type="range" min="20" max="120" step="10" value="60" style="width:220px">
+          <button id="useLocation" class="btn btn-sm btn-outline-primary"><i class="bi bi-geo"></i> Mein Standort</button>
+          <button id="resetFilters" class="btn btn-sm btn-outline-secondary">Reset</button>
+        </div>
+      </div>
+      <div class="col-md-6 text-end small-muted">
+        CSV exportiert <strong>alle</strong> Marker (nicht nur die Filter).
+      </div>
+    </div>
+
+    <div id="mapCanvas" style="height:440px;border-radius:12px;border:1px solid #e8ecf3;"></div>
+  </div>
+</section>

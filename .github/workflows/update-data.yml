@@ -1,0 +1,25 @@
+name: Update data (RSS)
+on:
+  schedule:
+    - cron: '15 4 * * *'  # täglich 04:15 UTC ~ 06:15 Berlin
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with: { python-version: '3.x' }
+      - name: Update news
+        run: |
+          python3 scripts/update_data.py
+      - name: Commit & Push
+        run: |
+          git config user.name "slb-bot"
+          git config user.email "slb-bot@users.noreply.github.com"
+          git add data/news.json partials/top5.html
+          git commit -m "chore(data): refresh news & top5" || exit 0
+          git push

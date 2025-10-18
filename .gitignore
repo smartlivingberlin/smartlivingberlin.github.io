@@ -1,0 +1,22 @@
+node_modules/
+package-lock.json
+node_modules
+.backups/
+snapshots/
+
+# ignore local archives & reports
+snapshots/
+reports/
+*.tar.gz
+*.zip
+reports/archives/
+backups/
+# --- SLB defaults ---
+snapshots/
+reports/
+archives/
+*.tar.gz
+*.zip
+backup-*.tar.gz
+*.tar.gz
+site_backups/

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="24" viewBox="0 0 120 24">
+  <rect x="0" y="0" width="24" height="24" rx="4" fill="#28C76F"/>
+  <path d="M6 13h12v5H6zM6 6h12v5H6z" fill="#0A2540"/>
+  <text x="30" y="17" font-size="12" font-family="Arial, Helvetica, sans-serif" fill="#0A2540">SmartLiving</text>
+</svg>

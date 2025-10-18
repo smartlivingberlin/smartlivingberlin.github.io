@@ -1,0 +1,16 @@
+{% set base = basepath %}
+<div class="row g-4">
+  <div class="col-lg-8">
+    {{ body|safe }}
+  </div>
+  <div class="col-lg-4">
+    <div class="card p-3">
+      <h6>Mehr zum Thema</h6>
+      <ul class="small mb-0">
+        {% for r in related %}
+          <li><a href="{{ r.url }}">{{ r.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

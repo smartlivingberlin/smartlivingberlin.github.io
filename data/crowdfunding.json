@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Demo Solar",
+    "description": "PV an Fassade, Demo-Eintrag.",
+    "goal": 50000,
+    "current": 8000,
+    "status": "Offen",
+    "link": "#"
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Müller Elektrotechnik",
+    "category": "Elektriker",
+    "region": "Berlin Mitte",
+    "phone": "+49 30 1234567",
+    "website": "https://beispiel-elektro.de",
+    "lat": 52.5208,
+    "lng": 13.4095
+  },
+  {
+    "name": "Sanitär Schulze",
+    "category": "Sanitär",
+    "region": "Prenzlauer Berg",
+    "phone": "+49 30 9876543",
+    "website": "https://beispiel-sanitaer.de"
+  },
+  {
+    "name": "Tischlerei Fischer",
+    "category": "Tischler",
+    "region": "Kreuzberg",
+    "phone": "+49 30 1112223",
+    "website": "https://beispiel-tischler.de"
+  }
+]

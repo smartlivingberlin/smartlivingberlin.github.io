@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IMMO Akademie – Lehrplan & Online-Format</title>
+<meta name="description" content="Lehrplan (M1–M5), 100% Online-Unterricht mit Zoom, Teams, Mentimeter, Whiteboards – praxisnah & klickbar.">
+<link rel="icon" href="/favicon.ico">
+<style>
+:root{--bg:#0b1020;--panel:#0f172a;--ink:#e6edf7;--muted:#9fb0cc;--brand:#3b82f6;--soft:#1b2440}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:1100px;margin:24px auto;padding:0 16px}
+.box{background:var(--panel);border:1px solid #1f2a44;border-radius:16px;padding:20px}
+.hero{display:grid;gap:16px;grid-template-columns:1.1fr .9fr;align-items:center}
+.h1{font-size:clamp(26px,3.2vw,40px);margin:8px 0 6px}
+.p{color:var(--muted)}
+.btn{display:inline-block;background:var(--brand);color:#fff;padding:10px 14px;border-radius:12px;font-weight:600;text-decoration:none}
+.btn.ghost{background:transparent;border:1px solid #38548a}
+.small{font-size:.9rem;color:#9fb0cc}
+.badge{display:inline-block;border:1px solid #2a3a62;background:#0e1730;color:#bfd2ff;border-radius:999px;padding:6px 10px;margin-bottom:8px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,0));border:1px solid #223049;border-radius:14px;padding:14px}
+.card img{width:100%;height:160px;object-fit:cover;border-radius:10px;border:1px solid #223049}
+.meta{color:var(--muted);font-size:13px;margin:6px 0}
+ul.bul{margin:8px 0 0 18px}
+footer{color:#8aa0c9;font-size:.9rem;text-align:center;margin:20px 0}
+
+/* Karussell (ohne Framework): */
+.carousel{position:relative; border:1px solid #223049; border-radius:14px; overflow:hidden; background:var(--soft)}
+.carousel-track{display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth}
+.carousel-track::-webkit-scrollbar{height:8px}
+.carousel-track img{scroll-snap-align:center; min-width:100%; height:360px; object-fit:cover}
+.carousel .nav{position:absolute; inset:auto 0 10px 0; display:flex; gap:8px; justify-content:center}
+.carousel .dot{width:10px;height:10px;border-radius:50%;background:#5f6f96;cursor:pointer}
+.carousel .dot.active{background:#cfe0ff}
+
+/* Reveal mini-Animation */
+.reveal{opacity:0; transform:translateY(10px); transition:.5s}
+.reveal.show{opacity:1; transform:none}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Topbar -->
+  <div class="box" style="display:flex;gap:10px;justify-content:space-between;align-items:center">
+    <div><strong>IMMO Akademie</strong> · <span class="small">Lehrplan & Online-Format</span></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a class="btn ghost" href="/">← Zur Startseite</a>
+      <a class="btn" href="mailto:info@smartliving.berlin?subject=Beratung">Kostenlose Beratung</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" style="margin-top:12px">
+    <div class="box reveal">
+      <span class="badge">100% Online · förderfähig*</span>
+      <h1 class="h1">Lehrplan (M1–M5) & modernes Unterrichtsformat</h1>
+      <p class="p">11 Monate gesamt oder flexibel als Einzelmodule: <strong>M1 Einführung</strong> → <strong>M2 §34c Makler</strong> → <strong>M3 Hausverwaltung</strong> → <strong>M4 Gutachter</strong> → <strong>M5 §34i + Prüfung</strong>.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn" href="#module">Module ansehen</a>
+        <a class="btn ghost" href="#online">Online-Format</a>
+      </div>
+      <p class="small" style="margin-top:8px">* Abhängig von Maßnahme/Träger. Keine Rechtsberatung.</p>
+    </div>
+    <div class="box reveal">
+      <div class="carousel" id="heroCarousel">
+        <div class="carousel-track" id="heroTrack" onscroll="syncDots()">
+          <!-- Realistische, thematisch passende Bilder (Unsplash: frei) -->
+          <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1600&auto=format&fit=crop" alt="Online-Unterricht (Zoom/Teams am Laptop)">
+          <img src="https://images.unsplash.com/photo-1560518883-3f5c5f7bcd83?q=80&w=1600&auto=format&fit=crop" alt="Hausverwaltung – Wohnanlage & Dokumente">
+          <img src="https://images.unsplash.com/photo-1551808525-51a94da548ce?q=80&w=1600&auto=format&fit=crop" alt="Maklerpraxis – Besichtigung/Exposé">
+          <img src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1600&auto=format&fit=crop" alt="Gutachter – Klemmbrett & Bewertung">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1600&auto=format&fit=crop" alt="Finanzierung – Darlehen & Unterlagen">
+        </div>
+        <div class="nav" id="heroDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULE -->
+  <section id="module" class="box reveal" style="margin-top:16px">
+    <h2 style="margin:0 0 10px">Module (M1–M5) – klickbar</h2>
+    <div class="grid">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" alt="Einführung">
+        <h3>M1 · Einführung</h3>
+        <div class="meta">Orientierung, Recht-Basics, Berufsbilder, Kommunikation</div>
+        <ul class="bul"><li>Branche & Akteure</li><li>Digitalisierung</li><li>BGB/§34c Basics</li></ul>
+        <p><a class="btn" href="/m1.html">Details</a></p>
+      </article>
+
+      <article class="card">
+        <!-- Wunsch: M2-Bild wie M3 ersetzt → wir zeigen ein Verwaltungs-Setting, aber Text bleibt M2 -->
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop" alt="Makler §34c (visuell neutral, Büro/Unterlagen)">
+        <h3>M2 · §34c Makler</h3>
+        <div class="meta">Maklervertrag, Widerruf, Exposé, Kommunikation, AML</div>
+        <p><a class="btn" href="/m2.html">Details</a></p>
+      </article>
+
+      <article class="card">
+        <!-- M3 Hausverwaltung -->
+        <img src="https://images.unsplash.com/photo-1560518883-3f5c5f7bcd83?q=80&w=1200&auto=format&fit=crop" alt="Hausverwaltung">
+        <h3>M3 · Hausverwaltung</h3>
+        <div class="meta">WEG/Mietrecht, Organisation, Eigentümerversammlung</div>
+        <p><a class="btn" href="/m3.html">Details</a></p>
+      </article>
+
+      <article class="card">
+        <!-- M4 Gutachter/Sachverständiger: Klemmbrett, Maßband, Unterlagen -->
+        <img src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1200&auto=format&fit=crop" alt="Gutachter / Sachverständiger">
+        <h3>M4 · Gutachter & Sachverständige</h3>
+        <div class="meta">Vergleichs-, Ertrags-, Sachwert; Nachvollziehbarkeit</div>
+        <p><a class="btn" href="/m4.html">Details</a></p>
+      </article>
+
+      <article class="card">
+        <!-- M5 §34i Darlehen: Finanzierungsszene -->
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt="§34i Darlehen">
+        <h3>M5 · §34i + Prüfung</h3>
+        <div class="meta">Kreditarten, Bonität, Tilgungsplan, Compliance, Prüfungsfit</div>
+        <p><a class="btn" href="/m5.html">Details</a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ONLINE-FORMAT -->
+  <section id="online" class="box reveal" style="margin-top:16px">
+    <h2>Unterrichtsformat (100% online)</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center">
+      <img alt="Online-Unterricht"
+           style="width:100%;border-radius:12px;border:1px solid #223049"
+           src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1200&auto=format&fit=crop">
+      <ul class="bul">
+        <li>Live-Sessions via <strong>Zoom</strong> &amp; <strong>Microsoft Teams</strong></li>
+        <li>Interaktive Übungen mit <strong>Mentimeter</strong></li>
+        <li>Visuelle Zusammenarbeit via <strong>digitale Whiteboards</strong></li>
+        <li>Einsatz von <strong>KI-Tools</strong> in der Praxis</li>
+      </ul>
+    </div>
+    <div class="small" style="margin-top:8px">Täglich 08:00–14:30 Uhr (Beispiel), flexible Teilnahme, praxisnah.</div>
+  </section>
+
+  <!-- Kontakt / Call to Action -->
+  <section class="box reveal" style="margin-top:16px">
+    <h2>Kontakt & Nächstes</h2>
+    <p class="p">E-Mail: <a class="btn" href="mailto:info@smartliving.berlin">info@smartliving.berlin</a></p>
+    <div class="small">Du möchtest diese Seite zur Startseite machen? Erst testen (dieser Link), dann später umschalten.</div>
+  </section>
+
+  <footer>© 2025 IMMO Akademie · Statisch, schnell, kostenlos gehostet (GitHub Pages)</footer>
+</div>
+
+<script>
+// Mini-Reveal
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Karussell Dots
+const track=document.getElementById('heroTrack');
+const dots=document.getElementById('heroDots');
+const slides=[...track.querySelectorAll('img')];
+slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>{track.scrollTo({left:track.clientWidth*i,behavior:'smooth'})};dots.appendChild(d);});
+window.syncDots = function(){
+  const i = Math.round(track.scrollLeft/track.clientWidth);
+  [...dots.children].forEach((d,idx)=>d.classList.toggle('active',idx===i));
+}
+</script>
+</body>
+</html>

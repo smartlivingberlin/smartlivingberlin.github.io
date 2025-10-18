@@ -1,0 +1,62 @@
+[
+  {
+    "type": "crowdfunding",
+    "title": "Demo Solar",
+    "text": "PV an Fassade, Demo-Eintrag."
+  },
+  {
+    "type": "investor",
+    "title": "Demo Invest",
+    "text": "Sanierungen 10k-100k #"
+  },
+  {
+    "type": "service",
+    "title": "Müller Elektrotechnik",
+    "text": "Elektriker Berlin Mitte"
+  },
+  {
+    "type": "service",
+    "title": "Sanitär Schulze",
+    "text": "Sanitär Prenzlauer Berg"
+  },
+  {
+    "type": "service",
+    "title": "Tischlerei Fischer",
+    "text": "Tischler Kreuzberg"
+  },
+  {
+    "type": "project",
+    "title": "Kiezgarten: Urbanes Gartenprojekt in Neukölln",
+    "text": "Offen "
+  },
+  {
+    "type": "project",
+    "title": "Aufstockung Altbau Prenzlauer Berg",
+    "text": "In Planung "
+  },
+  {
+    "type": "event",
+    "title": "Berlin Property Fair 2025",
+    "text": "2025-11-15 "
+  },
+  {
+    "type": "event",
+    "title": "Smart Home Expo Berlin",
+    "text": "2026-02-20 "
+  },
+  {
+    "type": "faq",
+    "title": "§ 535 BGB kurz?",
+    "text": "Vermieter: Gebrauch gewähren & instand halten. Mieter: Miete zahlen, Wohnung pfleglich behandeln."
+  },
+  {
+    "type": "faq",
+    "title": "Betriebskosten verständlich?",
+    "text": "Laufende Kosten wie Heizung, Wasser, Müll. Umlage nur bei vertraglicher Vereinbarung (BetrKV)."
+  },
+  {
+    "type": "faq",
+    "title": "Kaution – wie viel & wann zurück?",
+    "text": "Max. 3 Nettokaltmieten. Rückzahlung i.d.R. innerhalb von 3–6 Monaten nach Auszug, angemessene Prüf-/Abrechnungsfrist."
+  }
+]

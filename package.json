@@ -1,0 +1,25 @@
+{
+  "name": "smartliving-news",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartlivingberlin/smartlivingberlin.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smartlivingberlin/smartlivingberlin.github.io/issues"
+  },
+  "homepage": "https://github.com/smartlivingberlin/smartlivingberlin.github.io#readme",
+  "description": ""
+}
